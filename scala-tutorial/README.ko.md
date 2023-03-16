@@ -2,6 +2,11 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
+다음과 같이 `sbt`를 이용하여 템플릿 프로젝트를 다운로드 받으세요:
+```bash
+sbt new ku-plrg-classroom/scala-tutorial.g8
+```
+
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 - [기본 타입 (10점)](#기본-타입-10점)
@@ -21,11 +26,6 @@
   - [(문제 #10) `sum` (15점)](#문제-10-sum-15점)
   - [(문제 #11) `countLeaves` (15점)](#문제-11-countleaves-15점)
   - [(문제 #12) `flatten` (15점)](#문제-12-flatten-15점)
-
-다음과 같이 `sbt`를 이용하여 템플릿 프로젝트를 다운로드 받으세요:
-```bash
-sbt new ku-plrg-classroom/scala-tutorial.g8
-```
 
 ## 기본 타입 (10점)
 

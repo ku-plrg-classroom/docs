@@ -2,6 +2,11 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
+Please download the template project as follows:
+```bash
+sbt new ku-plrg-classroom/scala-tutorial.g8
+```
+
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 - [Primitives (10 points)](#primitives-10-points)
@@ -21,11 +26,6 @@
   - [(Problem #10) `sum` (15 points)](#problem-10-sum-15-points)
   - [(Problem #11) `countLeaves` (15 points)](#problem-11-countleaves-15-points)
   - [(Problem #12) `flatten` (15 points)](#problem-12-flatten-15-points)
-
-Please download the template project as follows:
-```bash
-sbt new ku-plrg-classroom/scala-tutorial.g8
-```
 
 ## Primitives (10 points)
 
