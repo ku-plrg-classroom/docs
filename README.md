@@ -17,7 +17,7 @@
 This is a repository for assignment documents of courses by the [Programming Languages Research Group (PLRG)](https://plrg.korea.ac.kr/) at [Korea University](https://korea.ac.kr).
 
 - Basics
-  - [scala-tutorial](./scala-tutorial) - Scala Tutorial
+  - [scala-tutorial](./scala-tutorial/README.md) - Scala Tutorial
 
 ## Prerequisites
 
