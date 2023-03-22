@@ -2,7 +2,7 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
-다음과 같이 `sbt`를 이용하여 템플릿 프로젝트를 다운로드 받으세요:
+다음과 같이 `sbt`를 이용하여 템플릿 코드를 다운로드 받으세요:
 ```bash
 sbt new ku-plrg-classroom/scala-tutorial.g8
 ```

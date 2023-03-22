@@ -26,8 +26,8 @@ This is a repository for assignment documents of courses by the [Programming Lan
 
 ## Download
 
-Run `sbt new ku-plrg-classroom/[assignment name].g8` in your terminal.
-The project directory whose name is the same as the assignment will be created
+Run `sbt new ku-plrg-classroom/[assignment name].g8` in your terminal. The
+assignment directory whose name is the same as the assignment will be created
 under the current directory.
 
 > :warning: You should **REPLACE** `[assignment name]` with the name of the
@@ -46,7 +46,7 @@ name [Scala Tutorial]:
 
 ## Directory Structure
 
-You can find the following directories and files in the project directory:
+You can find the following directories and files in the assignment directory:
 
 ```
 src
@@ -155,7 +155,7 @@ testExc(f(-1), "non-negative")
 
 ### Running Test Cases
 
-Under the project directory, execute `sbt` to start an sbt console.
+Under the assignment directory, execute `sbt` to start an sbt console.
 
 ```
 $ sbt
@@ -188,8 +188,8 @@ Then, `sbt` will run the test cases every time you save the file.
 ### Interactively Testing Your Implementation
 
 If you want to test your implementation interactively, you can use the `console`
-command in sbt. It will start a Scala REPL with the project. You can use any
-variables and functions defined in `Implementation.scala`.
+command in sbt. It will start a Scala REPL with the assignment implementation.
+You can use any variables and functions defined in `Implementation.scala`.
 
 ```
 sbt:...> console
@@ -202,10 +202,10 @@ scala> ...
 ## Submission
 
 Please use [Blackboard](https://kulms.korea.ac.kr/) to submit your code.
-You must submit your `Implementation.scala` of each project.
+You must submit your `Implementation.scala` of each assignment.
 
 > :warning: **If you copy and paste existing code, you will get an F.** You must
-> work on each project by yourself without getting any help. You can refer to
+> work on each assignment by yourself without getting any help. You can refer to
 > the lecture materials, including the lecture slides, or even other materials
 > on the Internet. However, **you should be able to explain the details of your
 > code. If not, you will get an F.**
