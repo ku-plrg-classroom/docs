@@ -168,8 +168,8 @@ test(depth(t3), 3)
 
 ### (Problem #10) `sum` (15 points)
 
-It takes a tree `t` and returns the sum of the values of its leaf nodes. For
-example, the sum of `t1` is 10, the sum of `t2` is 15, and the sum of `t3` is 15.
+It takes a tree `t` and returns the sum of the values of all nodes. For example,
+the sum of `t1` is 10, the sum of `t2` is 15, and the sum of `t3` is 15.
 ```scala
 test(sum(t1), 10)
 test(sum(t2), 15)
