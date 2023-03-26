@@ -111,7 +111,7 @@ the `STOP` button.
 The language of DFA `dfa_a_star_b` should be equal to the following language:
 
 $$
-L = \{ \texttt{a}^n \texttt{b} \mid n \geq 0 \}
+L = \lbrace \texttt{a}^n \texttt{b} \mid n \geq 0 \rbrace
 $$
 
 For example, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$, and
@@ -124,8 +124,8 @@ $\texttt{bb}$, $\texttt{aaa}$, and $\texttt{abab}$ are not in the language.
 The language of DFA `dfa_div_3` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1}^* \} \mid \mathbb{N}(w)
-      \equiv 0 (\text{mod } 3) \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w)
+\equiv 0 (\text{mod } 3) \rbrace
 $$
 
 where $\mathbb{N}(w)$ is a natural number represented by $w$. For example,
@@ -140,7 +140,8 @@ $\texttt{010}$, $\texttt{100}$, and $\texttt{1110}$ are not in the language.
 The language of DFA `dfa_subseq_011` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{011} \text{ is a subsequence of } w \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011}
+\text{ is a subsequence of } w \rbrace
 $$
 
 > :warning: Note that the SUBSEQUENCE is not necessarily contiguous unlike the
@@ -158,8 +159,9 @@ $\texttt{111}$ are not in the language.
 The language of DFA `dfa_even_0_1` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \textsf{zeros}(w) \equiv 0
-(\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0 (\text{mod } 2) \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
+\textsf{zeros}(w) \equiv 0 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0
+(\text{mod } 2) \rbrace
 $$
 
 where $\textsf{zeros}(w)$ and $\textsf{ones}(w)$ are the number of $\texttt{0}$
@@ -178,7 +180,8 @@ $\texttt{001}$ are not in the language.
 The language of NFA `nfa_least_two_0` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
+\text{ contains at least two } \texttt{0} \text{'s} \rbrace
 $$
 
 For example, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, and
@@ -190,7 +193,8 @@ $\texttt{10}$, $\texttt{11}$, and $\texttt{11011}$ are not in the language.
 The language of NFA `nfa_two_0` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains exactly two } \texttt{0} \text{'s} \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
+\text{ contains exactly two } \texttt{0} \text{'s} \rbrace
 $$
 
 For example, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$,
@@ -204,7 +208,8 @@ and $\texttt{1101111010}$ are not in the language.
 The language of NFA `nfa_substr_000` should be equal to the following language:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{000} \text{ is a substring of } w \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{000}
+\text{ is a substring of } w \rbrace
 $$
 
 For example, $\texttt{000}$, $\texttt{1000}$, and $\texttt{01000}$ are in the
@@ -218,7 +223,7 @@ The language of ε-NFA `enfa_ab_plus` should be equal to the following
 language:
 
 $$
-L = \{ (\texttt{ab})^n \mid n \geq 0 \}
+L = \lbrace (\texttt{ab})^n \mid n \geq 0 \rbrace
 $$
 
 For example, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, and $\texttt{ababab}$
@@ -231,7 +236,8 @@ The language of ε-NFA `enfa_same_digits` should be equal to the following
 language:
 
 $$
-L = \{ \texttt{0}^n \mid n \geq 0 \} \cup \{ \texttt{1}^n \mid n \geq 0 \}
+L = \lbrace \texttt{0}^n \mid n \geq 0 \rbrace \cup \lbrace \texttt{1}^n \mid n
+\geq 0 \rbrace
 $$
 
 For example, $\epsilon, \texttt{0}$, $\texttt{1}$, $\texttt{000}$, and
@@ -244,7 +250,7 @@ The language of ε-NFA `enfa_aibjck` should be equal to the following
 language:
 
 $$
-L = \{ \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \}
+L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \rbrace
 $$
 
 For example, $\epsilon, \texttt{a}$, $\texttt{ac}$, $\texttt{bc}$,

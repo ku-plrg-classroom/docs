@@ -48,7 +48,8 @@ fa-examples
 예를 들어, DFA `dfa_w00`의 언어는 다음과 같습니다:
 
 $$
-L = \{ w\texttt{00} \mid w \in \{ \texttt{0}, \texttt{1} \}^* \}
+L = \lbrace w\texttt{00} \mid w \in \lbrace \texttt{0}, \texttt{1} \rbrace^*
+\rbrace
 $$
 
 DFA `dfa_w00`의 올바른 구현은 이미 `Implementation.scala` 파일에서 제공하고
@@ -96,7 +97,7 @@ Firefox 등)에서 열어서 출력된 FA 객체를 확인할 수 있습니다:
 DFA `dfa_a_star_b`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ \texttt{a}^n \texttt{b} \mid n \geq 0 \}
+L = \lbrace \texttt{a}^n \texttt{b} \mid n \geq 0 \rbrace
 $$
 
 예를 들어, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$,
@@ -109,8 +110,8 @@ $\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는
 DFA `dfa_div_3`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1}^* \} \mid \mathbb{N}(w)
-      \equiv 0 (\text{mod } 3) \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w)
+\equiv 0 (\text{mod } 3) \rbrace
 $$
 
 여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어,
@@ -126,7 +127,8 @@ $\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어�
 DFA `dfa_subseq_011`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{011} \text{ is a subsequence of } w \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011}
+\text{ is a subsequence of } w \rbrace
 $$
 
 > :warning: 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도
@@ -144,8 +146,9 @@ $\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$,
 DFA `dfa_even_0_1`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \textsf{zeros}(w) \equiv 0
-(\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0 (\text{mod } 2) \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
+\textsf{zeros}(w) \equiv 0 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0
+(\text{mod } 2) \rbrace
 $$
 
 여기서, $\textsf{zeros}(w)$와 $\textsf{ones}(w)$는 $w$에 등장하는 $\texttt{0}$과 
@@ -164,7 +167,8 @@ $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, $\texttt{100}$, $\texttt{001}$
 NFA `nfa_least_two_0`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
+\text{ contains at least two } \texttt{0} \text{'s} \rbrace
 $$
 
 에를 들어, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, $\texttt{010100}$ 등은
@@ -176,7 +180,8 @@ $\texttt{11}$, $\texttt{11011}$ 등은 이 언어에 속해서는 안됩니다.
 NFA `nfa_two_0`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains exactly two } \texttt{0} \text{'s} \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
+\text{ contains exactly two } \texttt{0} \text{'s} \rbrace
 $$
 
 
@@ -191,7 +196,8 @@ $\texttt{0010}$, $\texttt{0100}$, $\texttt{1000}$, $\texttt{01010110}$
 NFA `nfa_substr_000`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{000} \text{ is a substring of } w \}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{000}
+\text{ is a substring of } w \rbrace
 $$
 
 예를 들어, $\texttt{000}$, $\texttt{1000}$, $\texttt{01000}$ 등은 이 언어에
@@ -205,7 +211,7 @@ $$
 ε-NFA `enfa_ab_plus`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ (\texttt{ab})^n \mid n \geq 0 \}
+L = \lbrace (\texttt{ab})^n \mid n \geq 0 \rbrace
 $$
 
 예를 들어, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, $\texttt{ababab}$ 등은 이
@@ -217,7 +223,8 @@ $$
 ε-NFA `enfa_same_digits`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ \texttt{0}^n \mid n \geq 0 \} \cup \{ \texttt{1}^n \mid n \geq 0 \}
+L = \lbrace \texttt{0}^n \mid n \geq 0 \rbrace \cup \lbrace \texttt{1}^n \mid n
+\geq 0 \rbrace
 $$
 
 예를 들어, $\epsilon$, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$,
@@ -229,7 +236,7 @@ $\texttt{011}$ 등은 이 언어에 속해서는 안됩니다.
 ε-NFA `enfa_aibjck`로 정의된 언어는 다음과 같아야 합니다:
 
 $$
-L = \{ \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \}
+L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \rbrace
 $$
 
 예를 들어, $\epsilon$, $\texttt{a}$, $\texttt{ac}$, $\texttt{bc}$,
