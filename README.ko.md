@@ -2,6 +2,7 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
+- [과제](#과제)
 - [사전 준비](#사전-준비)
 - [다운로드](#다운로드)
 - [디렉토리 구조](#디렉토리-구조)
@@ -16,8 +17,12 @@
 
 이 저장소는 [고려대학교](https://korea.ac.kr) 소속 [프로그래밍 언어 연구실](https://plrg.korea.ac.kr/)에서 진행하는 수업의 프로그래밍 과제에 대한 문서들을 관리합니다.
 
+## 과제
+
 - 기본
-  - [scala-tutorial](./scala-tutorial/README.ko.md) - Scala Tutorial
+  - [scala-tutorial](./scala-tutorial/README.ko.md) - Scala 튜토리얼
+- [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
+  - [fa-examples](./fa-examples/README.ko.md) - 유한 오토마타(Finite Automata) 예제
 
 ## 사전 준비
 

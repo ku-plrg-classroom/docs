@@ -2,6 +2,7 @@
 
 [English](./README.md) | [한국어](./README.ko.md)
 
+- [Assignments](#assignments)
 - [Prerequisites](#prerequisites)
 - [Download](#download)
 - [Directory Structure](#directory-structure)
@@ -16,8 +17,12 @@
 
 This is a repository for assignment documents of courses by the [Programming Languages Research Group (PLRG)](https://plrg.korea.ac.kr/) at [Korea University](https://korea.ac.kr).
 
+## Assignments
+
 - Basics
   - [scala-tutorial](./scala-tutorial/README.md) - Scala Tutorial
+- [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
+  - [fa-examples](./fa-examples/README.md) - Finite Automata Examples
 
 ## Prerequisites
 
@@ -51,7 +56,7 @@ You can find the following directories and files in the assignment directory:
 ```
 src
 ├─ main/scala/kuplrg
-│  ├─ Implementation.scala ─── SUBMIT THIS FILE
+│  ├─ Implementation.scala ─── IMPLEMENT AND SUBMIT THIS FILE
 │  └─ Template.scala
 └─ test/scala/kuplrg
    ├─ Spec.scala ───────────── ADD YOUR OWN TESTS
