@@ -108,9 +108,11 @@ the `STOP` button.
 ### (Problem #1) `dfa_a_star_b` (10 points)
 
 The language of DFA `dfa_a_star_b` should be equal to the following language:
+
 $$
 L = \{ \texttt{a}^n \texttt{b} \mid n \geq 0 \}
 $$
+
 For example, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$, and
 $\texttt{aaaaab}$ are in the language, but $\texttt{a}$, $\texttt{ba}$,
 $\texttt{bb}$, $\texttt{aaa}$, and $\texttt{abab}$ are not in the language.
@@ -119,10 +121,12 @@ $\texttt{bb}$, $\texttt{aaa}$, and $\texttt{abab}$ are not in the language.
 ### (Problem #2) `dfa_div_3` (10 points)
 
 The language of DFA `dfa_div_3` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1}^* \} \mid \mathbb{N}(w)
       \equiv 0 (\text{mod } 3) \}
 $$
+
 where $\mathbb{N}(w)$ is a natural number represented by $w$. For example,
 $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$ and $\mathbb{N}(\texttt{1111}) = 8 + 4 +
 2 + 1 = 15$. In addition, it allows the leading zeroes, so
@@ -133,9 +137,11 @@ $\texttt{010}$, $\texttt{100}$, and $\texttt{1110}$ are not in the language.
 ### (Problem #3) `dfa_subseq_011` (10 points)
 
 The language of DFA `dfa_subseq_011` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{011} \text{ is a subsequence of } w \}
 $$
+
 > :warning: Note that the SUBSEQUENCE is not necessarily contiguous unlike the
 > SUBSTRING. For example, $\texttt{011}$ is a subsequence of $\texttt{10101}$
 > because the second ($\texttt{0}$), third ($\texttt{1}$), and fifth
@@ -149,10 +155,12 @@ $\texttt{111}$ are not in the language.
 ### (Problem #4) `dfa_even_0_1` (10 points)
 
 The language of DFA `dfa_even_0_1` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \textsf{zeros}(w) \equiv 0
 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0 (\text{mod } 2) \}
 $$
+
 where $\textsf{zeros}(w)$ and $\textsf{ones}(w)$ are the number of $\texttt{0}$
 and $\texttt{1}$, respectively. For example, $\textsf{zeros}(\texttt{10101}) =
 2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\epsilon$, $\texttt{00}$,
@@ -167,9 +175,11 @@ $\texttt{001}$ are not in the language.
 ### (Problem #5) `nfa_least_two_0` (10 points)
 
 The language of NFA `nfa_least_two_0` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \}
 $$
+
 For example, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, and
 $\texttt{010100}$ are in the language, but $\texttt{0}$, $\texttt{01}$,
 $\texttt{10}$, $\texttt{11}$, and $\texttt{11011}$ are not in the language.
@@ -177,9 +187,11 @@ $\texttt{10}$, $\texttt{11}$, and $\texttt{11011}$ are not in the language.
 ### (Problem #6) `nfa_two_0` (10 points)
 
 The language of NFA `nfa_two_0` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains exactly two } \texttt{0} \text{'s} \}
 $$
+
 For example, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$,
 $\texttt{01110}$, and $\texttt{110111101}$ are in the language, but
 $\epsilon$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{000}$,
@@ -189,9 +201,11 @@ and $\texttt{1101111010}$ are not in the language.
 ### (Problem #7) `nfa_substr_000` (10 points)
 
 The language of NFA `nfa_substr_000` should be equal to the following language:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{000} \text{ is a substring of } w \}
 $$
+
 For example, $\texttt{000}$, $\texttt{1000}$, and $\texttt{01000}$ are in the
 language, but $\texttt{0100}$, $\texttt{001}$, and $\texttt{01010}$ are not.
 
@@ -201,9 +215,11 @@ language, but $\texttt{0100}$, $\texttt{001}$, and $\texttt{01010}$ are not.
 
 The language of ε-NFA `enfa_ab_plus` should be equal to the following
 language:
+
 $$
 L = \{ (\texttt{ab})^n \mid n \geq 0 \}
 $$
+
 For example, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, and $\texttt{ababab}$
 are in the language, but $\texttt{a}$, $\texttt{b}$, and $\texttt{abba}$ are
 not.
@@ -212,9 +228,11 @@ not.
 
 The language of ε-NFA `enfa_same_digits` should be equal to the following
 language:
+
 $$
 L = \{ \texttt{0}^n \mid n \geq 0 \} \cup \{ \texttt{1}^n \mid n \geq 0 \}
 $$
+
 For example, $\epsilon, \texttt{0}$, $\texttt{1}$, $\texttt{000}$, and
 $\texttt{11111}$ are in the language, but $\texttt{01}$, $\texttt{10}$, and
 $\texttt{011}$ are not.
@@ -223,9 +241,11 @@ $\texttt{011}$ are not.
 
 The language of ε-NFA `enfa_aibjck` should be equal to the following
 language:
+
 $$
 L = \{ \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \}
 $$
+
 For example, $\epsilon, \texttt{a}$, $\texttt{ac}$, $\texttt{bc}$,
 $\texttt{aaa}$, $\texttt{aabc}$, $\texttt{bbcc}$, and $\texttt{aacc}$ are in the
 language, but $\texttt{ba}$, $\texttt{bca}$, $\texttt{ccb}$, $\texttt{ca}$,

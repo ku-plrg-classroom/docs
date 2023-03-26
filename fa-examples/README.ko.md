@@ -46,9 +46,11 @@ fa-examples
 할당하는 방식으로 automata viewer에 출력할 수 있습니다.
 
 예를 들어, DFA `dfa_w00`의 언어는 다음과 같습니다:
+
 $$
 L = \{ w\texttt{00} \mid w \in \{ \texttt{0}, \texttt{1} \}^* \}
 $$
+
 DFA `dfa_w00`의 올바른 구현은 이미 `Implementation.scala` 파일에서 제공하고
 있습니다. 만약 `dfa_w00`를 다음과 같이 `dumpTarget`에 할당한다면:
 ```scala
@@ -92,9 +94,11 @@ Firefox 등)에서 열어서 출력된 FA 객체를 확인할 수 있습니다:
 ### (Problem #1) `dfa_a_star_b` (10 points)
 
 DFA `dfa_a_star_b`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ \texttt{a}^n \texttt{b} \mid n \geq 0 \}
 $$
+
 예를 들어, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$,
 $\texttt{aaaaab}$ 등은 이 언어에 속해야 하지만, $\texttt{a}$, $\texttt{ba}$,
 $\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는 안됩니다.
@@ -103,10 +107,12 @@ $\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는
 ### (Problem #2) `dfa_div_3` (10 points)
 
 DFA `dfa_div_3`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1}^* \} \mid \mathbb{N}(w)
       \equiv 0 (\text{mod } 3) \}
 $$
+
 여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어,
 $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$이고, $\mathbb{N}(\texttt{1111}) = 8 + 4 +
 2 + 1 = 15$입니다. 또한, 이 언어는 앞에 붙은 0을 허용하기 때문에,
@@ -118,9 +124,11 @@ $\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어�
 ### (Problem #3) `dfa_subseq_011` (10 points)
 
 DFA `dfa_subseq_011`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{011} \text{ is a subsequence of } w \}
 $$
+
 > :warning: 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도
 > 됩니다. 예를 들어, $\texttt{011}$은 $\texttt{10101}$의 subsequence입니다.
 > 왜냐하면, $\texttt{10101}$의 두 번째 ($\texttt{0}$), 세 번째 ($\texttt{1}$),
@@ -134,10 +142,12 @@ $\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$,
 ### (Problem #4) `dfa_even_0_1` (10 points)
 
 DFA `dfa_even_0_1`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \textsf{zeros}(w) \equiv 0
 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0 (\text{mod } 2) \}
 $$
+
 여기서, $\textsf{zeros}(w)$와 $\textsf{ones}(w)$는 $w$에 등장하는 $\texttt{0}$과 
 $\texttt{1}$의 개수를 의미합니다. 예를 들어, $\textsf{zeros}(\texttt{10101}) =
 2$이고, $\textsf{ones}(\texttt{10101}) = 3$입니다. 따라서, $\texttt{00}$,
@@ -152,9 +162,11 @@ $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, $\texttt{100}$, $\texttt{001}$
 ### (Problem #5) `nfa_least_two_0` (10 points)
 
 NFA `nfa_least_two_0`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \}
 $$
+
 에를 들어, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, $\texttt{010100}$ 등은
 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{01}$, $\texttt{10}$,
 $\texttt{11}$, $\texttt{11011}$ 등은 이 언어에 속해서는 안됩니다.
@@ -162,9 +174,11 @@ $\texttt{11}$, $\texttt{11011}$ 등은 이 언어에 속해서는 안됩니다.
 ### (Problem #6) `nfa_two_0` (10 points)
 
 NFA `nfa_two_0`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains exactly two } \texttt{0} \text{'s} \}
 $$
+
 
 예를 들어, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$,
 $\texttt{01110}$, $\texttt{110111101}$ 등은 이 언어에 속해야 하지만,
@@ -175,9 +189,11 @@ $\texttt{0010}$, $\texttt{0100}$, $\texttt{1000}$, $\texttt{01010110}$
 ### (Problem #7) `nfa_substr_000` (10 points)
 
 NFA `nfa_substr_000`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid \texttt{000} \text{ is a substring of } w \}
 $$
+
 예를 들어, $\texttt{000}$, $\texttt{1000}$, $\texttt{01000}$ 등은 이 언어에
 속해야 하지만, $\texttt{0100}$, $\texttt{001}$, $\texttt{01010}$ 등은 이 언어에
 속해서는 안됩니다.
@@ -187,9 +203,11 @@ $$
 ### (Problem #8) `enfa_ab_plus` (10 points)
 
 ε-NFA `enfa_ab_plus`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ (\texttt{ab})^n \mid n \geq 0 \}
 $$
+
 예를 들어, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, $\texttt{ababab}$ 등은 이
 언어에 속해야 하지만, $\texttt{a}$, $\texttt{b}$, $\texttt{abba}$ 등은 이 언어에
 속해서는 안됩니다.
@@ -197,9 +215,11 @@ $$
 ### (Problem #9) `enfa_same_digits` (10 points)
 
 ε-NFA `enfa_same_digits`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ \texttt{0}^n \mid n \geq 0 \} \cup \{ \texttt{1}^n \mid n \geq 0 \}
 $$
+
 예를 들어, $\epsilon$, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$,
 $\texttt{11111}$ 등은 이 언어에 속해야 하지만, $\texttt{01}$, $\texttt{10}$,
 $\texttt{011}$ 등은 이 언어에 속해서는 안됩니다.
@@ -207,9 +227,11 @@ $\texttt{011}$ 등은 이 언어에 속해서는 안됩니다.
 ### (Problem #10) `enfa_aibjck` (10 points)
 
 ε-NFA `enfa_aibjck`로 정의된 언어는 다음과 같아야 합니다:
+
 $$
 L = \{ \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \}
 $$
+
 예를 들어, $\epsilon$, $\texttt{a}$, $\texttt{ac}$, $\texttt{bc}$,
 $\texttt{aaa}$, $\texttt{aabc}$, $\texttt{bbcc}$, $\texttt{aacc}$ 등은 이
 언어에 속해야 하지만, $\texttt{ba}$, $\texttt{bca}$, $\texttt{ccb}$,
