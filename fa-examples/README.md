@@ -60,9 +60,11 @@ You can dump the automata in HTML format by assigning each FA to the
 `dumpTarget: FA` variable in `Implementation.scala`.
 
 For example, the language of DFA `dfa_w00` is the following language:
+
 $$
 L = \{ w\texttt{00} \mid w \in \{ \texttt{0}, \texttt{1} \}^* \}
 $$
+
 The correct implementation of `dfa_w00` is already given in
 `Implementation.scala`. If you assign `dfa_w00` to `dumpTarget` as follows:
 ```scala
