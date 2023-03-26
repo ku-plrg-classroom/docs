@@ -129,11 +129,13 @@ L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w)
 }$$
 
 where $\mathbb{N}(w)$ is a natural number represented by $w$. For example,
-$\mathbb{N}(\texttt{101}) = 4 + 1 = 5$ and $\mathbb{N}(\texttt{1111}) = 8 + 4 +
-2 + 1 = 15$. In addition, it allows the leading zeroes, so
-$\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$. Thus, $\texttt{11}$, $\texttt{1111}$,
-and $\texttt{00110}$ are in the language, but $\texttt{0}$, $\texttt{1}$,
-$\texttt{010}$, $\texttt{100}$, and $\texttt{1110}$ are not in the language.
+$\mathbb{N}(\texttt{101}) = 4 + 1 = 5$ and
+$\mathbb{N}(\texttt{1111}) = 8 + 4 + 2 + 1 = 15$.
+In addition, it allows the leading zeroes, so
+$\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$. Thus,
+$\texttt{11}$, $\texttt{1111}$, and $\texttt{00110}$ are in the language,
+but $\texttt{0}$, $\texttt{1}$, $\texttt{010}$, $\texttt{100}$,
+and $\texttt{1110}$ are not in the language.
 
 ### (Problem #3) `dfa_subseq_011` (10 points)
 
