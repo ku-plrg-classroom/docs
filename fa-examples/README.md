@@ -17,18 +17,18 @@ fa-examples
 │  ├── js/data.js ────────────── The data of automata
 │  └── ...
 └─ src
-  ├─ main/scala/kuplrg
-  │  ├── FA.scala ────────────── The base class of finite automata (FA)
-  │  ├── DFA.scala ───────────── The class of deterministic finite automata (DFA)
-  │  ├── NFA.scala ───────────── The class of nondeterministic finite automata (NFA)
-  │  ├── ENFA.scala ──────────── The class of ε-nondeterministic finite automata (ε-NFA)
-  │  ├── Implementation.scala ── IMPLEMENT AND SUBMIT THIS FILE
-  │  ├── Template.scala ──────── The templates of FAs that you must implement
-  │  ├── basics.scala ────────── The definitions of basic functions
-  │  └── error.scala ─────────── The definition of the `error` function
-  └─ test/scala/kuplrg
-     ├─ Spec.scala ───────────── ADD YOUR OWN TESTS
-     └─ SpecBase.scala ───────── The base class of test cases
+   ├─ main/scala/kuplrg
+   │  ├── FA.scala ────────────── The base class of finite automata (FA)
+   │  ├── DFA.scala ───────────── The class of deterministic finite automata (DFA)
+   │  ├── NFA.scala ───────────── The class of nondeterministic finite automata (NFA)
+   │  ├── ENFA.scala ──────────── The class of ε-nondeterministic finite automata (ε-NFA)
+   │  ├── Implementation.scala ── [[ IMPLEMENT AND SUBMIT THIS FILE ]]
+   │  ├── Template.scala ──────── The templates of FAs that you must implement
+   │  ├── basics.scala ────────── The definitions of basic functions
+   │  └── error.scala ─────────── The definition of the `error` function
+   └─ test/scala/kuplrg
+      ├─ Spec.scala ───────────── [[ ADD YOUR OWN TESTS ]]
+      └─ SpecBase.scala ───────── The base class of test cases
 ```
 
 **The goal of this assignment is to implement the finite automata (FA) objects in
@@ -61,9 +61,10 @@ You can dump the automata in HTML format by assigning each FA to the
 
 For example, the language of DFA `dfa_w00` is the following language:
 
-```math
-L = \{ w\texttt{00} \mid w \in \{ \texttt{0}, \texttt{1} \}^* \}
-```
+$$
+L = \left\{ w\texttt{00} \mid w \in \left\{ \texttt{0}, \texttt{1} \right\}^*
+\right\}
+$$
 
 The correct implementation of `dfa_w00` is already given in
 `Implementation.scala`. If you assign `dfa_w00` to `dumpTarget` as follows:

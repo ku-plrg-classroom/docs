@@ -14,21 +14,21 @@ sbt new ku-plrg-classroom/fa-examples.g8
 fa-examples
 ├─ viewer
 │  ├── index.html ────────────── Automata viewer를 위한 HTML 파일
-│  ├── data.js ───────────────── Automata의 데이터를 저장하는 JavaScript 파일
+│  ├── js/data.js ────────────── Automata의 데이터를 저장하는 JavaScript 파일
 │  └── ...
 └─ src
-  ├─ main/scala/kuplrg
-  │  ├── FA.scala ────────────── Finite automata (FA)의 공통 기능
-  │  ├── DFA.scala ───────────── Deterministic finite automata (DFA)의 정의
-  │  ├── NFA.scala ───────────── Nondeterministic finite automata (NFA)의 정의
-  │  ├── ENFA.scala ──────────── ε-Non-deterministic finite automata (ε-NFA)의 정의
-  │  ├── Implementation.scala ── [ 이 파일을 수정하고 제출하세요. ]
-  │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
-  │  ├── basics.scala ────────── 기본 함수들의 정의
-  │  └── error.scala ─────────── `error` 함수의 정의
-  └─ test/scala/kuplrg
-     ├─ Spec.scala ───────────── [ 이 파일에 테스트 케이스를 추가하세요. ]
-     └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능
+   ├─ main/scala/kuplrg
+   │  ├── FA.scala ────────────── Finite automata (FA)의 공통 기능
+   │  ├── DFA.scala ───────────── Deterministic finite automata (DFA)의 정의
+   │  ├── NFA.scala ───────────── Nondeterministic finite automata (NFA)의 정의
+   │  ├── ENFA.scala ──────────── ε-Non-deterministic finite automata (ε-NFA)의 정의
+   │  ├── Implementation.scala ── [[ 이 파일을 수정하고 제출하세요. ]]
+   │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
+   │  ├── basics.scala ────────── 기본 함수들의 정의
+   │  └── error.scala ─────────── `error` 함수의 정의
+   └─ test/scala/kuplrg
+      ├─ Spec.scala ───────────── [[ 이 파일에 테스트 케이스를 추가하세요. ]]
+      └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능
 ```
 
 **이 숙제의 목표는 `Implementation.scala` 파일에 FA 객체들을 구현하는
