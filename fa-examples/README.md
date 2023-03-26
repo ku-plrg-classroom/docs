@@ -76,6 +76,21 @@ object Implementation extends Template {
   // Assign any automaton you want to dump into the automata viewer
   def dumpTarget: FA = dfa_w00
 
+  def dfa_w00: DFA = DFA(
+    states = Set(0, 1, 2),
+    symbols = Set('0', '1'),
+    trans = Map(
+      (0, '0') -> 1,
+      (0, '1') -> 0,
+      (1, '0') -> 2,
+      (1, '1') -> 0,
+      (2, '0') -> 2,
+      (2, '1') -> 0,
+    ),
+    initState = 0,
+    finalStates = Set(2),
+  )
+
   ...
 }
 ```
