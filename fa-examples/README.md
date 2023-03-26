@@ -62,8 +62,8 @@ You can dump the automata in HTML format by assigning each FA to the
 For example, the language of DFA `dfa_w00` is the following language:
 
 $$
-L = \left\{ w\texttt{00} \mid w \in \left\{ \texttt{0}, \texttt{1} \right\}^*
-\right\}
+L = \lbrace w\texttt{00} \mid w \in \lbrace \texttt{0}, \texttt{1} \rbrace^*
+\rbrace
 $$
 
 The correct implementation of `dfa_w00` is already given in
