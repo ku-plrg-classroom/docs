@@ -180,7 +180,7 @@ L = \{ w \in \{ \texttt{0}, \texttt{1} \}^* \mid w \text{ contains exactly two }
 $$
 For example, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$,
 $\texttt{01110}$, and $\texttt{110111101}$ are in the language, but
-$\espilon$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{000}$,
+$\epsilon$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{000}$,
 $\texttt{0010}$, $\texttt{0100}$, $\texttt{1000}$, $\texttt{01010110}$,
 and $\texttt{1101111010}$ are not in the language.
 
