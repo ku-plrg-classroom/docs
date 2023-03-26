@@ -48,8 +48,7 @@ fa-examples
 예를 들어, DFA `dfa_w00`의 언어는 다음과 같습니다:
 
 $${\large
-L = \lbrace w\texttt{00} \mid w \in \lbrace \texttt{0}, \texttt{1} \rbrace^*
-\rbrace
+L = \lbrace w\texttt{00} \mid w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \rbrace
 }$$
 
 DFA `dfa_w00`의 올바른 구현은 이미 `Implementation.scala` 파일에서 제공하고
@@ -100,9 +99,7 @@ $${\large
 L = \lbrace \texttt{a}^n \texttt{b} \mid n \geq 0 \rbrace
 }$$
 
-예를 들어, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$,
-$\texttt{aaaaab}$ 등은 이 언어에 속해야 하지만, $\texttt{a}$, $\texttt{ba}$,
-$\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는 안됩니다.
+예를 들어, $\texttt{b}$, $\texttt{ab}$, $\texttt{aab}$, $\texttt{aaab}$, $\texttt{aaaaab}$ 등은 이 언어에 속해야 하지만, $\texttt{a}$, $\texttt{ba}$, $\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는 안됩니다.
 
 
 ### (Problem #2) `dfa_div_3` (10 points)
@@ -110,54 +107,32 @@ $\texttt{bb}$, $\texttt{aaa}$, $\texttt{abab}$ 등은 이 언어에 속해서는
 DFA `dfa_div_3`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w)
-\equiv 0 (\text{mod } 3) \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w) \equiv 0 (\text{mod } 3) \rbrace
 }$$
 
-여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어,
-$\mathbb{N}(\texttt{101}) = 4 + 1 = 5$이고, $\mathbb{N}(\texttt{1111}) = 8 + 4 +
-2 + 1 = 15$입니다. 또한, 이 언어는 앞에 붙은 0을 허용하기 때문에,
-$\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$입니다. 따라서, $\texttt{11}$,
-$\texttt{1111}$, $\texttt{00110}$ 등은 이 언어에 속해야 하지만, $\texttt{0}$,
-$\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어에
-속해서는 안됩니다.
+여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어, $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$이고, $\mathbb{N}(\texttt{1111}) = 8 + 4 + 2 + 1 = 15$입니다. 또한, 이 언어는 앞에 붙은 0을 허용하기 때문에, $\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$입니다. 따라서, $\texttt{11}$, $\texttt{1111}$, $\texttt{00110}$ 등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #3) `dfa_subseq_011` (10 points)
 
 DFA `dfa_subseq_011`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011}
-\text{ is a subsequence of } w \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011} \text{ is a subsequence of } w \rbrace
 }$$
 
-> :warning: 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도
-> 됩니다. 예를 들어, $\texttt{011}$은 $\texttt{10101}$의 subsequence입니다.
-> 왜냐하면, $\texttt{10101}$의 두 번째 ($\texttt{0}$), 세 번째 ($\texttt{1}$),
-> 그리고 다섯 번째 ($\texttt{1}$) 문자를 합치면, $\texttt{011}$이기 때문입니다.
+> :warning: 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도 됩니다. 예를 들어, $\texttt{011}$은 $\texttt{10101}$의 subsequence입니다. 왜냐하면, $\texttt{10101}$의 두 번째 ($\texttt{0}$), 세 번째 ($\texttt{1}$), 그리고 다섯 번째 ($\texttt{1}$) 문자를 합치면, $\texttt{011}$이기 때문입니다.
 
-예를 들어, $\texttt{011}$, $\texttt{10101}$, $\texttt{101011}$,
-$\texttt{10101011}$등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$,
-$\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$,
-등은 이 언어에 속해서는 안됩니다.
+예를 들어, $\texttt{011}$, $\texttt{10101}$, $\texttt{101011}$, $\texttt{10101011}$등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #4) `dfa_even_0_1` (10 points)
 
 DFA `dfa_even_0_1`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
-\textsf{zeros}(w) \equiv 0 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0
-(\text{mod } 2) \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \textsf{zeros}(w) \equiv 0 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0 (\text{mod } 2) \rbrace
 }$$
 
-여기서, $\textsf{zeros}(w)$와 $\textsf{ones}(w)$는 $w$에 등장하는 $\texttt{0}$과 
-$\texttt{1}$의 개수를 의미합니다. 예를 들어, $\textsf{zeros}(\texttt{10101}) =
-2$이고, $\textsf{ones}(\texttt{10101}) = 3$입니다. 따라서, $\texttt{00}$,
-$\texttt{11}$, $\texttt{0000}$, $\texttt{1001}$, $\texttt{100100}$ 등은 이
-언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{10}$, $\texttt{01}$,
-$\texttt{101}$, $\texttt{110}$, $\texttt{111}$, $\texttt{100}$, $\texttt{001}$
-등은 이 언어에 속해서는 안됩니다.
+여기서, $\textsf{zeros}(w)$와 $\textsf{ones}(w)$는 $w$에 등장하는 $\texttt{0}$과 $\texttt{1}$의 개수를 의미합니다. 예를 들어, $\textsf{zeros}(\texttt{10101}) = 2$이고, $\textsf{ones}(\texttt{10101}) = 3$입니다. 따라서, $\texttt{00}$, $\texttt{11}$, $\texttt{0000}$, $\texttt{1001}$, $\texttt{100100}$ 등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{10}$, $\texttt{01}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, $\texttt{100}$, $\texttt{001}$ 등은 이 언어에 속해서는 안됩니다.
 
 
 ## Nondeterministic Finite Automata (NFA) (30 points)
@@ -167,42 +142,31 @@ $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, $\texttt{100}$, $\texttt{001}$
 NFA `nfa_least_two_0`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
-\text{ contains at least two } \texttt{0} \text{'s} \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \rbrace
 }$$
 
-에를 들어, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, $\texttt{010100}$ 등은
-이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{01}$, $\texttt{10}$,
-$\texttt{11}$, $\texttt{11011}$ 등은 이 언어에 속해서는 안됩니다.
+에를 들어, $\texttt{00}$, $\texttt{010}$, $\texttt{000}$, $\texttt{010100}$ 등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{11011}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #6) `nfa_two_0` (10 points)
 
 NFA `nfa_two_0`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w
-\text{ contains exactly two } \texttt{0} \text{'s} \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{ contains exactly two } \texttt{0} \text{'s} \rbrace
 }$$
 
 
-예를 들어, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$,
-$\texttt{01110}$, $\texttt{110111101}$ 등은 이 언어에 속해야 하지만,
-$\epsilon$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{000}$,
-$\texttt{0010}$, $\texttt{0100}$, $\texttt{1000}$, $\texttt{01010110}$
-등은 이 언어에 속해서는 안됩니다.
+예를 들어, $\texttt{00}$, $\texttt{001}$, $\texttt{010}$, $\texttt{100}$, $\texttt{01110}$, $\texttt{110111101}$ 등은 이 언어에 속해야 하지만, $\epsilon$, $\texttt{01}$, $\texttt{10}$, $\texttt{11}$, $\texttt{000}$, $\texttt{0010}$, $\texttt{0100}$, $\texttt{1000}$, $\texttt{01010110}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #7) `nfa_substr_000` (10 points)
 
 NFA `nfa_substr_000`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{000}
-\text{ is a substring of } w \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{000} \text{ is a substring of } w \rbrace
 }$$
 
-예를 들어, $\texttt{000}$, $\texttt{1000}$, $\texttt{01000}$ 등은 이 언어에
-속해야 하지만, $\texttt{0100}$, $\texttt{001}$, $\texttt{01010}$ 등은 이 언어에
-속해서는 안됩니다.
+예를 들어, $\texttt{000}$, $\texttt{1000}$, $\texttt{01000}$ 등은 이 언어에 속해야 하지만, $\texttt{0100}$, $\texttt{001}$, $\texttt{01010}$ 등은 이 언어에 속해서는 안됩니다.
 
 ## ε-Nondeterministic Finite Automata (ε-NFA) (30 points)
 
@@ -214,22 +178,17 @@ $${\large
 L = \lbrace (\texttt{ab})^n \mid n \geq 0 \rbrace
 }$$
 
-예를 들어, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, $\texttt{ababab}$ 등은 이
-언어에 속해야 하지만, $\texttt{a}$, $\texttt{b}$, $\texttt{abba}$ 등은 이 언어에
-속해서는 안됩니다.
+예를 들어, $\epsilon$, $\texttt{ab}$, $\texttt{abab}$, $\texttt{ababab}$ 등은 이 언어에 속해야 하지만, $\texttt{a}$, $\texttt{b}$, $\texttt{abba}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #9) `enfa_same_digits` (10 points)
 
 ε-NFA `enfa_same_digits`로 정의된 언어는 다음과 같아야 합니다:
 
 $${\large
-L = \lbrace \texttt{0}^n \mid n \geq 0 \rbrace \cup \lbrace \texttt{1}^n \mid n
-\geq 0 \rbrace
+L = \lbrace \texttt{0}^n \mid n \geq 0 \rbrace \cup \lbrace \texttt{1}^n \mid n \geq 0 \rbrace
 }$$
 
-예를 들어, $\epsilon$, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$,
-$\texttt{11111}$ 등은 이 언어에 속해야 하지만, $\texttt{01}$, $\texttt{10}$,
-$\texttt{011}$ 등은 이 언어에 속해서는 안됩니다.
+예를 들어, $\epsilon$, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$, $\texttt{11111}$ 등은 이 언어에 속해야 하지만, $\texttt{01}$, $\texttt{10}$, $\texttt{011}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #10) `enfa_aibjck` (10 points)
 
@@ -239,8 +198,4 @@ $${\large
 L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \rbrace
 }$$
 
-예를 들어, $\epsilon$, $\texttt{a}$, $\texttt{ac}$, $\texttt{bc}$,
-$\texttt{aaa}$, $\texttt{aabc}$, $\texttt{bbcc}$, $\texttt{aacc}$ 등은 이
-언어에 속해야 하지만, $\texttt{ba}$, $\texttt{bca}$, $\texttt{ccb}$,
-$\texttt{ca}$, $\texttt{aba}$, $\texttt{abab}$ 등은 이 언어에 속해서는
-안됩니다.
+예를 들어, $\epsilon$, $\texttt{a}$, $\texttt{ac}$, $\texttt{bc}$, $\texttt{aaa}$, $\texttt{aabc}$, $\texttt{bbcc}$, $\texttt{aacc}$ 등은 이 언어에 속해야 하지만, $\texttt{ba}$, $\texttt{bca}$, $\texttt{ccb}$, $\texttt{ca}$, $\texttt{aba}$, $\texttt{abab}$ 등은 이 언어에 속해서는 안됩니다.
