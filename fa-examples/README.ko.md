@@ -125,7 +125,7 @@ $${\large
 L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w) \equiv 0 (\text{mod } 3) \rbrace
 }$$
 
-여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어, $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$이고, $\mathbb{N}(\texttt{1111}) = 8 + 4 + 2 + 1 = 15$입니다. 또한, 이 언어는 앞에 붙은 0을 허용하기 때문에, $\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$입니다. 따라서, $\texttt{11}$, $\texttt{1111}$, $\texttt{00110}$ 등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어에 속해서는 안됩니다.
+여기서, $\mathbb{N}(w)$는 $w$를 이진수로 해석한 자연수를 의미합니다. 예를 들어, $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$이고, $\mathbb{N}(\texttt{1111}) = 8 + 4 + 2 + 1 = 15$입니다. 또한, 이 언어는 앞에 붙은 0을 허용하기 때문에, $\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$입니다. 따라서, $\texttt{11}$, $\texttt{1111}$, $\texttt{00110}$ 등은 이 언어에 속해야 하지만, $\texttt{1}$, $\texttt{010}$, $\texttt{100}$, $\texttt{1110}$ 등은 이 언어에 속해서는 안됩니다.
 
 ### (Problem #3) `dfa_subseq_011` (10 points)
 
