@@ -22,7 +22,8 @@
 - 기본
   - [scala-tutorial](./scala-tutorial/README.ko.md) - Scala 튜토리얼
 - [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
-  - [fa-examples](./fa-examples/README.ko.md) - 유한 오토마타(Finite Automata) 예제
+  - [fa-examples](./fa-examples/README.ko.md) - Finite Automata 예제
+  - [equiv-re-fa](./equiv-re-fa/README.ko.md) - Regular Expression과 Finite Automata의 동치성
 
 ## 사전 준비
 

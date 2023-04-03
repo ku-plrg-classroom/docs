@@ -13,8 +13,8 @@ sbt new ku-plrg-classroom/fa-examples.g8
 ```
 fa-examples
 ├─ viewer
-│  ├── index.html ────────────── Automata viewer를 위한 HTML 파일
-│  ├── js/data.js ────────────── Automata의 데이터를 저장하는 JavaScript 파일
+│  ├── index.html ─────────────── Automata viewer를 위한 HTML 파일
+│  ├── js/data.js ─────────────── Automata의 데이터를 저장하는 JavaScript 파일
 │  └── ...
 └─ src
    ├─ main/scala/kuplrg
@@ -34,6 +34,20 @@ fa-examples
 **이 숙제의 목표는 `Implementation.scala` 파일에 FA 객체들을 구현하는
 것입니다.**
 
+- [Automata Viewer](#automata-viewer)
+- [Deterministic Finite Automata (40 points)](#deterministic-finite-automata-40-points)
+  - [(문제 #1) `dfa_a_star_b` (10 points)](#문제-1-dfa_a_star_b-10-points)
+  - [(문제 #2) `dfa_div_3` (10 points)](#문제-2-dfa_div_3-10-points)
+  - [(문제 #3) `dfa_subseq_011` (10 points)](#문제-3-dfa_subseq_011-10-points)
+  - [(문제 #4) `dfa_even_0_1` (10 points)](#문제-4-dfa_even_0_1-10-points)
+- [Nondeterministic Finite Automata (NFA) (30 points)](#nondeterministic-finite-automata-nfa-30-points)
+  - [(문제 #5) `nfa_least_two_0` (10 points)](#문제-5-nfa_least_two_0-10-points)
+  - [(문제 #6) `nfa_two_0` (10 points)](#문제-6-nfa_two_0-10-points)
+  - [(문제 #7) `nfa_substr_000` (10 points)](#문제-7-nfa_substr_000-10-points)
+- [ε-Nondeterministic Finite Automata (ε-NFA) (30 points)](#ε-nondeterministic-finite-automata-ε-nfa-30-points)
+  - [(문제 #8) `enfa_ab_plus` (10 points)](#문제-8-enfa_ab_plus-10-points)
+  - [(문제 #9) `enfa_same_digits` (10 points)](#문제-9-enfa_same_digits-10-points)
+  - [(문제 #10) `enfa_aibjck` (10 points)](#문제-10-enfa_aibjck-10-points)
 
 ## Automata Viewer
 

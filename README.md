@@ -23,6 +23,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
   - [scala-tutorial](./scala-tutorial/README.md) - Scala Tutorial
 - [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
   - [fa-examples](./fa-examples/README.md) - Finite Automata Examples
+  - [equiv-re-fa](./equiv-re-fa/README.md) - Equivalence of Regular Expressions and Finite Automata
 
 ## Prerequisites
 

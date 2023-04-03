@@ -13,8 +13,8 @@ The template source code contains the following files:
 ```
 fa-examples
 ├─ viewer
-│  ├── index.html ────────────── The HTML file for the automata viewer
-│  ├── js/data.js ────────────── The data of automata
+│  ├── index.html ─────────────── The HTML file for the automata viewer
+│  ├── js/data.js ─────────────── The data of automata
 │  └── ...
 └─ src
    ├─ main/scala/kuplrg
