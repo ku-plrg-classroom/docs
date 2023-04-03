@@ -40,7 +40,7 @@ fa-examples
   - [Automata Viewer](#automata-viewer)
   - [`dfa2re`의 디버깅](#dfa2re의-디버깅)
   - [DFA의 짧은 정의](#dfa의-짧은-정의)
-  - [Regular Expressions의 String 형태](#regular-expressions의-string-형태)
+  - [Regular Expression의 String 형태](#regular-expression의-string-형태)
 
 
 ## (문제 #1) Regular Expressions에서 ε-Nondeterministic Finite Automata (50점)
@@ -101,8 +101,8 @@ expression**을 주어진 **initial state**를 가지는 **simplified ε-NFA**�
 있습니다.
 
 테스트 케이스는 regular expression의 string 형태를 사용하여 정의되어 있습니다.
-이 string 형태 대한 설명은 [Regular Expressions의 String
-형태](#regular-expressions의-string-형태)를 참고하세요.
+이 string 형태 대한 설명은 [Regular Expression의 String
+형태](#regular-expression의-string-형태)를 참고하세요.
 
 또한, `ENFA` 클래스의 `dump` 함수를 사용하여 구현체를 디버깅할 수 있습니다.
 자세한 내용은 [Automata Viewer](#automata-viewer) 부분을 참고하세요.
