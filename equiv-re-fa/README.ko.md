@@ -45,8 +45,8 @@ fa-examples
 
 ## (문제 #1) Regular Expressions에서 ε-Nondeterministic Finite Automata (50점)
 
-첫 번째 문제는 **regular expression**을 **ε-Nondeterministic Finite Automata
-(ε-NFA)**로 변환하는 `re2enfa` 함수를 구현하는 것입니다.
+첫 번째 문제는 **regular expression**을 <strong>ε-Nondeterministic Finite
+Automata (ε-NFA)</strong>로 변환하는 `re2enfa` 함수를 구현하는 것입니다.
 
 권장하는 방법은 `Template.scala` 파일에 정의된 `SimpleENFA` 클래스를 사용하는
 것입니다. 이 방법으로 구현하고자 한다면, `re2enfa` 함수는 다음과 같이 이미
@@ -110,7 +110,7 @@ expression**을 주어진 **initial state**를 가지는 **simplified ε-NFA**�
 
 ## (문제 #2) Deterministic Finite Automata에서 Regular Expression (50점)
 
-두 번째 문제는 **deterministic finite automaton (DFA)**를 **regular
+두 번째 문제는 <strong>deterministic finite automaton (DFA)</strong>를 **regular
 expression**으로 변환하는 `dfa2re` 함수를 구현하는 것입니다:
 
 ```scala
