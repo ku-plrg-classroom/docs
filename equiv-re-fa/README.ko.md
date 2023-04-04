@@ -329,9 +329,10 @@ val dfa: DFA = DFA(
   그리고, 위에서 정의한 각 transition의 target은 다음과 같습니다: (1, 0, 2, 0, 2,
   0). 이를 삼진법으로 표현하면, `020201 (base 3)`(역순)이 되고, 10진법으로는
   `181`이 됩니다).
-- 네 번째 인자는 **initial state** (예: `0`).
-- 다섯 번째 인자는 **final state의 집합** (예: `6`은 이진법으로 `110`이고,
-  따라서 `Set(1, 2)`로 변환됩니다).
+- 네 번째 인자는 **final state의 집합** (예: `6`은 이진법으로 `110`이고,
+    따라서 `Set(1, 2)`로 변환됩니다).
+
+> :warning: Initial state는 항상 `0`입니다.
 
 
 ### Regular expression의 String 형태

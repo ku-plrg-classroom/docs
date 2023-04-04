@@ -322,6 +322,7 @@ val dfa: DFA = DFA(
   finalStates = Set(1, 2),
 )
 ```
+
 Each argument of the `DFA` constructor is explained as follows:
 - The first argument is **the number of states** (e.g., `3`).
 - The second argument is **the set of symbols** (e.g., `"01"` will be converted
@@ -331,9 +332,10 @@ Each argument of the `DFA` constructor is explained as follows:
     targets of the transitions are: (1, 0, 2, 0, 2, 0). Then, we can represent
     it as a ternary number `020201 (base 3)` (in opposite order). Finally, it is
     the decimal number `181`).
-- The fourth argument is **the initial state** (e.g., `0`).
-- The fifth argument is **the set of final states** (e.g., `4` is the binary
-  number `110`. Thus, it will be converted to the set `Set(1, 2)`).
+- The fourth argument is **the set of final states** (e.g., `6` is the binary
+    number `110`. Thus, it will be converted to the set `Set(1, 2)`).
+
+> :warning: The initial state is always `0`.
 
 
 ### String Form of Regular Expressions
