@@ -332,7 +332,7 @@ val dfa: DFA = DFA(
 - 네 번째 인자는 **final state의 집합** (예: `6`은 이진법으로 `110`이고,
     따라서 `Set(1, 2)`로 변환됩니다).
 
-> :warning: Initial state는 항상 `0`입니다.
+> :warning: Initial state는 항상 `1`입니다.
 
 
 ### Regular expression의 String 형태

@@ -335,7 +335,7 @@ Each argument of the `DFA` constructor is explained as follows:
 - The fourth argument is **the set of final states** (e.g., `6` is the binary
     number `110`. Thus, it will be converted to the set `Set(1, 2)`).
 
-> :warning: The initial state is always `0`.
+> :warning: The initial state is always `1`.
 
 
 ### String Form of Regular Expressions
