@@ -11,7 +11,7 @@ sbt new ku-plrg-classroom/equiv-re-fa.g8
 
 The template source code contains the following files:
 ```
-fa-examples
+equiv-re-fa
 ├─ viewer
 │  ├── index.html ─────────────── The HTML file for the automata viewer
 │  ├── js/data.js ─────────────── The data of automata

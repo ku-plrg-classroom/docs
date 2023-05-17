@@ -24,6 +24,8 @@
 - [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
   - [fa-examples](./fa-examples/README.ko.md) - Finite Automata 예제
   - [equiv-re-fa](./equiv-re-fa/README.ko.md) - Regular Expression과 Finite Automata의 동치성
+  - [equiv-pda-cfg](./equiv-pda-cfg/README.ko.md) - Pushdown
+      Automata와 Context-Free Grammar의 동치성
 
 ## 사전 준비
 

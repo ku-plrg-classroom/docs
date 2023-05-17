@@ -11,7 +11,7 @@ sbt new ku-plrg-classroom/equiv-re-fa.g8
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 ```
-fa-examples
+equiv-re-fa
 ├─ viewer
 │  ├── index.html ────────────── Automata viewer를 위한 HTML 파일
 │  ├── js/data.js ────────────── Automata의 데이터를 저장하는 JavaScript 파일
