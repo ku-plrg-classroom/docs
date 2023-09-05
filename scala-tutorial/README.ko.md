@@ -9,192 +9,316 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
-- [기본 타입 (10점)](#기본-타입-10점)
-  - [(문제 #1) `volumeOfCuboid` (5점)](#문제-1-volumeofcuboid-5점)
+- **[기본 데이터 타입 (10점)](#기본-데이터-타입-10점)**
+  - [(문제 #1) `sqsum` (5점)](#문제-1-sqsum-5점)
   - [(문제 #2) `concat` (5점)](#문제-2-concat-5점)
-- [함수 (15점)](#함수-15점)
-  - [(문제 #3) `mulN` (5점)](#문제-3-muln-5점)
+- **[함수 (15점)](#함수-15점)**
+  - [(문제 #3) `subN` (5점)](#문제-3-subn-5점)
   - [(문제 #4) `twice` (5점)](#문제-4-twice-5점)
   - [(문제 #5) `compose` (5점)](#문제-5-compose-5점)
-- [리스트 (10점)](#리스트-10점)
-  - [(문제 #6) `double` (5점)](#문제-6-double-5점)
-  - [(문제 #7) `product` (5점)](#문제-7-product-5점)
-- [맵 (5점)](#맵-10점)
-  - [(문제 #8) `getOrNotFound` (5점)](#문제-8-getornotfound-5점)
-- [대수적 데이터 타입 (60점)](#대수적-데이터-타입-60점)
-  - [(문제 #9) `depth` (15점)](#문제-9-depth-15점)
-  - [(문제 #10) `sum` (15점)](#문제-10-sum-15점)
-  - [(문제 #11) `countLeaves` (15점)](#문제-11-countleaves-15점)
-  - [(문제 #12) `flatten` (15점)](#문제-12-flatten-15점)
+- **[리스트 (15점)](#리스트-15점)**
+  - [(문제 #6) `sumOnlyOdd` (5점)](#문제-6-sumonlyodd-5점)
+  - [(문제 #7) `foldWith` (5점)](#문제-7-foldwith-5점)
+  - [(문제 #8) `toSet` (5점)](#문제-8-toset-5점)
+- **[맵과 집합 (10점)](#맵과-집합-10점)**
+  - [(문제 #9) `getOrZero` (5점)](#문제-9-getorzero-5점)
+  - [(문제 #10) `setMinus` (5점)](#문제-10-setminus-5점)
+- **[트리 (25점)](#트리-25점)**
+  - [(문제 #11) `has` (5점)](#문제-11-has-5점)
+  - [(문제 #12) `maxDepthOf` (5점)](#문제-12-maxdepthof-5점)
+  - [(문제 #13) `mul` (5점)](#문제-13-mul-5점)
+  - [(문제 #14) `countLeaves` (5점)](#문제-14-countleaves-5점)
+  - [(문제 #15) `postOrder` (5점)](#문제-15-postorder-5점)
+- **[논리식 (25점)](#논리식-25점)**
+  - [(문제 #16) `countLiterals` (5점)](#문제-16-countliterals-5점)
+  - [(문제 #17) `countNots` (5점)](#문제-17-countnots-5점)
+  - [(문제 #18) `depth` (5점)](#문제-18-depth-5점)
+  - [(문제 #19) `eval` (5점)](#문제-19-eval-5점)
+  - [(문제 #20) `getString` (5점)](#문제-20-getstring-5점)
 
-## 기본 타입 (10점)
+## 기본 데이터 타입 (10점)
 
-### (문제 #1) `volumeOfCuboid` (5점)
+#### (문제 #1) `sqsum` (5점)
 
-직육면체의 세 변의 길이를 나타내는 양의 정수 `a`, `b`, `c`를 받아서, 그
-직육면체의 부피를 반환하는 함수를 작성하세요.
+정수 `x`와 `y`를 받아서, `x`와 `y`의 제곱의 합을 반환하는 함수를 작성하세요.
 ```scala
-test(volumeOfCuboid(1, 3, 5), 15)
-test(volumeOfCuboid(2, 3, 4), 24)
+test(sqsum(0, 0), 0)
+test(sqsum(2, 3), 13)
+test(sqsum(-3, 4), 25)
 ```
 
-### (문제 #2) `concat` (5점)
+#### (문제 #2) `concat` (5점)
 
-두 문자열 `x`와 `y`를 받아서, 그 두 문자열을 이어붙인 문자열을 반환하는 함수를
+두 개의 문자열 `x`와 `y`를 받아서, 두 문자열을 이어붙인 결과를 반환하는 함수를
 작성하세요.
 ```scala
-test(concat("x", "y"), "xy")
-test(concat("abc", "def"), "abcdef")
+test(concat("Hello ", "World!"), "Hello World!")
+test(concat("COSE", "212"), "COSE212")
+test(concat("COSE", "215"), "COSE215")
 ```
 
 ## 함수 (15점)
 
-### (문제 #3) `mulN` (5점)
+#### (문제 #3) `subN` (5점)
 
-정수 `n`을 받아서, 정수에 `n`을 곱하는 함수를 반환하는 함수를 작성하세요.
+정수 `n`을 받아서, 정수에 `n`을 뺀 결과를 반환하는 함수를 작성하세요.
 ```scala
-test(mulN(3)(5), 15)
-test(mulN(4)(5), 20)
+test(subN(3)(5), 2)
+test(subN(4)(13), 9)
+test(subN(243)(-942), -1185)
 ```
 
-### (문제 #4) `twice` (5점)
+#### (문제 #4) `twice` (5점)
 
 `Int => Int` 타입의 함수 `f`를 받아서, `f`를 두 번 적용하는 함수를 반환하는
 함수를 작성하세요.
 ```scala
-test(twice(mulN(3))(5), 45)
-test(twice(mulN(4))(5), 80)
+test(twice(_ + 3)(1), 7)
+test(twice(subN(3))(10), 4)
+test(twice(_ * 10)(42), 4200)
 ```
 
-### (문제 #5) `compose` (5점)
+#### (문제 #5) `compose` (5점)
 
 `Int => Int` 타입의 함수 `f`와 `g`를 받아서, `f`와 `g`를 합성한 함수 (`f ∘ g`)
 를 반환하는 함수를 작성하세요.
 ```scala
-test(compose(mulN(3), mulN(4))(5), 60)
-test(compose(mulN(4), mulN(5))(5), 100)
+test(compose(_ + 3, _ * 2)(1), 5)
+test(compose(_ * 10, _ + 1)(42), 430)
+test(compose(subN(3), subN(2))(10), 5)
 ```
 
-## 리스트 (10점)
 
-### (문제 #6) `double` (5점)
+## 리스트 (15점)
 
-정수 리스트 `l`을 받아서, 그 리스트의 각 원소를 두 배한 리스트를 반환하는 함수를 작성하세요.
+#### (문제 #6) `sumOnlyOdd` (5점)
+
+정수 리스트 `l`을 받아서, `l`에 있는 홀수들의 합을 반환하는 함수를 작성하세요.
 ```scala
-test(double(List(1, 2, 3)), List(2, 4, 6))
-test(double(double(List(1, 2, 3, 4, 5))), List(4, 8, 12, 16, 20))
+test(sumOnlyOdd(List(2)), 0)
+test(sumOnlyOdd(List(1, 2, 3)), 4)
+test(sumOnlyOdd(List(4, 2, 3, 7, 5)), 15)
 ```
 
-### (문제 #7) `product` (5점)
+#### (문제 #7) `foldWith` (5점)
 
-정수 리스트 `l`을 받아서, 그 리스트의 원소들의 곱을 반환하는 함수를 작성하세요.
+`(Int, Int) => Int` 타입의 함수 `f`를 받아서, 정수 리스트 `l`을 `f`를 이용해서
+하나의 정수로 합치는 함수를 작성하세요. 시작 값은 0을 사용하세요.
 ```scala
-test(product(List(1, 2, 3)), 6)
-test(product(List(4, 2, 3, 7, 5)), 840)
+test(foldWith(_ + _)(List(1, 2, 3)), 6)
+// 6 = 0 + 1 + 2 + 3
+test(foldWith(_ - _)(List(5, 9, 2, 3)), -19)
+// -19 = 0 - 5 - 9 - 2 - 3
+test(foldWith(_ * 2 + _)(List(4, 7, 3, 2)), 68)
+// 68 = (((0 * 2 + 4) * 2 + 7) * 2 + 3) * 2 + 2
 ```
 
-## 맵 (10점)
+#### (문제 #8) `toSet` (5점)
 
-### (문제 #8) `getOrNotFound` (5점)
+정수 리스트 `l`과 정수 `from`을 받아서, `from` 이상의 인덱스를 가지는 `l`의
+원소들을 모은 집합을 반환하는 함수를 작성하세요.
+```scala
+test(toSet(List(1, 5, 2, 7, 4, 2, 4), 0), Set(1, 2, 4, 5, 7))
+// { 1, 5, 2, 7, 4, 2, 4 } = { 1, 2, 4, 5, 7 }
+test(toSet(List(1, 5, 2, 7, 4, 2, 4), 2), Set(2, 4, 7))
+// { 2, 7, 4, 2, 4 } = { 2, 4, 7 }
+test(toSet(List(1, 5, 2, 7, 4, 2, 4), 4), Set(2, 4))
+// { 4, 2, 4 } = { 2, 4 }
+```
+
+
+## 맵과 집합 (10점)
+
+#### (문제 #9) `getOrZero` (5점)
 
 문자열을 정수로 매핑하는 맵 `m`과 문자열 `s`를 받아서, `m`에 `s`에 대한 매핑이
-있으면 그 매핑을, 그렇지 않으면 `"Not Found"`라는 메시지를 포함하는 오류를
-던지는 함수를 작성하세요.
-
-> :warning: `throw`를 직접 사용할 수 없습니다. 대신 `Template.scala`에 정의된
-`error`를 사용하고, 자세한 내용은 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽어주세요.
-
+있다면 해당 정수를 반환하고, 그렇지 않다면 0을 반환하는 함수를 작성하세요.
 ```scala
-val m: Map[String, Int] = Map("Park" -> 1, "Kim" -> 2)
-test(getOrNotFound(m, "Park"), 1)
-test(getOrNotFound(m, "Kim"), 2)
-testExc(getOrNotFound(m, "Ryu"), "Not Found")
-testExc(getOrNotFound(m, "Hong"), "Not Found")
+test(getOrZero(Map("Park" -> 3, "Kim" -> 5), "Park"), 3)
+test(getOrZero(Map("Park" -> 3, "Kim" -> 5), "Lee"), 0)
+test(getOrZero(Map("Park" -> 3, "Kim" -> 5), "Kim"), 5)
 ```
 
-## 대수적 데이터 타입 (60점)
+#### (문제 #10) `setMinus` (5점)
 
-`Tree` 타입은 트리를 나타내는 대수적 데이터 타입입니다.
-`Tree` 타입은 `Branch` 타입 또는 `Leaf` 타입 중 하나입니다.
-- `Branch` 타입은 정수 값(`value: Int`)과 자식 트리들(`children: List[Tree]`)을
-  가집니다.
-- `Leaf` 타입은 정수 값(`value: Int`)을 가집니다.
+집합 `s1`과 `s2`를 받아서, `s1`에는 속하지만 `s2`에는 속하지 않는 원소들로
+만들어진 집합을 반환하는 함수를 작성하세요.
+```scala
+test(setMinus(Set(1, 2, 3), Set(2, 3, 4)), Set(1))
+test(setMinus(Set(1, 2, 3), Set(4, 5, 6)), Set(1, 2, 3))
+test(setMinus(Set(1, 2, 3), Set(1, 2, 3, 4)), Set())
+```
 
-> :warning: `Branch`는 적어도 하나 이상의 자식을 가지고 있다고 가정합니다. (`branch.children.length >= 1`).
+
+## 트리 (25점)
+
+`Tree` 타입은 트리를 나타냅니다. 트리는 말단 노드 (`Leaf`) 또는 비말단 노드
+(`Branch`)로 구성됩니다. 말단 노드는 값만 가지고 있고, 비말단 노드는 값, 왼쪽
+서브트리, 오른쪽 서브트리를 가집니다.
 
 ```scala
 sealed trait Tree
-case class Branch(value: Int, children: List[Tree]) extends Tree
 case class Leaf(value: Int) extends Tree
+case class Branch(value: Int, left: Tree, right: Tree) extends Tree
 ```
 
-> :warning: `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로** `Tree`
-타입을 `Implentation.scala`에 다시 정의하지 마세요.
+> :warning: `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
+`Tree` 타입을 `Implentation.scala`에 다시 정의하지 마세요.
 
 예를 들어, 다음은 `Tree` 타입의 예제들입니다.
 ```scala
-//     1
-//   / | \
-//  2  3  4
-val t1: Tree = Branch(1, List(Leaf(2), Leaf(3), Leaf(4)))
+//  8
+val tree1: Tree = Leaf(8)
 
-//    1
+//    4
+//   / \
+//  5   2
+//     / \
+//    8   3
+val tree2: Tree = Branch(4, Leaf(5), Branch(2, Leaf(8), Leaf(3)))
+
+//    7
 //   / \
 //  2   3
 //     / \
-//    4   5
-val t2: Tree = Branch(1, List(Leaf(2), Branch(3, List(Leaf(4), Leaf(5)))))
-
-//    5
-//    |
-//    4
-//    |
-//    3
+//    5   1
 //   / \
-//  2   1
-val t3: Tree = Branch(5, List(Branch(4, List(Branch(3, List(Leaf(2), Leaf(1)))))))
+//  1   8
+val tree3: Tree = Branch(7, Leaf(2), Branch(3, Branch(5, Leaf(1), Leaf(8)), Leaf(1)))
 ```
 
-### (문제 #9) `depth` (15점)
+#### (문제 #11) `has` (5점)
 
-하나의 트리 `t`를 받아서, 그 트리의 깊이를 반환하는 함수를 작성하세요. 트리의
-깊이는 트리의 루트에서 가장 먼 `Leaf`까지의 거리입니다. 예를 들어, `t1`의 깊이는
-1, `t2`의 깊이는 2, `t3`의 깊이는 3입니다.
+하나의 정수 `value`를 받아서, 트리가 해당 정수를 가지고 있는지 여부를 반환하는
+함수를 작성하세요.
 ```scala
-test(depth(t1), 1)
-test(depth(t2), 2)
-test(depth(t3), 3)
+test(has(8)(tree1), true)
+test(has(7)(tree2), false)
+test(has(1)(tree3), true)
 ```
 
-### (문제 #10) `sum` (15점)
+#### (문제 #12) `maxDepthOf` (5점)
 
-하나의 트리 `t`를 받아서, 그 트리의 모든 노드의 값을 더한 값을 반환하는 함수를
-작성하세요. 예를 들어, `t1`의 합은 10, `t2`의 합은 15, `t3`의 합은 15입니다.
+하나의 정수 `value`를 받아서, 트리에서 해당 정수를 가진 노드 중 가장 깊은 노드의
+깊이를 반환하는 함수를 작성하세요. 여기서 노드의 깊이는 최상위 노드에서 해당
+노드까지의 간선의 수를 의미합니다. 만약 트리에 해당 정수를 가진 노드가 없다면
+`None`을 반환해야 합니다.
 ```scala
-test(sum(t1), 10)
-test(sum(t2), 15)
-test(sum(t3), 15)
+test(maxDepthOf(8)(tree1), Some(0))
+test(maxDepthOf(7)(tree2), None)
+test(maxDepthOf(1)(tree3), Some(3))
 ```
 
-### (문제 #11) `countLeaves` (15점)
+#### (문제 #13) `mul` (5점)
 
-하나의 트리 `t`를 받아서, 그 트리의 모든 `Leaf` 노드의 개수를 반환하는 함수를
-작성하세요. 예를 들어, `t1`의 `Leaf` 노드의 개수는 3, `t2`의 `Leaf` 노드의
-개수는 3, `t3`의 `Leaf` 노드의 개수는 2입니다.
+하나의 트리 `t`를 받아서, `t`에 있는 모든 값들의 곱을 반환하는 함수를
+작성하세요.
 ```scala
-test(countLeaves(t1), 3)
-test(countLeaves(t2), 3)
-test(countLeaves(t3), 2)
+test(mul(tree1), 8)
+test(mul(tree2), 960)
+test(mul(tree3), 1680)
 ```
 
-### (문제 #12) `flatten` (15점)
+#### (문제 #14) `countLeaves` (5점)
 
-하나의 트리 `t`를 받아서, 그 트리의 모든 노드의 값을 전위 순회(pre-order
-traversal)한 결과를 리스트로 반환하는 함수를 작성하세요. 예를 들어, `t1`의 전위
-순회 결과는 `List(1, 2, 3, 4)`, `t2`의 전위 순회 결과는 `List(1, 2, 3, 4, 5)`,
-`t3`의 전위 순회 결과는 `List(5, 4, 3, 2, 1)`입니다.
+하나의 트리 `t`를 받아서, `t`에 있는 말단 노드의 수를 반환하는 함수를
+작성하세요.
 ```scala
-test(flatten(t1), List(1, 2, 3, 4))
-test(flatten(t2), List(1, 2, 3, 4, 5))
-test(flatten(t3), List(5, 4, 3, 2, 1))
+test(countLeaves(tree1), 1)
+test(countLeaves(tree2), 3)
+test(countLeaves(tree3), 4)
+```
+
+#### (문제 #15) `postOrder` (5점)
+
+하나의 트리 `t`를 받아서, `t`에 있는 모든 값들을 [후위 순회
+순서](https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A6%AC_%EC%88%9C%ED%9A%8C)로
+담은 리스트를 반환하는 함수를 작성하세요.
+```scala
+test(postOrder(tree1), List(8))
+test(postOrder(tree2), List(5, 8, 3, 2, 4))
+test(postOrder(tree3), List(2, 1, 8, 5, 1, 3, 7))
+```
+
+## 논리식 (25점)
+
+`BE` 타입은 논리식을 나타냅니다. 논리식은 리터럴 (`True`, `False`), 이진 논리
+연산자 (`And`, `Or`), 그리고 단항 논리 연산자 (`Not`)로 구성됩니다.
+
+```scala
+sealed trait BE
+case object True extends BE
+case object False extends BE
+case class And(left: BE, right: BE) extends BE
+case class Or(left: BE, right: BE) extends BE
+case class Not(expr: BE) extends BE
+```
+
+> :warning: `BE` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
+`BE` 타입을 `Implentation.scala`에 다시 정의하지 마세요.
+
+예를 들어, 다음은 `BE` 타입의 예제들입니다.
+```scala
+// true | false
+val be1: BE = Or(True, False)
+
+// (!(true | false) & !(false | true))
+val be2: BE = And(Not(Or(True, False)), Not(Or(False, True)))
+
+// (!((false | !true) & false) & (true & !false))
+val be3: BE = And(Not(And(Or(False, Not(True)), False)), And(True, Not(False)))
+```
+
+#### (문제 #16) `countLiterals` (5점)
+
+하나의 논리식 `expr`를 받아서, `expr`에 있는 리터럴의 수를 반환하는 함수를
+작성하세요. 여기서 리터럴은 `True`와 `False`를 의미합니다.
+```scala
+test(countLiterals(be1), 2)
+test(countLiterals(be2), 4)
+test(countLiterals(be3), 5)
+```
+
+#### (문제 #17) `countNots` (5점)
+
+하나의 논리식 `expr`를 받아서, `expr`에 있는 `Not` 연산자의 수를 반환하는 함수를
+작성하세요.
+```scala
+test(countNots(be1), 0)
+test(countNots(be2), 2)
+test(countNots(be3), 3)
+```
+
+#### (문제 #18) `depth` (5점)
+
+하나의 논리식 `expr`를 받아서, `expr`의 깊이를 반환하는 함수를 작성하세요.
+여기서 논리식의 깊이는 논리식에 있는 연산자의 중첩 수를 의미합니다.
+```scala
+test(depth(be1), 1)
+test(depth(be2), 3)
+test(depth(be3), 5)
+```
+
+#### (문제 #19) `eval` (5점)
+
+하나의 논리식 `expr`를 받아서, `expr`의 결과를 반환하는 함수를 작성하세요.
+```scala
+test(eval(be1), true)
+test(eval(be2), false)
+test(eval(be3), true)
+```
+
+#### (문제 #20) `getString` (5점)
+
+하나의 논리식 `expr`를 받아서, `expr`의 문자열 표현을 반환하는 함수를
+작성하세요:
+- `True`는 `true`로 표현됩니다.
+- `False`는 `false`로 표현됩니다.
+- `And(left, right)`는 `(<left> & <right>)`로 표현됩니다.
+- `Or(left, right)`는 `(<left> | <right>)`로 표현됩니다.
+- `Not(expr)`는 `!<expr>`로 표현됩니다.
+```scala
+test(getString(be1), "(true | false)")
+test(getString(be2), "(!(true | false) & !(false | true))")
+test(getString(be3), "(!((false | !true) & false) & (true & !false))")
 ```
