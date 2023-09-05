@@ -19,13 +19,24 @@ This is a repository for assignment documents of courses by the [Programming Lan
 
 ## Assignments
 
-- Basics
-  - [scala-tutorial](./scala-tutorial/README.md) - Scala Tutorial
-- [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
-  - [fa-examples](./fa-examples/README.md) - Finite Automata Examples
-  - [equiv-re-fa](./equiv-re-fa/README.md) - Equivalence of Regular Expressions and Finite Automata
-  - [equiv-pda-cfg](./equiv-pda-cfg/README.md) - Equivalence of Pushdown
-      Automata and Context-Free Grammars
+### Basics
+
+| Name | Explanation |
+| :--: | ----------- |
+| [scala-tutorial](./scala-tutorial/README.md) | Scala Tutorial |
+
+### [COSE212: Programming Languages](https://plrg.korea.ac.kr/courses/cose212/)
+
+| Name | Explanation |
+| :--: | ----------- |
+
+### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
+
+| Name | Explanation |
+| :--: | ----------- |
+| [fa-examples](./fa-examples/README.md) | Finite Automata Examples |
+| [equiv-re-fa](./equiv-re-fa/README.md) | Equivalence of Regular Expressions and Finite Automata |
+| [equiv-pda-cfg](./equiv-pda-cfg/README.md) | Equivalence of Pushdown Automata and Context-Free Grammars |
 
 ## Prerequisites
 

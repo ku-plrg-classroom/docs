@@ -19,13 +19,24 @@
 
 ## 과제
 
-- 기본
-  - [scala-tutorial](./scala-tutorial/README.ko.md) - Scala 튜토리얼
-- [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
-  - [fa-examples](./fa-examples/README.ko.md) - Finite Automata 예제
-  - [equiv-re-fa](./equiv-re-fa/README.ko.md) - Regular Expression과 Finite Automata의 동치성
-  - [equiv-pda-cfg](./equiv-pda-cfg/README.ko.md) - Pushdown
-      Automata와 Context-Free Grammar의 동치성
+### 기본
+
+| 이름 | 설명 |
+| :--: | ---- |
+| [scala-tutorial](./scala-tutorial/README.ko.md) | Scala 튜토리얼 |
+
+### [COSE212: 프로그래밍 언어](https://plrg.korea.ac.kr/courses/cose212/)
+
+| 이름 | 설명 |
+| :--: | ---- |
+
+### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
+
+| 이름 | 설명 |
+| :--: | ---- |
+| [fa-examples](./fa-examples/README.ko.md) | Finite Automata 예제 |
+| [equiv-re-fa](./equiv-re-fa/README.ko.md) | Regular Expression과 Finite Automata의 동치성 |
+| [equiv-pda-cfg](./equiv-pda-cfg/README.ko.md) | Pushdown Automata와 Context-Free Grammar의 동치성 |
 
 ## 사전 준비
 
