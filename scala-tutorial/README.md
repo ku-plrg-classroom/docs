@@ -159,9 +159,9 @@ A tree (`Tree`) is either 1) a leaf node (`Leaf`) with a value or 2) a non-leaf
 node (`Branch`) with a value, left sub-tree, and right sub-tree.
 
 ```scala
-sealed trait Tree
-case class Leaf(value: Int) extends Tree
-case class Branch(value: Int, left: Tree, right: Tree) extends Tree
+enum Tree:
+  case Leaf(value: Int)
+  case Branch(value: Int, left: Tree, right: Tree)
 ```
 
 > :warning: The `Tree` type is already defined in `Template.scala`. **DO NOT**
@@ -247,12 +247,12 @@ A boolean expression (`BE`) is either a literal (`True` or `False`), a boolean
 operation (`And` or `Or`), or a unary operation (`Not`).
 
 ```scala
-sealed trait BE
-case object True extends BE
-case object False extends BE
-case class And(left: BE, right: BE) extends BE
-case class Or(left: BE, right: BE) extends BE
-case class Not(expr: BE) extends BE
+enum BE:
+  case True
+  case False
+  case And(left: BE, right: BE)
+  case Or(left: BE, right: BE)
+  case Not(expr: BE)
 ```
 
 > :warning: The `BE` type is already defined in `Template.scala`. **DO NOT**

@@ -157,9 +157,9 @@ test(setMinus(Set(1, 2, 3), Set(1, 2, 3, 4)), Set())
 서브트리, 오른쪽 서브트리를 가집니다.
 
 ```scala
-sealed trait Tree
-case class Leaf(value: Int) extends Tree
-case class Branch(value: Int, left: Tree, right: Tree) extends Tree
+enum Tree:
+  case Leaf(value: Int)
+  case Branch(value: Int, left: Tree, right: Tree)
 ```
 
 > :warning: `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
@@ -246,12 +246,12 @@ test(postOrder(tree3), List(2, 1, 8, 5, 1, 3, 7))
 연산자 (`And`, `Or`), 그리고 단항 논리 연산자 (`Not`)로 구성됩니다.
 
 ```scala
-sealed trait BE
-case object True extends BE
-case object False extends BE
-case class And(left: BE, right: BE) extends BE
-case class Or(left: BE, right: BE) extends BE
-case class Not(expr: BE) extends BE
+enum BE:
+  case True
+  case False
+  case And(left: BE, right: BE)
+  case Or(left: BE, right: BE)
+  case Not(expr: BE)
 ```
 
 > :warning: `BE` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
