@@ -161,7 +161,7 @@ node (`Branch`) with a value, left sub-tree, and right sub-tree.
 ```scala
 enum Tree:
   case Leaf(value: Int)
-  case Branch(value: Int, left: Tree, right: Tree)
+  case Branch(left: Tree, value: Int, right: Tree)
 ```
 
 > :warning: The `Tree` type is already defined in `Template.scala`. **DO NOT**
@@ -169,6 +169,8 @@ enum Tree:
 
 For example, the following trees are examples of `Tree`:
 ```scala
+import Tree.*
+
 //  8
 val tree1: Tree = Leaf(8)
 
@@ -177,7 +179,7 @@ val tree1: Tree = Leaf(8)
 //  5   2
 //     / \
 //    8   3
-val tree2: Tree = Branch(4, Leaf(5), Branch(2, Leaf(8), Leaf(3)))
+val tree2: Tree = Branch(Leaf(5), 4, Branch(Leaf(8), 2, Leaf(3)))
 
 //    7
 //   / \
@@ -186,7 +188,7 @@ val tree2: Tree = Branch(4, Leaf(5), Branch(2, Leaf(8), Leaf(3)))
 //    5   1
 //   / \
 //  1   8
-val tree3: Tree = Branch(7, Leaf(2), Branch(3, Branch(5, Leaf(1), Leaf(8)), Leaf(1)))
+val tree3: Tree = Branch(Leaf(2), 7, Branch(Branch(Leaf(1), 5, Leaf(8)), 3, Leaf(1)))
 ```
 
 #### (Problem #11) `has` (5 points)
@@ -260,6 +262,8 @@ enum BE:
 
 For example, the following boolean expressions are examples of `BE`:
 ```scala
+import BE.*
+
 // (true | false)
 val be1: BE = Or(True, False)
 

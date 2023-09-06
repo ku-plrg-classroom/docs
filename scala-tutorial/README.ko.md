@@ -159,7 +159,7 @@ test(setMinus(Set(1, 2, 3), Set(1, 2, 3, 4)), Set())
 ```scala
 enum Tree:
   case Leaf(value: Int)
-  case Branch(value: Int, left: Tree, right: Tree)
+  case Branch(left: Tree, value: Int, right: Tree)
 ```
 
 > :warning: `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
@@ -167,6 +167,8 @@ enum Tree:
 
 예를 들어, 다음은 `Tree` 타입의 예제들입니다.
 ```scala
+import Tree.*
+
 //  8
 val tree1: Tree = Leaf(8)
 
@@ -175,7 +177,7 @@ val tree1: Tree = Leaf(8)
 //  5   2
 //     / \
 //    8   3
-val tree2: Tree = Branch(4, Leaf(5), Branch(2, Leaf(8), Leaf(3)))
+val tree2: Tree = Branch(Leaf(5), 4, Branch(Leaf(8), 2, Leaf(3)))
 
 //    7
 //   / \
@@ -184,7 +186,7 @@ val tree2: Tree = Branch(4, Leaf(5), Branch(2, Leaf(8), Leaf(3)))
 //    5   1
 //   / \
 //  1   8
-val tree3: Tree = Branch(7, Leaf(2), Branch(3, Branch(5, Leaf(1), Leaf(8)), Leaf(1)))
+val tree3: Tree = Branch(Leaf(2), 7, Branch(Branch(Leaf(1), 5, Leaf(8)), 3, Leaf(1)))
 ```
 
 #### (문제 #11) `has` (5점)
@@ -259,6 +261,8 @@ enum BE:
 
 예를 들어, 다음은 `BE` 타입의 예제들입니다.
 ```scala
+import BE.*
+
 // true | false
 val be1: BE = Or(True, False)
 
