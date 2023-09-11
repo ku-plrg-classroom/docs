@@ -72,15 +72,11 @@ Please implement the `countNums` function in the `Implementation.scala` file.
 ### Abstract Syntax
 
 $$
-\newcommand{\expr}{e}
-\newcommand{\num}{n}
-\newcommand{\code}[1]{\texttt{#1}}
-\newcommand{\eval}[2]{\vdash {#1} \Rightarrow {#2}}
 \begin{array}{lcll}
-\expr
-&\code{::=}& \num & (\code{Num}) \\
-&\mid& \expr \; \code{+} \; \expr & (\code{Add}) \\
-&\mid& \expr \; \code{*} \; \expr & (\code{Mul}) \\
+e
+&\texttt{::=}& n & (\texttt{Num}) \\
+&\mid& e \; \texttt{+} \; e & (\texttt{Add}) \\
+&\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
 \end{array}
 $$
 
@@ -90,25 +86,25 @@ $$
 > semantics**.
 
 $$
-\code{Num}\frac{
+\texttt{Num}\frac{
 }{
-  \eval{\num}{\num}
+  \vdash n \Rightarrow n
 }
 \qquad
-\code{Add}\frac{
-  \eval{\expr_1}{\num_1}
+\texttt{Add}\frac{
+  \vdash e_1 \Rightarrow n_1
   \qquad
-  \eval{\expr_2}{\num_2}
+  \vdash e_2 \Rightarrow n_2
 }{
-  \eval{\expr_1 \; \code{+} \; \expr_2}{\num_1 + \num_2}
+  \vdash e_1 \; \texttt{+} \; e_2 \Rightarrow n_1 + n_2
 }
 \qquad
-\code{Mul}\frac{
-  \eval{\expr_1}{\num_1}
+\texttt{Mul}\frac{
+  \vdash e_1 \Rightarrow n_1
   \qquad
-  \eval{\expr_2}{\num_2}
+  \vdash e_2 \Rightarrow n_2
 }{
-  \eval{\expr_1 \; \code{*} \; \expr_2}{\num_1 \times \num_2}
+  \vdash e_1 \; \texttt{*} \; e_2 \Rightarrow n_1 \times n_2
 }
 $$
 
