@@ -67,20 +67,20 @@ def countNums(expr: Expr): Int = ???
 
 ### 요약 문법 (Abstract Syntax)
 
-$$
+$`
 \begin{array}{lcll}
 e
 &\texttt{::=}& n & (\texttt{Num}) \\
 &\mid& e \; \texttt{+} \; e & (\texttt{Add}) \\
 &\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
 \end{array}
-$$
+`$
 
 ### 큰 걸음 동작 의미 (Big-Step Operational Semantics)
 
 > :bookmark: 혹은 자연적 의미 (Natural Semantics) 로 불립니다.
 
-$$
+$`
 \texttt{Num}\frac{
 }{
   \vdash n \Rightarrow n
@@ -101,6 +101,6 @@ $$
 }{
   \vdash e_1 \; \texttt{*} \; e_2 \Rightarrow n_1 \times n_2
 }
-$$
+`$
 
 </details>
