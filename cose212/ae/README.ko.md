@@ -68,6 +68,7 @@ def countNums(expr: Expr): Int = ???
 ### 요약 문법 (Abstract Syntax)
 
 ```math
+\large
 \begin{array}{lcll}
 e
 &\texttt{::=}& n & (\texttt{Num}) \\
@@ -81,6 +82,7 @@ e
 > :bookmark: 혹은 자연적 의미 (Natural Semantics) 로 불립니다.
 
 ```math
+\large
 \texttt{Num}\frac{
 }{
   \vdash n \Rightarrow n

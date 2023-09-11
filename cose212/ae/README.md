@@ -72,7 +72,7 @@ Please implement the `countNums` function in the `Implementation.scala` file.
 ### Abstract Syntax
 
 ```math
-\Large
+\large
 \begin{array}{lcll}
 e
 &\texttt{::=}& n & (\texttt{Num}) \\
@@ -87,7 +87,7 @@ e
 > semantics**.
 
 ```math
-\Large
+\large
 \texttt{Num}\frac{
 }{
   \vdash n \Rightarrow n
