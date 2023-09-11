@@ -66,12 +66,12 @@ def countNums(expr: Expr): Int = ???
 | `+`    | 왼쪽 (Left)               | 2                      |
 
 ### 요약 문법 (Abstract Syntax)
+
 $$
 \newcommand{\expr}{e}
 \newcommand{\num}{n}
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\eval}[2]{\vdash {#1} \Rightarrow {#2}}
-
 \begin{array}{lcll}
 \expr
 &\code{::=}& \num & (\code{Num}) \\
@@ -90,7 +90,6 @@ $$
   \eval{\num}{\num}
 }
 \qquad
-
 \code{Add}\frac{
   \eval{\expr_1}{\num_1}
   \qquad
@@ -99,7 +98,6 @@ $$
   \eval{\expr_1 \; \code{+} \; \expr_2}{\num_1 + \num_2}
 }
 \qquad
-
 \code{Mul}\frac{
   \eval{\expr_1}{\num_1}
   \qquad
