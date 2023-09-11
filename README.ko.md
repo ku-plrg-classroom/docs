@@ -29,14 +29,15 @@
 
 | 이름 | 설명 |
 | :--: | ---- |
+| [ae](./cose212/ae/README.ko.md) | `AE` - Arithmetic Expressions |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 
 | 이름 | 설명 |
 | :--: | ---- |
-| [fa-examples](./fa-examples/README.ko.md) | Finite Automata 예제 |
-| [equiv-re-fa](./equiv-re-fa/README.ko.md) | Regular Expression과 Finite Automata의 동치성 |
-| [equiv-pda-cfg](./equiv-pda-cfg/README.ko.md) | Pushdown Automata와 Context-Free Grammar의 동치성 |
+| [fa-examples](./cose215/fa-examples/README.ko.md) | Finite Automata 예제 |
+| [equiv-re-fa](./cose215/equiv-re-fa/README.ko.md) | Regular Expression과 Finite Automata의 동치성 |
+| [equiv-pda-cfg](./cose215/equiv-pda-cfg/README.ko.md) | Pushdown Automata와 Context-Free Grammar의 동치성 |
 
 ## 사전 준비
 
@@ -209,7 +210,7 @@ sbt:...> test
 ```
 sbt:...> console
 ...
-scala> import kuplrg.Implementation.*
+scala> import kuplrg.*, Implementation.*
 
 scala> ...
 ```

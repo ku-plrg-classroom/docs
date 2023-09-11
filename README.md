@@ -29,14 +29,15 @@ This is a repository for assignment documents of courses by the [Programming Lan
 
 | Name | Explanation |
 | :--: | ----------- |
+| [ae](./cose212/ae/README.md) | `AE` - Arithmetic Expressions |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 
 | Name | Explanation |
 | :--: | ----------- |
-| [fa-examples](./fa-examples/README.md) | Finite Automata Examples |
-| [equiv-re-fa](./equiv-re-fa/README.md) | Equivalence of Regular Expressions and Finite Automata |
-| [equiv-pda-cfg](./equiv-pda-cfg/README.md) | Equivalence of Pushdown Automata and Context-Free Grammars |
+| [fa-examples](./cose215/fa-examples/README.md) | Finite Automata Examples |
+| [equiv-re-fa](./cose215/equiv-re-fa/README.md) | Equivalence of Regular Expressions and Finite Automata |
+| [equiv-pda-cfg](./cose215/equiv-pda-cfg/README.md) | Equivalence of Pushdown Automata and Context-Free Grammars |
 
 ## Prerequisites
 
@@ -213,7 +214,7 @@ You can use any variables and functions defined in `Implementation.scala`.
 ```
 sbt:...> console
 ...
-scala> import kuplrg.Implementation.*
+scala> import kuplrg.*, Implementation.*
 
 scala> ...
 ```
