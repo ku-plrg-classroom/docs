@@ -71,21 +71,21 @@ Please implement the `countNums` function in the `Implementation.scala` file.
 
 ### Abstract Syntax
 
-$`
+```math
 \begin{array}{lcll}
 e
 &\texttt{::=}& n & (\texttt{Num}) \\
 &\mid& e \; \texttt{+} \; e & (\texttt{Add}) \\
 &\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
 \end{array}
-`$
+```
 
 ### Big-Step Operational Semantics
 
 > :bookmark: The **big-step operational semantics** is also called the **natural
 > semantics**.
 
-$`
+```math
 \texttt{Num}\frac{
 }{
   \vdash n \Rightarrow n
@@ -106,6 +106,6 @@ $`
 }{
   \vdash e_1 \; \texttt{*} \; e_2 \Rightarrow n_1 \times n_2
 }
-`$
+```
 
 </details>
