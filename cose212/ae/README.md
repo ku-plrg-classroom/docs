@@ -78,6 +78,14 @@ e
 &\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
 \end{array}
 ```
+where
+```math
+\large
+\begin{array}{lcll}
+n &\in& \mathbb{Z} & (\texttt{BigInt})\\
+e &\in& \mathbb{E} & (\texttt{Expr})\\
+\end{array}
+```
 
 ### Big-Step Operational Semantics
 

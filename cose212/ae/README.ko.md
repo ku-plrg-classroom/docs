@@ -74,6 +74,14 @@ e
 &\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
 \end{array}
 ```
+where
+```math
+\large
+\begin{array}{lcll}
+n &\in& \mathbb{Z} & (\texttt{BigInt})\\
+e &\in& \mathbb{E} & (\texttt{Expr})\\
+\end{array}
+```
 
 ### 큰 걸음 동작 의미 (Big-Step Operational Semantics)
 
