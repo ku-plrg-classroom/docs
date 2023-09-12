@@ -94,6 +94,11 @@ e &\in& \mathbb{E} & (\texttt{Expr})\\
 
 ```math
 \large
+\fbox{$\vdash e \Rightarrow n$}
+```
+
+```math
+\large
 \texttt{Num}\frac{
 }{
   \vdash n \Rightarrow n
