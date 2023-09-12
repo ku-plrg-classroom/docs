@@ -30,7 +30,7 @@ sbt new ku-plrg-classroom/ae.g8
 `VAE` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
 [`vae-spec.pdf`](./vae-spec.pdf) 참조하세요.
 
-## (문제 #1) `interp` (50 점)
+## (문제 #1) `interp` (20 점)
 
 `interp` 함수는 주어진 표현식을 계산하여 결과를 반환합니다:
 ```scala
@@ -46,7 +46,7 @@ def freeIds(expr: Expr): Set[String] = ???
 ```
 `Implementation.scala` 파일에 `freeIds` 함수를 구현하세요.
 
-## (문제 #3) `bindingIds` (10 점)
+## (문제 #3) `bindingIds` (20 점)
 
 `bindingIds` 함수는 주어진 표현식에서 바인딩된 변수의 집합을 반환합니다:
 ```scala
@@ -54,7 +54,7 @@ def bindingIds(expr: Expr): Set[String] = ???
 ```
 `Implementation.scala` 파일에 `bindingIds` 함수를 구현하세요.
 
-## (문제 #4) `boundIds` (10 점)
+## (문제 #4) `boundIds` (20 점)
 
 `boundIds` 함수는 주어진 표현식에서 바운드된 변수의 집합을 반환합니다:
 ```scala
@@ -62,7 +62,7 @@ def boundIds(expr: Expr): Set[String] = ???
 ```
 `Implementation.scala` 파일에 `boundIds` 함수를 구현하세요.
 
-## (문제 #5) `shadowedIds` (10 점)
+## (문제 #5) `shadowedIds` (20 점)
 
 `shadowedIds` 함수는 주어진 표현식에서 같은 이름의 다른 변수를 가려버리는
 변수의 집합을 반환합니다:
