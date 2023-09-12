@@ -24,6 +24,11 @@ sbt new ku-plrg-classroom/ae.g8
 `AE` 언어는 정수의 덧셈과 곱셈을 지원하는 간단한 산술 표현식 언어입니다. 이
 과제에서는 `interp`과 `countNums` 두 함수를 구현합니다.
 
+## `AE` 언어의 명세
+
+`AE` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
+[`ae-spec.pdf`](./ae-spec.pdf) 참조하세요.
+
 ## (문제 #1) `interp` (50 점)
 
 `interp` 함수는 주어진 표현식을 계산하여 결과를 반환합니다:
@@ -39,81 +44,3 @@ def interp(expr: Expr): Value = ???
 def countNums(expr: Expr): Int = ???
 ```
 `Implementation.scala` 파일에 `countNums` 함수를 구현하세요.
-
-## `AE`의 정의
-
-<details>
-<summary markdown="span"><b>더 보기</b></summary>
-
-### 구체적 문법 (Concrete Syntax)
-
-```bnf
-<expr>   ::= <number>
-           | <expr> "+" <expr>
-           | <expr> "*" <expr>
-           | "(" <expr> ")"
-
-<digit>  ::= "0" | "1" | ... | "9"
-<nat>    ::= <digit> | <digit> <nat>
-<number> ::= <nat> | "-" <nat>
-```
-
-| 연산자 | 결합 방향 (Associativity) | 우선 순위 (Precedence) |
-|:------:|:-------------------------:|:----------------------:|
-| `*`    | 왼쪽 (Left)               | 1                      |
-| `+`    | 왼쪽 (Left)               | 2                      |
-
-### 요약 문법 (Abstract Syntax)
-
-```math
-\large
-\begin{array}{lcll}
-e
-&\texttt{::=}& n & (\texttt{Num}) \\
-&\mid& e \; \texttt{+} \; e & (\texttt{Add}) \\
-&\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
-\end{array}
-```
-where
-```math
-\large
-\begin{array}{lcll}
-n &\in& \mathbb{Z} & (\texttt{BigInt})\\
-e &\in& \mathbb{E} & (\texttt{Expr})\\
-\end{array}
-```
-
-### 큰 걸음 동작 의미 (Big-Step Operational Semantics)
-
-> :bookmark: 혹은 자연적 의미 (Natural Semantics) 로 불립니다.
-
-```math
-\large
-\fbox{$\vdash e \Rightarrow n$}
-```
-
-```math
-\large
-\texttt{Num}\frac{
-}{
-  \vdash n \Rightarrow n
-}
-\qquad
-\texttt{Add}\frac{
-  \vdash e_1 \Rightarrow n_1
-  \qquad
-  \vdash e_2 \Rightarrow n_2
-}{
-  \vdash e_1 \; \texttt{+} \; e_2 \Rightarrow n_1 + n_2
-}
-\qquad
-\texttt{Mul}\frac{
-  \vdash e_1 \Rightarrow n_1
-  \qquad
-  \vdash e_2 \Rightarrow n_2
-}{
-  \vdash e_1 \; \texttt{*} \; e_2 \Rightarrow n_1 \times n_2
-}
-```
-
-</details>

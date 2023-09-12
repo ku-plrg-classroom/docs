@@ -25,6 +25,11 @@ The `AE` language is a simple arithmetic expression language that supports
 addition and multiplication of integers. In this assignment, you will implement
 two functions: `interp` and `countNums`.
 
+## Specification of `AE` language
+
+See the [`ae-spec.pdf`](./ae-spec.pdf) for the syntax and semantics
+of the `AE` language.
+
 ## (Problem #1) `interp` (50 points)
 
 The `interp` function evaluates the given expression and returns the result:
@@ -42,83 +47,3 @@ expression:
 def countNums(expr: Expr): Int = ???
 ```
 Please implement the `countNums` function in the `Implementation.scala` file.
-
-
-## Definition of `AE`
-
-<details>
-<summary markdown="span"><b>See more</b></summary>
-
-### Concrete Syntax
-
-```bnf
-<expr>   ::= <number>
-           | <expr> "+" <expr>
-           | <expr> "*" <expr>
-           | "(" <expr> ")"
-
-<digit>  ::= "0" | "1" | ... | "9"
-<nat>    ::= <digit> | <digit> <nat>
-<number> ::= <nat> | "-" <nat>
-```
-
-| Operator | Associativity | Precedence |
-|:--------:|:-------------:|:----------:|
-| `*`      | Left          | 1          |
-| `+`      | Left          | 2          |
-
-### Abstract Syntax
-
-```math
-\large
-\begin{array}{lcll}
-e
-&\texttt{::=}& n & (\texttt{Num}) \\
-&\mid& e \; \texttt{+} \; e & (\texttt{Add}) \\
-&\mid& e \; \texttt{*} \; e & (\texttt{Mul}) \\
-\end{array}
-```
-where
-```math
-\large
-\begin{array}{lcll}
-n &\in& \mathbb{Z} & (\texttt{BigInt})\\
-e &\in& \mathbb{E} & (\texttt{Expr})\\
-\end{array}
-```
-
-### Big-Step Operational Semantics
-
-> :bookmark: The **big-step operational semantics** is also called the **natural
-> semantics**.
-
-```math
-\large
-\fbox{$\vdash e \Rightarrow n$}
-```
-
-```math
-\large
-\texttt{Num}\frac{
-}{
-  \vdash n \Rightarrow n
-}
-\qquad
-\texttt{Add}\frac{
-  \vdash e_1 \Rightarrow n_1
-  \qquad
-  \vdash e_2 \Rightarrow n_2
-}{
-  \vdash e_1 \; \texttt{+} \; e_2 \Rightarrow n_1 + n_2
-}
-\qquad
-\texttt{Mul}\frac{
-  \vdash e_1 \Rightarrow n_1
-  \qquad
-  \vdash e_2 \Rightarrow n_2
-}{
-  \vdash e_1 \; \texttt{*} \; e_2 \Rightarrow n_1 \times n_2
-}
-```
-
-</details>
