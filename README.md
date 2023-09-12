@@ -68,15 +68,13 @@ name [Scala Tutorial]:
 
 You can find the following directories and files in the assignment directory:
 
-```
-src
+<pre><code>src
 ├─ main/scala/kuplrg
-│  ├─ Implementation.scala ─── IMPLEMENT AND SUBMIT THIS FILE
+│  ├─ Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
 │  └─ Template.scala
 └─ test/scala/kuplrg
-   ├─ Spec.scala ───────────── ADD YOUR OWN TESTS
-   └─ SpecBase.scala
-```
+   ├─ Spec.scala ──────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
+   └─ SpecBase.scala</code></pre>
 
 **DO NOT** edit files other than
 `src/main/scala/kuplrg/Implementation.scala` and

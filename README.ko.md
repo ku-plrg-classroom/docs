@@ -66,15 +66,13 @@ name [Scala Tutorial]:
 
 다음과 같은 디렉토리와 파일이 숙제 디렉토리에 있습니다.
 
-```
-src
+<pre><code>src
 ├─ main/scala/kuplrg
-│  ├─ Implementation.scala ─── 이 파일을 제출하세요.
+│  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
 │  └─ Template.scala
 └─ test/scala/kuplrg
-   ├─ Spec.scala ───────────── 이 파일에 테스트 케이스를 작성하세요.
-   └─ SpecBase.scala
-```
+   ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
+   └─ SpecBase.scala</code></pre>
 
 **절대로** `src/main/scala/kuplrg/Implementation.scala`와
 `src/test/scala/kuplrg/Spec.scala` 이외의 파일을 수정하지 마세요.

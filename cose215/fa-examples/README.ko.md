@@ -10,8 +10,7 @@ sbt new ku-plrg-classroom/fa-examples.g8
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
-```
-fa-examples
+<pre><code>fa-examples
 ├─ viewer
 │  ├── index.html ─────────────── Automata viewer를 위한 HTML 파일
 │  ├── js/data.js ─────────────── Automata의 데이터를 저장하는 JavaScript 파일
@@ -22,14 +21,13 @@ fa-examples
    │  ├── DFA.scala ───────────── Deterministic finite automata (DFA)의 정의
    │  ├── NFA.scala ───────────── Nondeterministic finite automata (NFA)의 정의
    │  ├── ENFA.scala ──────────── ε-Non-deterministic finite automata (ε-NFA)의 정의
-   │  ├── Implementation.scala ── [[ 이 파일을 수정하고 제출하세요. ]]
+   │  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
    │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
    │  ├── basics.scala ────────── 기본 함수들의 정의
    │  └── error.scala ─────────── `error` 함수의 정의
    └─ test/scala/kuplrg
-      ├─ Spec.scala ───────────── [[ 이 파일에 테스트 케이스를 추가하세요. ]]
-      └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능
-```
+      ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
+      └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
 **이 숙제의 목표는 `Implementation.scala` 파일에 FA 객체들을 구현하는
 것입니다.**

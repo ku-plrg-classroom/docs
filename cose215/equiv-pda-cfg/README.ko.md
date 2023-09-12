@@ -10,20 +10,18 @@ sbt new ku-plrg-classroom/equiv-pda-cfg.g8
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
-```
-equiv-pda-cfg
+<pre><code>equiv-pda-cfg
 └─ src
    ├─ main/scala/kuplrg
    │  ├── PDA.scala ───────────── Pushdown Automata (PDA)의 정의
    │  ├── CFG.scala ───────────── Context-Free Grammar (CFG)의 정의
-   │  ├── Implementation.scala ── [[ 이 파일을 수정하고 제출하세요. ]]
+   │  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
    │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
    │  ├── basics.scala ────────── 기본 함수들의 정의
    │  └── error.scala ─────────── `error` 함수의 정의
    └─ test/scala/kuplrg
-      ├─ Spec.scala ───────────── [[ 이 파일에 테스트 케이스를 추가하세요. ]]
-      └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능
-```
+      ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
+      └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
 **이 숙제의 목표는 `Implementation.scala` 파일에 `pdafs2es`, `pdaes2fs`, 그리고
 `cfg2pdaes` 함수를 구현하는 것입니다.**

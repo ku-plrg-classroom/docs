@@ -10,20 +10,18 @@ sbt new ku-plrg-classroom/equiv-pda-cfg.g8
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-```
-equiv-pda-cfg
+<pre><code>equiv-pda-cfg
 └─ src
    ├─ main/scala/kuplrg
    │  ├── PDA.scala ───────────── The class of pushdown automata (PDA)
    │  ├── CFG.scala ───────────── The class of context-free grammars (CFGs)
-   │  ├── Implementation.scala ── [[ IMPLEMENT AND SUBMIT THIS FILE ]]
+   │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of FAs that you must implement
    │  ├── basics.scala ────────── The definitions of basic functions
    │  └── error.scala ─────────── The definition of the `error` function
    └─ test/scala/kuplrg
-      ├─ Spec.scala ───────────── [[ ADD YOUR OWN TESTS ]]
-      └─ SpecBase.scala ───────── The base class of test cases
-```
+      ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
+      └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
 **The goal of this assignment is to implement `pdafs2es`, `pdaes2fs`, and
 `cfg2pdaes` functions in the `Implementation.scala` file.**

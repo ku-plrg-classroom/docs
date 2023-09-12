@@ -10,8 +10,7 @@ sbt new ku-plrg-classroom/fa-examples.g8
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-```
-fa-examples
+<pre><code>fa-examples
 ├─ viewer
 │  ├── index.html ─────────────── The HTML file for the automata viewer
 │  ├── js/data.js ─────────────── The data of automata
@@ -22,14 +21,13 @@ fa-examples
    │  ├── DFA.scala ───────────── The class of deterministic finite automata (DFA)
    │  ├── NFA.scala ───────────── The class of nondeterministic finite automata (NFA)
    │  ├── ENFA.scala ──────────── The class of ε-nondeterministic finite automata (ε-NFA)
-   │  ├── Implementation.scala ── [[ IMPLEMENT AND SUBMIT THIS FILE ]]
+   │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of FAs that you must implement
    │  ├── basics.scala ────────── The definitions of basic functions
    │  └── error.scala ─────────── The definition of the `error` function
    └─ test/scala/kuplrg
-      ├─ Spec.scala ───────────── [[ ADD YOUR OWN TESTS ]]
-      └─ SpecBase.scala ───────── The base class of test cases
-```
+      ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
+      └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
 **The goal of this assignment is to implement the finite automata (FA) objects in
 the `Implementation.scala` file.**

@@ -10,18 +10,16 @@ sbt new ku-plrg-classroom/ae.g8
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-```
-fa-examples
+<pre><code>ae
 └─ src
    ├─ main/scala/kuplrg
    │  ├── AE.scala ────────────── The definition of the AE and parsers
-   │  ├── Implementation.scala ── [[ IMPLEMENT AND SUBMIT THIS FILE ]]
+   │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
    └─ test/scala/kuplrg
-      ├─ Spec.scala ───────────── [[ ADD YOUR OWN TESTS ]]
-      └─ SpecBase.scala ───────── The base class of test cases
-```
+      ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
+      └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
 The `AE` language is a simple arithmetic expression language that supports
 addition and multiplication of integers. In this assignment, you will implement
