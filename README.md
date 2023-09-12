@@ -30,6 +30,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | Name | Explanation |
 | :--: | ----------- |
 | [ae](./cose212/ae/README.md) | `AE` - Arithmetic Expressions |
+| [vae](./cose212/vae/README.md) | `VAE` - Arithmetic Expressions with Variables |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 
