@@ -25,15 +25,15 @@ fa-examples
 
 The `AE` language is a simple arithmetic expression language that supports
 addition and multiplication of integers. In this assignment, you will implement
-two functions: `eval` and `countNums`.
+two functions: `interp` and `countNums`.
 
-## (Problem #1) `eval` (50 points)
+## (Problem #1) `interp` (50 points)
 
-The `eval` function evaluates the given expression and returns the result:
+The `interp` function evaluates the given expression and returns the result:
 ```scala
 def interp(expr: Expr): Value = ???
 ```
-Please implement the `eval` function in the `Implementation.scala` file.
+Please implement the `interp` function in the `Implementation.scala` file.
 
 
 ## (Problem #2) `countNums` (50 points)

@@ -24,15 +24,15 @@ fa-examples
 ```
 
 `AE` 언어는 정수의 덧셈과 곱셈을 지원하는 간단한 산술 표현식 언어입니다. 이
-과제에서는 `eval`과 `countNums` 두 함수를 구현합니다.
+과제에서는 `interp`과 `countNums` 두 함수를 구현합니다.
 
-## (문제 #1) `eval` (50 점)
+## (문제 #1) `interp` (50 점)
 
-`eval` 함수는 주어진 표현식을 계산하여 결과를 반환합니다:
+`interp` 함수는 주어진 표현식을 계산하여 결과를 반환합니다:
 ```scala
 def interp(expr: Expr): Value = ???
 ```
-`Implementation.scala` 파일에 `eval` 함수를 구현하세요.
+`Implementation.scala` 파일에 `interp` 함수를 구현하세요.
 
 ## (문제 #2) `countNums` (50 점)
 
