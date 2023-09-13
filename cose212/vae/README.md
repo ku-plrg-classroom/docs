@@ -4,13 +4,13 @@
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/ae.g8
+sbt new ku-plrg-classroom/vae.g8
 ```
 
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>ae
+<pre><code>vae
 └─ src
    ├─ main/scala/kuplrg
    │  ├── VAE.scala ───────────── The definition of the VAE and parsers

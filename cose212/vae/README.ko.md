@@ -4,13 +4,13 @@
 
 다음과 같이 `sbt`를 이용하여 템플릿 코드를 다운로드 받으세요:
 ```bash
-sbt new ku-plrg-classroom/ae.g8
+sbt new ku-plrg-classroom/vae.g8
 ```
 
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
-<pre><code>ae
+<pre><code>vae
 └─ src
    ├─ main/scala/kuplrg
    │  ├── VAE.scala ───────────── VAE의 정의와 파서들
