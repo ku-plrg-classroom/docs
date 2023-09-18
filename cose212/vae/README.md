@@ -73,3 +73,4 @@ expression:
 ```scala
 def shadowedIds(expr: Expr): Set[String] = ???
 ```
+Please implement the `shadowedIds` function in the `Implementation.scala` file.
