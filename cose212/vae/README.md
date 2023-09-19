@@ -39,6 +39,16 @@ def interp(expr: Expr): Value = ???
 ```
 Please implement the `interp` function in the `Implementation.scala` file.
 
+You should throw an exception using the `error` function if the given expression
+contains a free identifier. For example, the following test case checks whether
+the `interp` function throws an exception containing the message `unknown
+identifier: y` because the expression `val x = 1; y` contains a free identifier
+`y`:
+
+```scala
+testExc(eval("val x = 1; y"), "unknown identifier: y")
+```
+
 ## (Problem #2) `freeIds` (20 points)
 
 The `freeIds` function returns the set of free identifiers in the given
