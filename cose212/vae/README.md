@@ -1,4 +1,4 @@
-# `VAE` - Arithmetic Expressions with Variables
+# `VAE` - `AE` with Variables
 
 [English](./README.md) | [한국어](./README.ko.md)
 
@@ -21,10 +21,9 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-The `VAE` language is a simple arithmetic expression language with variables,
-and it supports addition and multiplication of integers. In this assignment, you
-will implement five functions: `interp`, `freeIds`, `bindingIds`, `boundIds`,
-and `shadowedIds`.
+The `VAE` language is an extension of the [`AE`](../ae/README.md) language with
+variables. In this assignment, you will implement five functions: `interp`,
+`freeIds`, `bindingIds`, `boundIds`, and `shadowedIds`.
 
 ## Specification of `VAE` language
 

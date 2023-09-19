@@ -1,4 +1,4 @@
-# `VAE` - Arithmetic Expressions with Variables
+# `VAE` - `AE` with Variables
 
 [English](./README.md) | [한국어](./README.ko.md)
 
@@ -21,9 +21,9 @@ sbt new ku-plrg-classroom/vae.g8
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
       └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
-`VAE` 언어는 정수의 덧셈과 곱셈 및 변수를 지원하는 간단한 산술 표현식
-언어입니다. 이 과제에서는 `interp`, `freeIds`, `bindingIds`, `boundIds`,
-`shadowedIds` 함수를 구현합니다.
+`VAE` 언어는 [`AE`](../ae/README.ko.md) 언어에 변수를 추가한 것입니다. 이
+과제에서는 `interp`, `freeIds`, `bindingIds`, `boundIds`, `shadowedIds` 함수를
+구현합니다.
 
 ## `VAE` 언어의 명세
 

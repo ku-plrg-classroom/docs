@@ -30,7 +30,7 @@
 | 이름 | 설명 |
 | :--: | ---- |
 | [ae](./cose212/ae/README.ko.md) | `AE` - Arithmetic Expressions |
-| [vae](./cose212/vae/README.ko.md) | `VAE` - Arithmetic Expressions with Variables |
+| [vae](./cose212/vae/README.ko.md) | `VAE` - `AE` with Variables |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 
