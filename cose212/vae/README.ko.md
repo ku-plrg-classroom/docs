@@ -34,7 +34,7 @@ sbt new ku-plrg-classroom/vae.g8
 
 `interp` 함수는 주어진 표현식을 계산하여 결과를 반환합니다:
 ```scala
-def interp(expr: Expr): Value = ???
+def interp(expr: Expr, env: Env): Value = ???
 ```
 `Implementation.scala` 파일에 `interp` 함수를 구현하세요.
 

@@ -35,7 +35,7 @@ of the `VAE` language.
 
 The `interp` function evaluates the given expression and returns the result:
 ```scala
-def interp(expr: Expr): Value = ???
+def interp(expr: Expr, env: Env): Value = ???
 ```
 Please implement the `interp` function in the `Implementation.scala` file.
 
