@@ -41,10 +41,10 @@ def interp(expr: Expr, env: Env): Value = ???
 만약 주어진 표현식에 자유 변수가 포함되어 있다면, `interp` 함수는 `error`
 함수를 이용하여 예외를 발생시켜야 합니다. 예를 들어, 다음 테스트 케이스는
 표현식 `val x = 1; y`에 자유 변수 `y`가 포함되어 있기 때문에 `interp` 함수가
-`unknown identifier: y`라는 메시지를 포함하는 예외를 발생시켜야 합니다:
+`free identifier`라는 메시지를 포함하는 예외를 발생시켜야 합니다:
 
 ```scala
-testExc(eval("val x = 1; y"), "unknown identifier: y")
+testExc(eval("val x = 1; y"), "free identifier")
 ```
 
 ## (문제 #2) `freeIds` (20 점)
