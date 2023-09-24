@@ -30,56 +30,63 @@ variables. In this assignment, you will implement five functions: `interp`,
 See the [`vae-spec.pdf`](./vae-spec.pdf) for the syntax and semantics
 of the `VAE` language.
 
+### Run-time Errors
+
+If the given expression meets the following conditions during evaluation,
+the `interp` function should throw an exception using the `error` function
+with corresponding error messages containing their error kinds:
+
+| Error kind | Description |
+|:-----------|:------------|
+| `free identifier` | The given identifier is not bound in the environment. |
+
 ## (Problem #1) `interp` (20 points)
 
-The `interp` function evaluates the given expression and returns the result:
+The `eval` function is a wrapper of the `interp` function. It parses the given
+string into an expression and evaluates it with the empty environment:
+```scala
+def eval(str: String): String = interp(Expr(str), Map.empty).toString
+```
+
+The `interp` function evaluates the given expression `expr` with the given
+environment `env` and returns the result:
 ```scala
 def interp(expr: Expr, env: Env): Value = ???
 ```
-Please implement the `interp` function in the `Implementation.scala` file.
-
-You should throw an exception using the `error` function if the given expression
-contains a free identifier. For example, the following test case checks whether
-the `interp` function throws an exception containing the message `free
-identifier` because the expression `val x = 1; y` contains a free identifier
-`y`:
-
-```scala
-testExc(eval("val x = 1; y"), "free identifier")
-```
+**Please implement the `interp` function in the `Implementation.scala` file.**
 
 ## (Problem #2) `freeIds` (20 points)
 
 The `freeIds` function returns the set of free identifiers in the given
-expression:
+expression `expr`:
 ```scala
 def freeIds(expr: Expr): Set[String] = ???
 ```
-Please implement the `freeIds` function in the `Implementation.scala` file.
+**Please implement the `freeIds` function in the `Implementation.scala` file.**
 
 ## (Problem #3) `bindingIds` (20 points)
 
 The `bindingIds` function returns the set of binding identifiers in the given
-expression:
+expression `expr`:
 ```scala
 def bindingIds(expr: Expr): Set[String] = ???
 ```
-Please implement the `bindingIds` function in the `Implementation.scala` file.
+**Please implement the `bindingIds` function in the `Implementation.scala` file.**
 
 ## (Problem #4) `boundIds` (20 points)
 
 The `boundIds` function returns the set of bound identifiers in the given
-expression:
+expression `expr`:
 ```scala
 def boundIds(expr: Expr): Set[String] = ???
 ```
-Please implement the `boundIds` function in the `Implementation.scala` file.
+**Please implement the `boundIds` function in the `Implementation.scala` file.**
 
 ## (Problem #5) `shadowedIds` (20 points)
 
 The `shadowedIds` function returns the set of shadowed identifiers in the given
-expression:
+expression `expr`:
 ```scala
 def shadowedIds(expr: Expr): Set[String] = ???
 ```
-Please implement the `shadowedIds` function in the `Implementation.scala` file.
+**Please implement the `shadowedIds` function in the `Implementation.scala` file.**
