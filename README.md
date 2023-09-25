@@ -31,6 +31,8 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | :--: | ----------- |
 | [ae](./cose212/ae/README.md) | `AE` - Arithmetic Expressions |
 | [vae](./cose212/vae/README.md) | `VAE` - `AE` with Variables |
+| [f1vae](./cose212/f1vae/README.md) | `F1VAE` - `VAE` with First-Order Functions |
+| [fvae](./cose212/fvae/README.md) | `FVAE` - `VAE` with First-Class Functions |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 

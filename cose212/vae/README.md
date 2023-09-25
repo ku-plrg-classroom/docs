@@ -22,7 +22,7 @@ The template source code contains the following files:
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
 The `VAE` language is an extension of the [`AE`](../ae/README.md) language with
-variables. In this assignment, you will implement five functions: `interp`,
+**variables**. In this assignment, you will implement five functions: `interp`,
 `freeIds`, `bindingIds`, `boundIds`, and `shadowedIds`.
 
 ## Specification of `VAE` language

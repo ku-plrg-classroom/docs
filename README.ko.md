@@ -31,6 +31,8 @@
 | :--: | ---- |
 | [ae](./cose212/ae/README.ko.md) | `AE` - Arithmetic Expressions |
 | [vae](./cose212/vae/README.ko.md) | `VAE` - `AE` with Variables |
+| [f1vae](./cose212/f1vae/README.ko.md) | `F1VAE` - `VAE` with First-Order Functions |
+| [fvae](./cose212/fvae/README.ko.md) | `FVAE` - `VAE` with First-Class Functions |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 

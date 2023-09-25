@@ -21,7 +21,7 @@ sbt new ku-plrg-classroom/vae.g8
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
       └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
-`VAE` 언어는 [`AE`](../ae/README.ko.md) 언어에 변수를 추가한 것입니다. 이
+`VAE` 언어는 [`AE`](../ae/README.ko.md) 언어에 **변수**를 추가한 것입니다. 이
 과제에서는 `interp`, `freeIds`, `bindingIds`, `boundIds`, 그리고 `shadowedIds`
 함수를 구현합니다.
 
