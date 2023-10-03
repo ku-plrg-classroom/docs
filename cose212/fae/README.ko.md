@@ -1,19 +1,19 @@
-# `FVAE` - `VAE` with First-Class Functions
+# `FAE` - `AE` with First-Class Functions
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 다음과 같이 `sbt`를 이용하여 템플릿 코드를 다운로드 받으세요:
 ```bash
-sbt new ku-plrg-classroom/fvae.g8
+sbt new ku-plrg-classroom/fae.g8
 ```
 
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
-<pre><code>fvae
+<pre><code>fae
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── FVAE.scala ──────────── FVAE의 정의와 파서들
+   │  ├── FAE.scala ───────────── FAE의 정의와 파서들
    │  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
    │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
    │  └── error.scala ─────────── `error` 함수의 정의
@@ -21,13 +21,13 @@ sbt new ku-plrg-classroom/fvae.g8
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
       └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
-`FVAE` 언어는 [`VAE`](../vae/README.ko.md) 언어에 일급 함수를 추가한 것입니다.
+`FAE` 언어는 [`AE`](../ae/README.ko.md) 언어에 일급 함수를 추가한 것입니다.
 이 과제에서는 `interp`과 `interpDS` 함수를 구현합니다.
 
-## `FVAE` 언어의 명세
+## `FAE` 언어의 명세
 
-`FVAE` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
-[`fvae-spec.pdf`](./fvae-spec.pdf) 참조하세요.
+`FAE` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
+[`fae-spec.pdf`](./fae-spec.pdf) 참조하세요.
 
 
 ### 실행 오류
@@ -74,6 +74,6 @@ def interpDS(expr: Expr, env: Env): Value = ???
 ```
 > :warning: 기존의 `interp` 함수는 **정적 스코핑(static scoping)** 를 사용하지만,
 > `interpDS` 함수는 **동적 스코프(dynamic scoping)** 를 사용합니다. 이 두 가지
-> 스코핑 방식의 차이점은 [명세](./fvae-spec.pdf)의 4.1 절을 참조하세요.
+> 스코핑 방식의 차이점은 [명세](./f1ae-spec.pdf)의 4.1 절을 참조하세요.
 
 **`Implementation.scala` 파일에 `interpDS` 함수를 구현하세요.**

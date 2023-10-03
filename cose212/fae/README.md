@@ -1,19 +1,19 @@
-# `FVAE` - `VAE` with First-Class Functions
+# `FAE` - `AE` with First-Class Functions
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/fvae.g8
+sbt new ku-plrg-classroom/fae.g8
 ```
 
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>fvae
+<pre><code>fae
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── FVAE.scala ──────────── The definition of the FVAE and parsers
+   │  ├── FAE.scala ───────────── The definition of the FAE and parsers
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
@@ -21,14 +21,14 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-The `FVAE` language is an extension of the [`VAE`](../vae/README.md) language
+The `FAE` language is an extension of the [`AE`](../ae/README.md) language
 with **first-class functions**. In this assignment, you will implement two
 functions: `interp` and `interpDS`.
 
-## Specification of `FVAE` language
+## Specification of `FAE` language
 
-See the [`fvae-spec.pdf`](./fvae-spec.pdf) for the syntax and semantics of the
-`FVAE` language.
+See the [`fae-spec.pdf`](./fae-spec.pdf) for the syntax and semantics of the
+`FAE` language.
 
 ### Run-time Errors
 
@@ -73,7 +73,7 @@ def interpDS(expr: Expr, env: Env): Value = ???
 ```
 > :warning: The original `interp` function uses the **static scoping** (i.e.,
 > lexical scoping). But, the `interpDS` function uses the **dynamic scoping**.
-> Please see the Section 4.1 of the [spec](./fvae-spec.pdf) for the difference
+> Please see the Section 4.1 of the [spec](./fae-spec.pdf) for the difference
 > between the static scoping and the dynamic scoping.
 
 **Please implement the `interpDS` function in the `Implementation.scala` file.**
