@@ -34,6 +34,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [f1vae](./cose212/f1vae/README.md) | `F1VAE` - `VAE` with First-Order Functions |
 | [fvae](./cose212/fvae/README.md) | `FVAE` - `VAE` with First-Class Functions |
 | [fae](./cose212/fae/README.md) | `FAE` - `AE` with First-Class Functions |
+| [rfae](./cose212/rfae/README.md) | `RFAE` - `FAE` with Recursion and Conditionals |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 
