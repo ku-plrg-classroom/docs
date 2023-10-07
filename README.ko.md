@@ -34,7 +34,8 @@
 | [f1vae](./cose212/f1vae/README.ko.md) | `F1VAE` - `VAE` with First-Order Functions |
 | [fvae](./cose212/fvae/README.ko.md) | `FVAE` - `VAE` with First-Class Functions |
 | [fae](./cose212/fae/README.ko.md) | `FAE` - `AE` with First-Class Functions |
-| [rfae](./cose212/rfae/README.md) | `RFAE` - `FAE` with Recursion and Conditionals |
+| [rfae](./cose212/rfae/README.ko.md) | `RFAE` - `FAE` with Recursion and Conditionals |
+| [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 
