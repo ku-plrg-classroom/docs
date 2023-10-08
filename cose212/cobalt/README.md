@@ -48,6 +48,18 @@ corresponding error messages containing their error kinds:
 | `out of bounds` | The index is out of bounds in the tuple projection. |
 | `not a tuple` | The expression does not evaluate to a tuple in the tuple projection. |
 
+Note that this language's semantics do not sometimes define the order of
+subexpressions. For example, the order between evaluating the subexpressions of
+the addition operation is not defined. Therefore, the following expression can
+throw two different errors depending on the order of subexpressions:
+```scala
+interp(Expr("(1 + x) + (1 + true)")) // `free identifier` or `invalid operation`
+```
+They are both valid errors, and you can throw either of them. It means that you
+do not need to consider the order of subexpressions, and you can assume any
+convenient order. Also, we will not test such cases in this assignment.
+
+
 ## (Problem #1) `interp`
 
 The `eval` function is a wrapper of the `interp` function. It parses the given
