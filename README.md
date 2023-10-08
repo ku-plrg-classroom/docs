@@ -35,6 +35,8 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [fvae](./cose212/fvae/README.md) | `FVAE` - `VAE` with First-Class Functions |
 | [fae](./cose212/fae/README.md) | `FAE` - `AE` with First-Class Functions |
 | [rfae](./cose212/rfae/README.md) | `RFAE` - `FAE` with Recursion and Conditionals |
+| [bfae](./cose212/bfae/README.md) | `BFAE` - `FAE` with Mutable Boxes |
+| | |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
