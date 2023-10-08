@@ -23,8 +23,8 @@ The template source code contains the following files:
 
 The `COBALT` language is a toy language that stands for
 **CO**mprehension-supported **B**oolean and **A**rithmetic expressions with
-**L**ists and **T**uples. In this assignment, you will implement two `interp`
-functions.
+**L**ists and **T**uples. In this assignment, you will implement the `interp`
+function.
 
 ## Specification of `COBALT` language
 
