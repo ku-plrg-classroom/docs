@@ -42,6 +42,7 @@ sbt new ku-plrg-classroom/cobalt.g8
 | `invalid operation` | 주어진 연산자와 피연산자들의 타입이 맞지 않는 경우 |
 | `not a function` | 함수 호출의 대상이 함수가 아닌 경우 |
 | `not a boolean` | 조건문의 조건이 불리언이 아닌 경우 |
+| `not a boolean` | `filter`에 주어진 함수의 결과가 불리언이 아닌 경우 |
 | `not a list` | 리스트 연산에서 리스트가 아닌 경우 |
 | `empty list` | 리스트 head나 tail 연산에서 빈 리스트인 경우 |
 | `out of bounds` | 튜플 프로젝션에서 인덱스가 튜플의 범위를 벗어난 경우 |

@@ -43,6 +43,7 @@ corresponding error messages containing their error kinds:
 | `invalid operation` | The given operation is not defined for the given operands. |
 | `not a function` | The expression does not evaluate to a function in the function application. |
 | `not a boolean` | The expression does not evaluate to a boolean in the conditional expression. |
+| `not a boolean` | The given function for `filter` does not evaluate to a boolean. |
 | `not a list` | The expression does not evaluate to a list in the list operation. |
 | `empty list` | The list is empty in the list head or tail operation. |
 | `out of bounds` | The index is out of bounds in the tuple projection. |
