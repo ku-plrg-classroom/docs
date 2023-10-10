@@ -36,6 +36,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [fae](./cose212/fae/README.md) | `FAE` - `AE` with First-Class Functions |
 | [rfae](./cose212/rfae/README.md) | `RFAE` - `FAE` with Recursion and Conditionals |
 | [bfae](./cose212/bfae/README.md) | `BFAE` - `FAE` with Mutable Boxes |
+| [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
 | | |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 

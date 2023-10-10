@@ -61,7 +61,7 @@ def interp(expr: Expr, env: Env): Value = ???
 ## (Problem #2) `interpDS` (50 points)
 
 The `evalDS` function is a wrapper of the `interpDS` function, and performs the
-similar tasks as the `eval` function except that it uses the `interpDS`.
+similar tasks as the `eval` function except that it uses the `interpDS`:
 ```scala
 def evalDS(str: String): String = interpDS(Expr(str), Map.empty).str
 ```
