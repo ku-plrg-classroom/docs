@@ -33,8 +33,8 @@ See the [`mfae-spec.pdf`](./mfae-spec.pdf) for the syntax and semantics of the
 ### Run-time Errors
 
 If the given expression meets the following conditions during evaluation, the
-`interp` function should throw an exception using the `error` function with
-corresponding error messages containing their error kinds:
+`interp` (or `interpCBR`) function should throw an exception using the `error`
+function with corresponding error messages containing their error kinds:
 
 | Error kind | Description |
 |:-----------|:------------|
