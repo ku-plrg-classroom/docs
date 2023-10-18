@@ -37,6 +37,7 @@
 | [rfae](./cose212/rfae/README.ko.md) | `RFAE` - `FAE` with Recursion and Conditionals |
 | [bfae](./cose212/bfae/README.ko.md) | `BFAE` - `FAE` with Mutable Boxes |
 | [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
+| [lfae](./cose212/lfae/README.md) | `LFAE` - `FAE` with Lazy Evaluation |
 | | |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 
