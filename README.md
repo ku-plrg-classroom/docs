@@ -38,6 +38,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [bfae](./cose212/bfae/README.md) | `BFAE` - `FAE` with Mutable Boxes |
 | [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
 | [lfae](./cose212/lfae/README.md) | `LFAE` - `FAE` with Lazy Evaluation |
+| [fae-cps](./cose212/fae-cps/README.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | | |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 
@@ -162,13 +163,27 @@ You can test `PLError` exceptions by using `testExc`. Please refer to the
 
 ### Writing Test Cases
 
-You can write your own test cases in `Spec.scala`. You can use the `test` and
-`testExc` functions to test your implementation.
+You can write your own test cases in `Spec.scala`. You can use the `check`,
+`test`, and `testExc` functions to test your implementation:
+
+* The `check` function takes any expression and checks if it normally terminates
+    without any exceptions.
+* The `test` function takes two expressions whose types are equal to each other
+    and checks if they are equal.
+* The `testExc` function takes an expression and a string. It checks if the
+    expression throws a `PLError` exception whose message contains the given
+    string.
+
+For example, you can write the following test cases for the `f` function in
+`Spec.scala`:
 
 ```scala
 def f(x: Int): Int =
   if (x < 0) error("x must be non-negative")
   else x
+
+// test f(3) normally terminates without any exceptions
+check(f(3))
 
 // test f(3) == 3
 test(f(3), 3)

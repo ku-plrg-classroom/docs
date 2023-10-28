@@ -36,8 +36,9 @@
 | [fae](./cose212/fae/README.ko.md) | `FAE` - `AE` with First-Class Functions |
 | [rfae](./cose212/rfae/README.ko.md) | `RFAE` - `FAE` with Recursion and Conditionals |
 | [bfae](./cose212/bfae/README.ko.md) | `BFAE` - `FAE` with Mutable Boxes |
-| [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
-| [lfae](./cose212/lfae/README.md) | `LFAE` - `FAE` with Lazy Evaluation |
+| [mfae](./cose212/mfae/README.ko.md) | `MFAE` - `FAE` with Mutable Variables |
+| [lfae](./cose212/lfae/README.ko.md) | `LFAE` - `FAE` with Lazy Evaluation |
+| [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | | |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 
@@ -158,13 +159,25 @@ f(-1)         // "x must be non-negative"를 메시지로 가지는 `PLError`를
 
 ### 테스트 케이스 작성
 
-`Spec.scala`에 테스트 케이스를 작성할 수 있습니다. `test`와 `testExc` 함수를
-사용하여 구현을 테스트할 수 있습니다.
+`Spec.scala`에 테스트 케이스를 작성할 수 있습니다. `check`, `test`, 그리고
+`testExc` 함수를 사용하여 구현을 테스트할 수 있습니다:
+
+* `check` 함수는 임의의 표현식을 받아서, 그 표현식이 예외를 던지지 않고 정상적으로
+    종료되는지 확인합니다.
+* `test` 함수는 두 개의 같은 타입을 가지는 표현식을 받아서, 그 두 표현식이 같은
+    값을 가지는지 확인합니다.
+* `testExc` 함수는 표현식과 문자열을 받아서, 그 표현식이 주어진 문자열을 포함하는
+    메시지를 가지는 `PLError` 예외를 던지는지 확인합니다.
+
+예를 들어, 다음과 같이 `f` 함수를 테스트할 수 있습니다:
 
 ```scala
 def f(x: Int): Int =
   if (x < 0) error("x must be non-negative")
   else x
+
+// test f(3) normally terminates without any exceptions
+check(f(3))
 
 // test f(3) == 3
 test(f(3), 3)
