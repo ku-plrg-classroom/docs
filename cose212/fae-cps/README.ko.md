@@ -23,7 +23,7 @@ sbt new ku-plrg-classroom/fae-cps.g8
 
 `FAE-cp` 언어는 [`FAE`](../fae/README.ko.md)와 동일한 언어이지만 **후속 계산
 전달 방식(continuation-passing style)** 을 사용하여 구현합니다. 이 과제에서는
-`interp`과 `reduce` 함수를 구현합니다.
+`interpCPS`과 `reduce` 함수를 구현합니다.
 
 
 ## `FAE-cps` 언어의 명세
@@ -35,7 +35,7 @@ sbt new ku-plrg-classroom/fae-cps.g8
 
 ### 실행 오류
 
-만약 실행 도중 다음과 같은 조건을 만족하는 경우, `interp` 함수는 해당하는 오류의
+만약 실행 도중 다음과 같은 조건을 만족하는 경우, `interpCPS` 함수는 해당하는 오류의
 종류를 포함하는 문자열을 메세지로 가지는 오류를 `error` 함수를 통해 발생시켜야
 합니다:
 
@@ -46,21 +46,21 @@ sbt new ku-plrg-classroom/fae-cps.g8
 | `not a function` | 함수 호출의 대상이 함수가 아닌 경우 |
 
 
-## (문제 #1) `interp` (50 점)
+## (문제 #1) `interpCPS` (50 점)
 
-`evalCPS` 함수는 `interp` 함수의 편의 함수로써, 주어진 문자열을 파싱한 후,
+`evalCPS` 함수는 `interpCPS` 함수의 편의 함수로써, 주어진 문자열을 파싱한 후,
 환경으로는 비어있는 환경을 사용하고, 후속 계산 함수로는 항등 함수를 사용하여
-`interp` 함수를 호출합니다:
+`interpCPS` 함수를 호출합니다:
 ```scala
-def evalCPS(str: String): String = interp(Expr(str), Map.empty, v => v).str
+def evalCPS(str: String): String = interpCPS(Expr(str), Map.empty, v => v).str
 ```
 
-`interp` 함수는 주어진 표현식(`expr`)을 주어진 환경(`env`)과 후속 계산
+`interpCPS` 함수는 주어진 표현식(`expr`)을 주어진 환경(`env`)과 후속 계산
 함수(`cont`)을 인자로 받아 결과를 계산합니다:
 ```scala
-def interp(expr: Expr, env: Env, k: Value => Value): Value = ???
+def interpCPS(expr: Expr, env: Env, k: Value => Value): Value = ???
 ```
-**`Implementation.scala` 파일에 `interp` 함수를 구현하세요.**
+**`Implementation.scala` 파일에 `interpCPS` 함수를 구현하세요.**
 
 ## (문제 #1) `reduce` (50 점)
 
@@ -69,8 +69,8 @@ def interp(expr: Expr, env: Env, k: Value => Value): Value = ???
 구현합니다:
 ```scala
 def evalK(str: String): String =
-  import Kont.*
-  def aux(k: Kont, s: Stack): Value = reduce(k, s) match
+  import Cont.*
+  def aux(k: Cont, s: Stack): Value = reduce(k, s) match
     case (EmptyK, List(v)) => v
     case (k, s) => aux(k, s)
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
@@ -79,7 +79,7 @@ def evalK(str: String): String =
 `reduce` 함수는 후속 계산(`k`)과 스택(`s`)로 구성된 현재 상태(`(k, s)`)를
 인자로 받아, 다음 상태(`(k', s')`)를 계산합니다.
 ```scala
-def reduce(k: Kont, s: Stack): (Kont, Stack) = ???
+def reduce(k: Cont, s: Stack): (Cont, Stack) = ???
 ```
 
 **`Implementation.scala` 파일에 `reduce` 함수를 구현하세요.**

@@ -23,8 +23,8 @@ The template source code contains the following files:
 
 The `FAE-cps` language is exactly the same as the [`FAE`](../fae/README.md)
 language, but it uses the **continuation-passing style** (CPS) for the
-interpreter. In this assignment, you will implement two functions: `interp` and
-`reduce`.
+interpreter. In this assignment, you will implement two functions: `interpCPS`
+and `reduce`.
 
 ## Specification of `FAE-cps` language
 
@@ -35,7 +35,7 @@ continuation-passing style (CPS) in [`fae-cps-spec.pdf`](./fae-cps-spec.pdf).
 ### Run-time Errors
 
 If the given expression meets the following conditions during evaluation, the
-`interp` or `reduce` function should throw an exception using the `error`
+`interpCPS` or `reduce` function should throw an exception using the `error`
 function with corresponding error messages containing their error kinds:
 
 | Error kind | Description |
@@ -44,22 +44,22 @@ function with corresponding error messages containing their error kinds:
 | `invalid operation` | The given operation is not defined for the given operands. |
 | `not a function` | The expression does not evaluate to a function in the function application. |
 
-## (Problem #1) `interp` (50 points)
+## (Problem #1) `interpCPS` (50 points)
 
-The `evalCPS` function is a wrapper of the `interp` function. It parses the
+The `evalCPS` function is a wrapper of the `interpCPS` function. It parses the
 given string into an expression and evaluates it with the empty environment and
 the identity function as the continuation function:
 
 ```scala
-def evalCPS(str: String): String = interp(Expr(str), Map.empty, v => v).str
+def evalCPS(str: String): String = interpCPS(Expr(str), Map.empty, v => v).str
 ```
 
-The `interp` function evaluates the given expression `expr` with the given
+The `interpCPS` function evaluates the given expression `expr` with the given
 environment `env` and the continuation function `k` to produce a value:
 ```scala
-def interp(expr: Expr, env: Env, k: Value => Value): Value = ???
+def interpCPS(expr: Expr, env: Env, k: Value => Value): Value = ???
 ```
-**Please implement the `interp` function in the `Implementation.scala` file.**
+**Please implement the `interpCPS` function in the `Implementation.scala` file.**
 
 ## (Problem #2) `reduce` (50 points)
 
@@ -67,8 +67,8 @@ The `evalK` function is another way to implement the interpreter by repeatedly
 calling the `reduce` function until the continuation becomes empty:
 ```scala
 def evalK(str: String): String =
-  import Kont.*
-  def aux(k: Kont, s: Stack): Value = reduce(k, s) match
+  import Cont.*
+  def aux(k: Cont, s: Stack): Value = reduce(k, s) match
     case (EmptyK, List(v)) => v
     case (k, s) => aux(k, s)
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
@@ -77,7 +77,7 @@ def evalK(str: String): String =
 The `reduce` function reduces a state `(k, s)` consisting of a continuation `k`
 and a stack `s` into a new state `(k', s')`:
 ```scala
-def reduce(k: Kont, s: Stack): (Kont, Stack) = ???
+def reduce(k: Cont, s: Stack): (Cont, Stack) = ???
 ```
 
 **Please implement the `reduce` function in the `Implementation.scala` file.**
