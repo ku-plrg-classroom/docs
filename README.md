@@ -39,6 +39,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
 | [lfae](./cose212/lfae/README.md) | `LFAE` - `FAE` with Lazy Evaluation |
 | [fae-cps](./cose212/fae-cps/README.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
+| [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
 | | |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 

@@ -39,6 +39,7 @@
 | [mfae](./cose212/mfae/README.ko.md) | `MFAE` - `FAE` with Mutable Variables |
 | [lfae](./cose212/lfae/README.ko.md) | `LFAE` - `FAE` with Lazy Evaluation |
 | [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
+| [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
 | | |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 

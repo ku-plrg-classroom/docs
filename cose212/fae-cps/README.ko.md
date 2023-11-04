@@ -62,7 +62,7 @@ def interpCPS(expr: Expr, env: Env, k: Value => Value): Value = ???
 ```
 **`Implementation.scala` 파일에 `interpCPS` 함수를 구현하세요.**
 
-## (문제 #1) `reduce` (50 점)
+## (문제 #2) `reduce` (50 점)
 
 `evalK` 함수는 다른 방식으로 인터프리터를 구현한 것으로, `reduce` 함수를
 반복적으로 호출하여 현재 상태를 변환하는 방식을 통해 후속 계산 전달 방식을
