@@ -89,7 +89,9 @@ def eval(str: String, debug: Boolean = false): String =
 The `reduce` function represents the reduction relation of the `MAGNET` language
 as a function that reduces a state `st` to another state:
 ```scala
-def reduce(st: State): State = ???
+def reduce(st: State): State =
+  val State(k, s, h, mem) = st
+  ???
 ```
 
 > The following helper functions are defined in the `Implementation.scala` file.

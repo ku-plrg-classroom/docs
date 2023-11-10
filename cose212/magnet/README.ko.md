@@ -87,7 +87,9 @@ def eval(str: String, debug: Boolean = false): String =
 
 `reduce` 함수는 `MAGNET` 언어의 상태를 인자로 받아, 다음 상태를 반환합니다:
 ```scala
-def reduce(st: State): State = ???
+def reduce(st: State): State =
+  val State(k, s, h, mem) = st
+  ???
 ```
 
 > 다음의 함수들이 `Implementation.scala` 파일에 정의되어 있으니, 필요하다면
