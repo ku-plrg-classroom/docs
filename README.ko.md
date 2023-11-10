@@ -42,6 +42,7 @@
 | [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
 | | |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
+| [magnet](./cose212/magnet/README.ko.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 

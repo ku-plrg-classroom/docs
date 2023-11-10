@@ -42,6 +42,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
 | | |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
+| [magnet](./cose212/magnet/README.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 
