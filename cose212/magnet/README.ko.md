@@ -139,7 +139,7 @@ def squareSumExpr(n: Int, m: Int): String = s"""
   sum
 """
 
-def bodyOfSquares(n: Int): String = ???
+def bodyOfSquares: String = ???
 ```
 `squares` 함수는 `from`에서 `to`까지의 숫자들의 제곱을 생성하는 제너레이터
 함수입니다.

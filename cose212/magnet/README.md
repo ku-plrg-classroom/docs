@@ -142,7 +142,7 @@ def squareSumExpr(n: Int, m: Int): String = s"""
   sum
 """
 
-def bodyOfSquares(n: Int): String = ???
+def bodyOfSquares: String = ???
 ```
 The `squares` function is a **generator** function that generates the squares of
 numbers from `from` to `to`.
