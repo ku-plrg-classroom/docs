@@ -41,7 +41,11 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [fae-cps](./cose212/fae-cps/README.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.md) | `TFAE` - `FAE` with Type System |
-| | |
+
+#### Projects
+
+| Name | Explanation |
+| :--: | ----------- |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 | [magnet](./cose212/magnet/README.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
 

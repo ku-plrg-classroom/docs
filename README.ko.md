@@ -41,7 +41,11 @@
 | [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.ko.md) | `TFAE` - `FAE` with Type System |
-| | |
+
+#### 프로젝트
+
+| 이름 | 설명 |
+| :--: | ---- |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 | [magnet](./cose212/magnet/README.ko.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
 
