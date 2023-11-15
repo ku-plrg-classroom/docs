@@ -41,6 +41,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [fae-cps](./cose212/fae-cps/README.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.md) | `TFAE` - `FAE` with Type System |
+| [trfae](./cose212/trfae/README.md) | `TRFAE` - `RFAE` with Type System |
 
 #### Projects
 

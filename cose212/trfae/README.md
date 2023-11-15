@@ -1,19 +1,19 @@
-# `TFAE` - `FAE` with Type System
+# `TRFAE` - `RFAE` with Type System
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/tfae.g8
+sbt new ku-plrg-classroom/trfae.g8
 ```
 
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>tfae
+<pre><code>trfae
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── TFAE.scala ──────────── The definition of the TFAE and parsers
+   │  ├── TRFAE.scala ─────────── The definition of the TRFAE and parsers
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
@@ -21,14 +21,14 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-The `TFAE` language is an extension of the [`FAE`](../fae/README.md) language
+The `TRFAE` language is an extension of the [`RFAE`](../rfae/README.md) language
 with **type system**. In this assignment, you will implement two functions:
 `typeCheck` and `interp`.
 
-## Specification of `TFAE` language
+## Specification of `TRFAE` language
 
-See the [`tfae-spec.pdf`](./tfae-spec.pdf) for the syntax, type system, and
-semantics of the `TFAE` language.
+See the [`trfae-spec.pdf`](./trfae-spec.pdf) for the syntax, type system, and
+semantics of the `TRFAE` language.
 
 ### Type Errors
 

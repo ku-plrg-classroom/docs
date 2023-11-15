@@ -41,6 +41,7 @@
 | [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
 | [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.ko.md) | `TFAE` - `FAE` with Type System |
+| [trfae](./cose212/trfae/README.ko.md) | `TRFAE` - `RFAE` with Type System |
 
 #### 프로젝트
 
