@@ -42,6 +42,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.md) | `TFAE` - `FAE` with Type System |
 | [trfae](./cose212/trfae/README.md) | `TRFAE` - `RFAE` with Type System |
+| [tafae](./cose212/tafae/README.md) | `TAFAE` - `TRFAE` with Algebraic Data Types |
 
 #### Projects
 
