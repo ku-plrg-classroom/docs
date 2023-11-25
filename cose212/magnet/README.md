@@ -145,7 +145,9 @@ def squareSumExpr(n: Int, m: Int): String = s"""
 def bodyOfSquares: String = ???
 ```
 The `squares` function is a **generator** function that generates the squares of
-numbers from `from` to `to`.
+numbers from `from` to `to`. (Note that it returns an empty iterator if `from >
+to`, and you could assume that it always takes two number arguments.)
+```scala
 
 > :warning: Note that the `squares` function is a **generator** function added
 > in the `MAGNET` language, not a normal function. Please try to understand the

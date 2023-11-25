@@ -142,7 +142,8 @@ def squareSumExpr(n: Int, m: Int): String = s"""
 def bodyOfSquares: String = ???
 ```
 `squares` 함수는 `from`에서 `to`까지의 숫자들의 제곱을 생성하는 제너레이터
-함수입니다.
+함수입니다. (`from > to`인 경우 아무것도 생성하지 않고, 이 함수는 항상 두 개의
+숫자를 인자로 받는다고 가정합니다.)
 
 > :warning: `squares` 함수는 일반 함수가 아닌 이 언어에서 추가된 **제너레이터**
 > 함수인 점에 유의하세요. `MAGNET` 언어의 [명세](./magnet-spec.pdf)와
