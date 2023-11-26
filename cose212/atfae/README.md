@@ -1,19 +1,19 @@
-# `TAFAE` - `TRFAE` with Algebraic Data Types
+# `ATFAE` - `TRFAE` with Algebraic Data Types
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/tafae.g8
+sbt new ku-plrg-classroom/atfae.g8
 ```
 
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>tafae
+<pre><code>atfae
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── TAFAE.scala ─────────── The definition of the TAFAE and parsers
+   │  ├── ATFAE.scala ─────────── The definition of the ATFAE and parsers
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
@@ -21,14 +21,14 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-The `TAFAE` language is an extension of the [`TRFAE`](../trfae/README.md)
+The `ATFAE` language is an extension of the [`TRFAE`](../trfae/README.md)
 language with **algebraic data types**.  In this assignment, you will implement
 two functions: `typeCheck` and `interp`.
 
-## Specification of `TAFAE` language
+## Specification of `ATFAE` language
 
-See the [`tafae-spec.pdf`](./tafae-spec.pdf) for the syntax, type system, and
-semantics of the `TAFAE` language.
+See the [`atfae-spec.pdf`](./atfae-spec.pdf) for the syntax, type system, and
+semantics of the `ATFAE` language.
 
 ### Type Errors
 
