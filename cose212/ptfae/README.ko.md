@@ -1,4 +1,4 @@
-# `PTFAE` - `TFAE` with Polymorphic Types
+# `PTFAE` - `TFAE` with Parametric Polymorphism
 
 [English](./README.md) | [한국어](./README.ko.md)
 

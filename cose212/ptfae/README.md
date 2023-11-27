@@ -1,4 +1,4 @@
-# `PTFAE` - `TFAE` with Polymorphic Types
+# `PTFAE` - `TFAE` with Parametric Polymorphism
 
 [English](./README.md) | [한국어](./README.ko.md)
 
@@ -22,7 +22,7 @@ The template source code contains the following files:
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
 The `PTFAE` language is an extension of the [`TFAE`](../tfae/README.md) language
-with **polymorphic types**.  In this assignment, you will implement two
+with **parametric polymorphism**.  In this assignment, you will implement two
 functions: `typeCheck` and `interp`.
 
 ## Specification of `PTFAE` language
