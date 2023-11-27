@@ -42,7 +42,8 @@
 | [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
 | [tfae](./cose212/tfae/README.ko.md) | `TFAE` - `FAE` with Type System |
 | [trfae](./cose212/trfae/README.ko.md) | `TRFAE` - `RFAE` with Type System |
-| [atfae](./cose212/atfae/README.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
+| [atfae](./cose212/atfae/README.ko.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
+| [ptfae](./cose212/ptfae/README.ko.md) | `PTFAE` - `TFAE` with Polymorphic Types |
 
 #### 프로젝트
 
