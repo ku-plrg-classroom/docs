@@ -1,19 +1,19 @@
-# `ATFAE` - `TRFAE` with Type System
+# `BATTERY` - `TFAE` with Parametric Polymorphism
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 다음과 같이 `sbt`를 이용하여 템플릿 코드를 다운로드 받으세요:
 ```bash
-sbt new ku-plrg-classroom/atfae.g8
+sbt new ku-plrg-classroom/battery.g8
 ```
 
 > :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
-<pre><code>atfae
+<pre><code>battery
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── ATFAE.scala ─────────── ATFAE의 정의와 파서들
+   │  ├── BATTERY.scala ───────── BATTERY의 정의와 파서들
    │  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
    │  ├── Template.scala ──────── 구현해야 할 함수들의 템플릿
    │  └── error.scala ─────────── `error` 함수의 정의
@@ -21,14 +21,14 @@ sbt new ku-plrg-classroom/atfae.g8
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
       └─ SpecBase.scala ───────── 테스트 케이스의 공통 기능</code></pre>
 
-`ATFAE` 언어는 [`TRFAE`](../trfae/README.ko.md) 언어에 대수적 자료형( algebraic
-data type)을 추가한 언어입니다. 이 과제에서는 `typeCheck`와 `interp` 함수를
-구현합니다.
+`BATTERY` 언어는 기본적인 타입과 대수적 데이터 타입을 지원하면서 동시에 재귀와
+다형성을 지원하는 언어입니다.  이 과제에서는 `BATTERY` 언어의 타입 검사기
+(`typeCheck`)와 인터프리터(`interp`)를 구현합니다.
 
-## `ATFAE` 언어의 명세
+## `BATTERY` 언어의 명세
 
-`ATFAE` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
-[`atfae-spec.pdf`](./atfae-spec.pdf) 참조하세요.
+`BATTERY` 언어의 문법(syntax)과 의미가(semantics)가 궁금하면,
+[`battery-spec.pdf`](./battery-spec.pdf) 참조하세요.
 
 ### 타입 오류
 
@@ -43,7 +43,7 @@ testExc(eval("(x: Number) => x(1)"))
 비슷한 방식으로, 만약 주어진 표현식이 실행 중에 오류를 발생시키는 경우, `interp`
 함수는 `error` 함수를 통해 오류를 발생시켜야 합니다:
 ```scala
-testExc(eval("1 / 0"))
+testExc(eval("x"))
 ```
 
 하지만, 타입 오류 및 실행 오류의 오류 메시지는 검사 대상이 아니며, 오직 `error`
@@ -62,9 +62,11 @@ testExc(eval("1 / 0"))
 ```scala
 def eval(str: String): String =
   val expr = Expr(str)
-  val ty = typeCheck(expr, TypeEnv())
-  val v = interp(expr, Map.empty)
-  s"${v.str}: ${ty.str}"
+  val ty = typeCheck(expr, TypeEnv()).str
+  val result =
+    try interp(expr, Map.empty).str
+    catch case e: PLError => "ERROR"
+  s"$result: $ty"
 ```
 
 ## (문제 #1) `typeCheck`

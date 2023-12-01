@@ -51,6 +51,7 @@
 | :--: | ---- |
 | [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 | [magnet](./cose212/magnet/README.ko.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
+| [battery](./cose212/battery/README.ko.md) | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 

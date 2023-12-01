@@ -51,6 +51,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | :--: | ----------- |
 | [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
 | [magnet](./cose212/magnet/README.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
+| [battery](./cose212/battery/README.md) | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism |
 
 ### [COSE215: Theory of Computation](https://plrg.korea.ac.kr/courses/cose215/)
 

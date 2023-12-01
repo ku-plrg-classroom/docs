@@ -1,19 +1,19 @@
-# `ATFAE` - `TRFAE` with Algebraic Data Types
+# `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism
 
 [English](./README.md) | [한국어](./README.ko.md)
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/atfae.g8
+sbt new ku-plrg-classroom/battery.g8
 ```
 
 > :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>atfae
+<pre><code>battery
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── ATFAE.scala ─────────── The definition of the ATFAE and parsers
+   │  ├── BATTERY.scala ───────── The definition of the BATTERY and parsers
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
@@ -21,14 +21,16 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-The `ATFAE` language is an extension of the [`TRFAE`](../trfae/README.md)
-language with **algebraic data types**.  In this assignment, you will implement
-two functions: `typeCheck` and `interp`.
+The `BATTERY` language is a toy language that stands for **B**asic and
+**A**lgebraic Data **T**ype-supported **T**yped **E**xpressions with
+**R**ecursions and Pol**Y**morphism.  In this assignment, you will implement the
+type checker (`typeCheck`) and the interpreter (`interp`) of the `BATTERY`
+language.
 
-## Specification of `ATFAE` language
+## Specification of `BATTERY` language
 
-See the [`atfae-spec.pdf`](./atfae-spec.pdf) for the syntax, type system, and
-semantics of the `ATFAE` language.
+See the [`battery-spec.pdf`](./battery-spec.pdf) for the syntax, type system, and
+semantics of the `BATTERY` language.
 
 ### Type Errors
 
@@ -43,7 +45,7 @@ testExc(eval("(x: Number) => x(1)"))
 Similarly, if the semantics of the given expression is not defined, the `interp`
 function should throw an exception using the `error` function:
 ```scala
-testExc(eval("1 / 0"))
+testExc(eval("x"))
 ```
 However, you don't need to consider the specific error messages for both type
 errors and run-time errors.  We will not test error messages but only test
@@ -65,9 +67,11 @@ and the type of the expression:
 ```scala
 def eval(str: String): String =
   val expr = Expr(str)
-  val ty = typeCheck(expr, TypeEnv())
-  val v = interp(expr, Map.empty)
-  s"${v.str}: ${ty.str}"
+  val ty = typeCheck(expr, TypeEnv()).str
+  val result =
+    try interp(expr, Map.empty).str
+    catch case e: PLError => "ERROR"
+  s"$result: $ty"
 ```
 
 ## (Problem #1) `typeCheck`
