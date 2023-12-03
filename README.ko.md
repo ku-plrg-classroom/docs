@@ -44,6 +44,7 @@
 | [trfae](./cose212/trfae/README.ko.md) | `TRFAE` - `RFAE` with Type System |
 | [atfae](./cose212/atfae/README.ko.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
 | [ptfae](./cose212/ptfae/README.ko.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
+| [stfae](./cose212/stfae/README.ko.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
 
 #### 프로젝트
 
