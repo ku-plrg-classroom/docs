@@ -1,4 +1,4 @@
-# `STFAE` - `TFAE` with Parametric Polymorphism
+# `STFAE` - `TFAE` with Subtype Polymorphism
 
 [English](./README.md) | [한국어](./README.ko.md)
 
