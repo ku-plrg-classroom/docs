@@ -45,6 +45,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 | [atfae](./cose212/atfae/README.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
 | [ptfae](./cose212/ptfae/README.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
 | [stfae](./cose212/stfae/README.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
+| [tifae](./cose212/stfae/README.md) | `TIFAE` - `TRFAE` with Type Inference |
 
 #### Projects
 

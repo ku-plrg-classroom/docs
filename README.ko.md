@@ -45,6 +45,7 @@
 | [atfae](./cose212/atfae/README.ko.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
 | [ptfae](./cose212/ptfae/README.ko.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
 | [stfae](./cose212/stfae/README.ko.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
+| [tifae](./cose212/stfae/README.ko.md) | `TIFAE` - `TRFAE` with Type Inference |
 
 #### 프로젝트
 
