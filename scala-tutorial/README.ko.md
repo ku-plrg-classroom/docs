@@ -7,7 +7,8 @@
 sbt new ku-plrg-classroom/scala-tutorial.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 - **[기본 데이터 타입 (10점)](#기본-데이터-타입-10점)**
   - [(문제 #1) `sqsum` (5점)](#문제-1-sqsum-5점)
@@ -162,8 +163,9 @@ enum Tree:
   case Branch(left: Tree, value: Int, right: Tree)
 ```
 
-> :warning: `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
-`Tree` 타입을 `Implentation.scala`에 다시 정의하지 마세요.
+> [!WARNING]
+> `Tree` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로** `Tree`
+> 타입을 `Implentation.scala`에 다시 정의하지 마세요.
 
 예를 들어, 다음은 `Tree` 타입의 예제들입니다.
 ```scala
@@ -256,8 +258,9 @@ enum BE:
   case Not(expr: BE)
 ```
 
-> :warning: `BE` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
-`BE` 타입을 `Implentation.scala`에 다시 정의하지 마세요.
+> [!WARNING]
+> `BE` 타입은 이미 `Template.scala`에 정의되어 있습니다. **절대로**
+> `BE` 타입을 `Implentation.scala`에 다시 정의하지 마세요.
 
 예를 들어, 다음은 `BE` 타입의 예제들입니다.
 ```scala

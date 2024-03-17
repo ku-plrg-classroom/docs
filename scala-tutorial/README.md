@@ -7,7 +7,8 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/scala-tutorial.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md)
+> [!WARNING]
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md)
 > first if you have not read them.
 
 - **[Built-in Data Types (10 points)](#built-in-data-types-10-points)**
@@ -164,8 +165,9 @@ enum Tree:
   case Branch(left: Tree, value: Int, right: Tree)
 ```
 
-> :warning: The `Tree` type is already defined in `Template.scala`. **DO NOT**
-> define it again in `Implementation.scala`.
+> [!WARNING]
+> The `Tree` type is already defined in `Template.scala`. **DO NOT** define it
+> again in `Implementation.scala`.
 
 For example, the following trees are examples of `Tree`:
 ```scala
@@ -257,8 +259,9 @@ enum BE:
   case Not(expr: BE)
 ```
 
-> :warning: The `BE` type is already defined in `Template.scala`. **DO NOT**
-> define it again in `Implementation.scala`.
+> [!WARNING]
+> The `BE` type is already defined in `Template.scala`. **DO NOT** define it
+> again in `Implementation.scala`.
 
 For example, the following boolean expressions are examples of `BE`:
 ```scala

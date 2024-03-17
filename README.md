@@ -74,8 +74,9 @@ Run `sbt new ku-plrg-classroom/[assignment name].g8` in your terminal. The
 assignment directory whose name is the same as the assignment will be created
 under the current directory.
 
-> :warning: You should **REPLACE** `[assignment name]` with the name of the
-> assignment or copy and paste the command from the document of each assignment.
+> [!WARNING]
+> You should **REPLACE** `[assignment name]` with the name of the assignment or
+> copy and paste the command from the document of each assignment.
 
 Below is an example.
 
@@ -85,8 +86,8 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 name [Scala Tutorial]:
 ```
 
-> :warning: Please type `Enter` key if you want to use the default directory
-> name.
+> [!WARNING]
+> Please type `Enter` key if you want to use the default directory name.
 
 ## Directory Structure
 
@@ -205,9 +206,10 @@ test(f(3), 3)
 testExc(f(-1), "non-negative")
 ```
 
-> :warning: Passing all the provided tests does not guarantee that your
-> implementation is correct. So, we **HIGHLY RECOMMEND** adding your own tests
-> to check your implementation.
+> [!WARNING]
+> Passing all the provided tests does not guarantee that your implementation is
+> correct. So, we **HIGHLY RECOMMEND** adding your own tests to check your
+> implementation.
 
 ### Running Test Cases
 
@@ -260,10 +262,11 @@ scala> ...
 Please use [Blackboard](https://kulms.korea.ac.kr/) to submit your code.
 You must submit your `Implementation.scala` of each assignment.
 
-> :warning: **If you copy and paste existing code, you will get an F.** You must
-> work on each assignment by yourself without getting any help. You can refer to
-> the lecture materials, including the lecture slides, or even other materials
-> on the Internet. However, **you should be able to explain the details of your
+> [!WARNING]
+> **If you copy and paste existing code, you will get an F.** You must work on
+> each assignment by yourself without getting any help. You can refer to the
+> lecture materials, including the lecture slides, or even other materials on
+> the Internet. However, **you should be able to explain the details of your
 > code. If not, you will get an F.**
 
 We disallow late submissions. If you submit multiple times, only the last
