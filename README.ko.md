@@ -21,60 +21,59 @@
 
 ### 기본
 
-| 이름 | 설명 |
-| :--: | ---- |
+|                      이름                       | 설명           |
+| :---------------------------------------------: | -------------- |
 | [scala-tutorial](./scala-tutorial/README.ko.md) | Scala 튜토리얼 |
 
 ### [COSE212: 프로그래밍 언어](https://plrg.korea.ac.kr/courses/cose212/)
 
-| 이름 | 설명 |
-| :--: | ---- |
-| [ae](./cose212/ae/README.ko.md) | `AE` - Arithmetic Expressions |
-| [vae](./cose212/vae/README.ko.md) | `VAE` - `AE` with Variables |
-| [f1vae](./cose212/f1vae/README.ko.md) | `F1VAE` - `VAE` with First-Order Functions |
-| [fvae](./cose212/fvae/README.ko.md) | `FVAE` - `VAE` with First-Class Functions |
-| [fae](./cose212/fae/README.ko.md) | `FAE` - `AE` with First-Class Functions |
-| [rfae](./cose212/rfae/README.ko.md) | `RFAE` - `FAE` with Recursion and Conditionals |
-| [bfae](./cose212/bfae/README.ko.md) | `BFAE` - `FAE` with Mutable Boxes |
-| [mfae](./cose212/mfae/README.ko.md) | `MFAE` - `FAE` with Mutable Variables |
-| [lfae](./cose212/lfae/README.ko.md) | `LFAE` - `FAE` with Lazy Evaluation |
+|                   이름                    | 설명                                              |
+| :---------------------------------------: | ------------------------------------------------- |
+|      [ae](./cose212/ae/README.ko.md)      | `AE` - Arithmetic Expressions                     |
+|     [vae](./cose212/vae/README.ko.md)     | `VAE` - `AE` with Variables                       |
+|   [f1vae](./cose212/f1vae/README.ko.md)   | `F1VAE` - `VAE` with First-Order Functions        |
+|    [fvae](./cose212/fvae/README.ko.md)    | `FVAE` - `VAE` with First-Class Functions         |
+|     [fae](./cose212/fae/README.ko.md)     | `FAE` - `AE` with First-Class Functions           |
+|    [rfae](./cose212/rfae/README.ko.md)    | `RFAE` - `FAE` with Recursion and Conditionals    |
+|    [bfae](./cose212/bfae/README.ko.md)    | `BFAE` - `FAE` with Mutable Boxes                 |
+|    [mfae](./cose212/mfae/README.ko.md)    | `MFAE` - `FAE` with Mutable Variables             |
+|    [lfae](./cose212/lfae/README.ko.md)    | `LFAE` - `FAE` with Lazy Evaluation               |
 | [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
-| [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
-| [tfae](./cose212/tfae/README.ko.md) | `TFAE` - `FAE` with Type System |
-| [trfae](./cose212/trfae/README.ko.md) | `TRFAE` - `RFAE` with Type System |
-| [atfae](./cose212/atfae/README.ko.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
-| [ptfae](./cose212/ptfae/README.ko.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
-| [stfae](./cose212/stfae/README.ko.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
-| [tifae](./cose212/tifae/README.ko.md) | `TIFAE` - `TRFAE` with Type Inference |
+|    [kfae](./cose212/kfae/README.ko.md)    | `KFAE` - `FAE` with First-Class Continuations     |
+|    [tfae](./cose212/tfae/README.ko.md)    | `TFAE` - `FAE` with Type System                   |
+|   [trfae](./cose212/trfae/README.ko.md)   | `TRFAE` - `RFAE` with Type System                 |
+|   [atfae](./cose212/atfae/README.ko.md)   | `ATFAE` - `TRFAE` with Algebraic Data Types       |
+|   [ptfae](./cose212/ptfae/README.ko.md)   | `PTFAE` - `TFAE` with Parametric Polymorphism     |
+|   [stfae](./cose212/stfae/README.ko.md)   | `STFAE` - `TFAE` with Subtype Polymorphism        |
+|   [tifae](./cose212/tifae/README.ko.md)   | `TIFAE` - `TRFAE` with Type Inference             |
 
 #### 프로젝트
 
-| 이름 | 설명 |
-| :--: | ---- |
-| [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
-| [magnet](./cose212/magnet/README.ko.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
+|                   이름                    | 설명                                                                                                   |
+| :---------------------------------------: | ------------------------------------------------------------------------------------------------------ |
+|  [cobalt](./cose212/cobalt/README.ko.md)  | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples             |
+|  [magnet](./cose212/magnet/README.ko.md)  | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions                               |
 | [battery](./cose212/battery/README.ko.md) | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 
-| 이름 | 설명 |
-| :--: | ---- |
-| [fa-examples](./cose215/fa-examples/README.ko.md) | Finite Automata 예제 |
-| [equiv-re-fa](./cose215/equiv-re-fa/README.ko.md) | Regular Expression과 Finite Automata의 동치성 |
+|                         이름                          | 설명                                              |
+| :---------------------------------------------------: | ------------------------------------------------- |
+|   [fa-examples](./cose215/fa-examples/README.ko.md)   | Finite Automata 예제                              |
+|   [equiv-re-fa](./cose215/equiv-re-fa/README.ko.md)   | Regular Expression과 Finite Automata의 동치성     |
 | [equiv-pda-cfg](./cose215/equiv-pda-cfg/README.ko.md) | Pushdown Automata와 Context-Free Grammar의 동치성 |
 
 ## 사전 준비
 
-* JDK >= 8 (<https://www.oracle.com/java/technologies/downloads/>)
-* sbt (<https://www.scala-sbt.org/download.html>)
+- JDK >= 8 (<https://www.oracle.com/java/technologies/downloads/>)
+- sbt (<https://www.scala-sbt.org/download.html>)
 
 ## 다운로드
 
 터미널에서 `sbt new ku-plrg-classroom/[assignment name].g8`를 실행합니다.
 현재 디렉토리 아래에 과제 이름과 동일한 디렉토리가 생성됩니다.
 
-> [!WARNING]
-> `[assignment name]`을 과제 이름으로 바꿔주세요. 혹은, 각 과제의 문서에서
+> [!WARNING] > `[assignment name]`을 과제 이름으로 바꿔주세요. 혹은, 각 과제의 문서에서
 > 명령어를 복사해서 붙여넣어도 됩니다.
 
 아래는 예시입니다.
@@ -85,8 +84,13 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 name [Scala Tutorial]:
 ```
 
-> [!WARNING]
-> 기본 디렉토리 이름을 사용하려면 `Enter` 키를 눌러주세요.
+번역:
+
+기본 디렉토리 이름을 사용하려면 `Enter` 키를 눌러주세요.
+
+만약 프로젝트를 성공적으로 다운로드했다면, 디렉토리에 `/src`와 `/project`, 그리고 `build.sbt` 파일이 있어야 합니다.
+
+> [!WARNING] > `.g8` 폴더나 저장소를 직접 다운로드하거나 클론하지 마세요. `sbt new` 명령어를 사용하여 숙제를 다운로드해야 합니다.
 
 ## 디렉토리 구조
 
@@ -103,47 +107,47 @@ name [Scala Tutorial]:
 **절대로** `src/main/scala/kuplrg/Implementation.scala`와
 `src/test/scala/kuplrg/Spec.scala` 이외의 파일을 수정하지 마세요.
 
-* `src/main/scala/kuplrg/Implementation.scala`:
-이 파일에 구현해야 하는 함수의 정의가 있습니다. 이 파일만 수정하면 과제를 완료할
-수 있습니다.
+- `src/main/scala/kuplrg/Implementation.scala`:
+  이 파일에 구현해야 하는 함수의 정의가 있습니다. 이 파일만 수정하면 과제를 완료할
+  수 있습니다.
 
-* `src/main/scala/kuplrg/Template.scala`:
-이 파일에는 구현해야 하는 함수의 정의가 있습니다. 이 파일은 **절대로** 수정하지
-마세요.
+- `src/main/scala/kuplrg/Template.scala`:
+  이 파일에는 구현해야 하는 함수의 정의가 있습니다. 이 파일은 **절대로** 수정하지
+  마세요.
 
-* `src/main/scala/kuplrg/error.scala`:
- 이 파일은 `error` 함수를 정의하고 있습니다. 자세한 내용은
-[예외처리](#예외처리) 부분을 참고하세요.
+- `src/main/scala/kuplrg/error.scala`:
+  이 파일은 `error` 함수를 정의하고 있습니다. 자세한 내용은
+  [예외처리](#예외처리) 부분을 참고하세요.
 
-* `src/test/scala/kuplrg/Spec.scala`
-이 파일에는 테스트 케이스가 있습니다. 테스트 케이스 작성과 실행 방법은 [테스트
-케이스 작성](#테스트-케이스-작성)과 [테스트 케이스 실행](#테스트-케이스-실행)
-부분을 참고하세요.
+- `src/test/scala/kuplrg/Spec.scala`
+  이 파일에는 테스트 케이스가 있습니다. 테스트 케이스 작성과 실행 방법은 [테스트
+  케이스 작성](#테스트-케이스-작성)과 [테스트 케이스 실행](#테스트-케이스-실행)
+  부분을 참고하세요.
 
-* `src/test/scala/kuplrg/SpecBase.scala`
-이 파일은 테스트 케이스를 위한 기본 프레임워크를 포함하고 있습니다. 이 파일을
-읽거나 수정할 필요는 없습니다.
-
+- `src/test/scala/kuplrg/SpecBase.scala`
+  이 파일은 테스트 케이스를 위한 기본 프레임워크를 포함하고 있습니다. 이 파일을
+  읽거나 수정할 필요는 없습니다.
 
 ## 제약사항
 
 **절대로** 다음의 기능을 사용하지 마십시오:
-* `var`
-* `while`
-* `asInstanceOf`
-* `isInstanceOf`
-* `null`
-* `return`
-* `throw`
-* `try-catch`
-* 가변 데이터 구조 (`scala.collection.mutable`)
+
+- `var`
+- `while`
+- `asInstanceOf`
+- `isInstanceOf`
+- `null`
+- `return`
+- `throw`
+- `try-catch`
+- 가변 데이터 구조 (`scala.collection.mutable`)
 
 위에서 언급한 기능 외에는 자유롭게 사용하실 수 있습니다. 예를 들어,
 
-* 새로운 함수나 타입을 정의할 수 있습니다.
-* 불변 데이터 구조를 사용할 수 있습니다.
-* `for` comprehension을 사용할 수 있습니다.
-* 이미 정의된 가변 변수/필드를 변경할 수 있습니다.
+- 새로운 함수나 타입을 정의할 수 있습니다.
+- 불변 데이터 구조를 사용할 수 있습니다.
+- `for` comprehension을 사용할 수 있습니다.
+- 이미 정의된 가변 변수/필드를 변경할 수 있습니다.
 
 금지된 기능을 사용하면 코드가 컴파일되지 않습니다. 만약 코드가 성공적으로
 컴파일되면 금지된 기능을 사용하지 않았다는 것을 의미합니다.
@@ -177,12 +181,12 @@ f(-1)         // "x must be non-negative"를 메시지로 가지는 `PLError`를
 `Spec.scala`에 테스트 케이스를 작성할 수 있습니다. `check`, `test`, 그리고
 `testExc` 함수를 사용하여 구현을 테스트할 수 있습니다:
 
-* `check` 함수는 임의의 표현식을 받아서, 그 표현식이 예외를 던지지 않고 정상적으로
-    종료되는지 확인합니다.
-* `test` 함수는 두 개의 같은 타입을 가지는 표현식을 받아서, 그 두 표현식이 같은
-    값을 가지는지 확인합니다.
-* `testExc` 함수는 표현식과 문자열을 받아서, 그 표현식이 주어진 문자열을 포함하는
-    메시지를 가지는 `PLError` 예외를 던지는지 확인합니다.
+- `check` 함수는 임의의 표현식을 받아서, 그 표현식이 예외를 던지지 않고 정상적으로
+  종료되는지 확인합니다.
+- `test` 함수는 두 개의 같은 타입을 가지는 표현식을 받아서, 그 두 표현식이 같은
+  값을 가지는지 확인합니다.
+- `testExc` 함수는 표현식과 문자열을 받아서, 그 표현식이 주어진 문자열을 포함하는
+  메시지를 가지는 `PLError` 예외를 던지는지 확인합니다.
 
 예를 들어, 다음과 같이 `f` 함수를 테스트할 수 있습니다:
 
@@ -206,10 +210,14 @@ testExc(f(-1), "non-negative")
 > 않습니다. 따라서, 자신만의 테스트 케이스를 작성하여 구현을 더 엄밀하게
 > 테스트하는 것을 **매우 권장**합니다.
 
-
 ### 테스트 케이스 실행
 
 테스트 케이스를 실행하기 위해서는 터미널에서 `sbt` 콘솔을 실행해야 합니다.
+
+> [!WARNING]
+> 올바른 디렉토리에서 `sbt`를 실행해야 합니다. 일반적으로, `build.sbt` 파일이
+> 존재하는 디렉토리에서 `sbt`를 실행해야 합니다.
+
 ```
 $ sbt
 [info] welcome to sbt
@@ -252,20 +260,53 @@ scala> import kuplrg.*, Implementation.*
 scala> ...
 ```
 
+### 테스트 없이 코드 실행하기
+
+만약 임의의 코드를 실행하고 싶다면, 다른 언어들과 마찬가지로 자신만의 main 메소드를
+정의할 수 있습니다. Scala는 `@main` 어노테이션을 사용하여 메소드(함수)를 main 메소드로
+정의합니다:
+
+```scala
+@main def myMain = {
+  // write your code here
+}
+```
+
+만약 다른 객체나 클래스에 정의된 함수를 사용하고 싶다면, 그것을 import해야 합니다. 예를
+들어, `Implementation.scala`에 main 함수를 추가하고 싶다면, `object Implementation`를 import하여
+그 안에 정의된 함수를 사용할 수 있습니다.
+
+```scala
+object Implementation extends Template {
+  ...
+}
+
+@main def myMain = {z
+  import Implementation._
+  // it imports all method of the object 'Implementation'
+
+  // then write your code here
+}
+```
+
+이제 `sbt` 콘솔에서 `run` 명령을 사용하여 main 메소드를 실행할 수 있습니다.
+
+```
+sbt:...> run
+```
+
 ## 제출
 
 [블랙보드](https://kulms.korea.ac.kr/)를 사용하여 각 숙제의
 `Implementation.scala`를 제출하세요.
 
-> [!WARNING]
-> **기존에 존재하던 코드를 단순히 복사해서 제출하면 F를 받게 됩니다.** 각 숙제는
+> [!WARNING] > **기존에 존재하던 코드를 단순히 복사해서 제출하면 F를 받게 됩니다.** 각 숙제는
 > 반드시 혼자서 구현해야 합니다. 강의 자료, 강의 슬라이드, 인터넷 등을 참고할 수
 > 있습니다. 하지만, **자신이 작성한 코드의 세부사항을 설명할 수 있어야 합니다.
 > 만약 설명을 제대로 하지 못하면, F를 받게 됩니다.**
 
 제출 시간을 넘기면 제출이 불가능합니다. 대신, 제출은 여러번 할 수 있고, 마지막에
 제출한 코드가 채점됩니다.
-
 
 ## 채점
 
@@ -276,3 +317,57 @@ scala> ...
 많은 점수를 얻게 됩니다. 각 테스트 케이스는 서로 영향을 주지 않습니다. 예를
 들어, 특정 테스트 케이스에서 구현이 무한 루프에 빠져도 다른 테스트 케이스는
 정상적으로 채점됩니다.
+
+## IDE와 텍스트 에디터 사용하기
+
+### Scala를 위한 VSCode 사용하기
+
+[Visual Studio Code](https://code.visualstudio.com/)를 사용하여 Scala 파일을 편집할 수 있습니다. [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals) 확장을 설치하여 구문 강조, 코드 완성, 디버깅과 같은 기능을 사용할 수 있습니다.
+
+Scala 개발에는 Metals를 사용하는 것을 강력히 권장합니다. Metals에 대한 자세한 정보는 [공식 문서](https://scalameta.org/metals/docs/editors/vscode.html)에서 찾을 수 있습니다.
+
+그러나 때로는 `wart` 플러그인이 Metals와 함께 제대로 작동하지 않을 수 있습니다. 이 경우, `build.sbt`에서 다음 줄을 주석 처리하여 `wart` 플러그인을 일시적으로 제거할 수 있습니다.
+
+```scala
+lazy val root = project
+  .in(file("."))
+  .settings(
+    name := "equiv-pda-cfg",
+    libraryDependencies ++= Seq(
+      "io.circe" %% "circe-core" % "0.14.3",
+      "io.circe" %% "circe-generic" % "0.14.3",
+      "io.circe" %% "circe-parser" % "0.14.3",
+      "org.scalatest" %% "scalatest" % "3.2.15" % Test,
+      ("org.scala-lang.modules" %% "scala-parser-combinators" % "2.2.0")
+        .cross(CrossVersion.for3Use2_13),
+    ),
+
+    // Comment out the following lines
+
+    // wartremoverClasspaths += "file://" + baseDirectory.value + "/../lib/warts.jar",
+    // wartremoverErrors ++= Seq(
+    //   Wart.AsInstanceOf, Wart.IsInstanceOf, Wart.Null, Wart.Return, Wart.Throw,
+    //   Wart.Var, Wart.While, Wart.MutableDataStructures,
+    //   Wart.custom("kuplrg.warts.TryCatch"),
+    // ),
+    // wartremoverExcluded ++= Seq(
+    //   baseDirectory.value / "src" / "main" / "scala" / "kuplrg" / "basics.scala",
+    //   baseDirectory.value / "src" / "main" / "scala" / "kuplrg" / "error.scala",
+    //   baseDirectory.value / "src" / "test" / "scala" / "kuplrg",
+    // ),
+  )
+```
+
+위의 줄을 주석 처리한 후, 프로젝트를 새로 고칠 수 있도록 `sbt`를 다시 실행해야 합니다. 또는 다음 명령을 사용하여 프로젝트를 새로 고칠 수 있습니다.
+
+```bash
+sbt reload
+```
+
+> [!WARNING] > `wart` 플러그인이 주석 처리된 구현을 제출해서는 안됩니다. 제출 전에 `wart` 플러그인을 사용하여 구현이 제대로 작동하는지 확인해야 합니다. 즉, 구현에서 `var`, `while`, `asInstanceOf`, `isInstanceOf`, `null`, `return`, `throw`, `try-catch`와 같은 금지된 기능을 사용해서는 안됩니다.
+
+### Scala를 위한 IntelliJ IDEA 사용하기
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/)를 사용하여 Scala 파일을 편집할 수 있습니다. Scala 플러그인을 설치하여 구문 강조, 코드 완성, 디버깅과 같은 기능을 사용할 수 있습니다.
+
+대학생들은 무료로 [IntelliJ IDEA Ultimate](https://www.jetbrains.com/community/education/#students)를 사용할 수 있습니다. Scala 플러그인에 대한 자세한 정보는 [공식 문서](https://www.jetbrains.com/help/idea/discover-intellij-idea-for-scala.html)에서 찾을 수 있습니다.
