@@ -74,10 +74,10 @@ Run `sbt new ku-plrg-classroom/[assignment name].g8` in your terminal. The
 assignment directory whose name is the same as the assignment will be created
 under the current directory.
 
-> [!NOTE]
+> [!WARNING]
 >
-> You should **REPLACE** `[assignment name]` with the name of the assignment or
-> copy and paste the command from the document of each assignment.
+> You should **REPLACE** `[assignment name]` with the **name of the assignment**
+> or copy and paste the command from the document of each assignment.
 
 Below is an example.
 
