@@ -8,6 +8,7 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 ```
 
 > [!WARNING]
+>
 > Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md)
 > first if you have not read them.
 
