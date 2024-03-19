@@ -1,7 +1,5 @@
 # `TRFAE` - `RFAE` with Type System
 
-[English](./README.md) | [한국어](./README.ko.md)
-
 Please download the template code as follows:
 ```bash
 sbt new ku-plrg-classroom/trfae.g8

@@ -1,7 +1,5 @@
 # `MFAE` - `FAE` with Mutable Variables
 
-[English](./README.md) | [한국어](./README.ko.md)
-
 Please download the template code as follows:
 ```bash
 sbt new ku-plrg-classroom/mfae.g8

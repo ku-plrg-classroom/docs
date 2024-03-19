@@ -74,7 +74,7 @@ Run `sbt new ku-plrg-classroom/[assignment name].g8` in your terminal. The
 assignment directory whose name is the same as the assignment will be created
 under the current directory.
 
-> [!WARNING]
+> [!NOTE]
 >
 > You should **REPLACE** `[assignment name]` with the name of the assignment or
 > copy and paste the command from the document of each assignment.
@@ -87,7 +87,7 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 name [Scala Tutorial]:
 ```
 
-> [!WARNING]
+> [!NOTE]
 >
 > Please type `Enter` key if you want to use the default directory name.
 
@@ -265,7 +265,7 @@ scala> ...
 Please use [Blackboard](https://kulms.korea.ac.kr/) to submit your code.
 You must submit your `Implementation.scala` of each assignment.
 
-> [!WARNING]
+> [!CAUTION]
 >
 > **If you copy and paste existing code, you will get an F.** You must work on
 > each assignment by yourself without getting any help. You can refer to the

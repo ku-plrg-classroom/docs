@@ -23,45 +23,45 @@
 
 | 이름 | 설명 |
 | :--: | ---- |
-| [scala-tutorial](./scala-tutorial/README.ko.md) | Scala 튜토리얼 |
+| [scala-tutorial](./scala-tutorial/README.md) | Scala Tutorial |
 
 ### [COSE212: 프로그래밍 언어](https://plrg.korea.ac.kr/courses/cose212/)
 
 | 이름 | 설명 |
 | :--: | ---- |
-| [ae](./cose212/ae/README.ko.md) | `AE` - Arithmetic Expressions |
-| [vae](./cose212/vae/README.ko.md) | `VAE` - `AE` with Variables |
-| [f1vae](./cose212/f1vae/README.ko.md) | `F1VAE` - `VAE` with First-Order Functions |
-| [fvae](./cose212/fvae/README.ko.md) | `FVAE` - `VAE` with First-Class Functions |
-| [fae](./cose212/fae/README.ko.md) | `FAE` - `AE` with First-Class Functions |
-| [rfae](./cose212/rfae/README.ko.md) | `RFAE` - `FAE` with Recursion and Conditionals |
-| [bfae](./cose212/bfae/README.ko.md) | `BFAE` - `FAE` with Mutable Boxes |
-| [mfae](./cose212/mfae/README.ko.md) | `MFAE` - `FAE` with Mutable Variables |
-| [lfae](./cose212/lfae/README.ko.md) | `LFAE` - `FAE` with Lazy Evaluation |
-| [fae-cps](./cose212/fae-cps/README.ko.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
-| [kfae](./cose212/kfae/README.ko.md) | `KFAE` - `FAE` with First-Class Continuations |
-| [tfae](./cose212/tfae/README.ko.md) | `TFAE` - `FAE` with Type System |
-| [trfae](./cose212/trfae/README.ko.md) | `TRFAE` - `RFAE` with Type System |
-| [atfae](./cose212/atfae/README.ko.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
-| [ptfae](./cose212/ptfae/README.ko.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
-| [stfae](./cose212/stfae/README.ko.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
-| [tifae](./cose212/tifae/README.ko.md) | `TIFAE` - `TRFAE` with Type Inference |
+| [ae](./cose212/ae/README.md) | `AE` - Arithmetic Expressions |
+| [vae](./cose212/vae/README.md) | `VAE` - `AE` with Variables |
+| [f1vae](./cose212/f1vae/README.md) | `F1VAE` - `VAE` with First-Order Functions |
+| [fvae](./cose212/fvae/README.md) | `FVAE` - `VAE` with First-Class Functions |
+| [fae](./cose212/fae/README.md) | `FAE` - `AE` with First-Class Functions |
+| [rfae](./cose212/rfae/README.md) | `RFAE` - `FAE` with Recursion and Conditionals |
+| [bfae](./cose212/bfae/README.md) | `BFAE` - `FAE` with Mutable Boxes |
+| [mfae](./cose212/mfae/README.md) | `MFAE` - `FAE` with Mutable Variables |
+| [lfae](./cose212/lfae/README.md) | `LFAE` - `FAE` with Lazy Evaluation |
+| [fae-cps](./cose212/fae-cps/README.md) | `FAE-cps` - `FAE` with Continuation-Passing Style |
+| [kfae](./cose212/kfae/README.md) | `KFAE` - `FAE` with First-Class Continuations |
+| [tfae](./cose212/tfae/README.md) | `TFAE` - `FAE` with Type System |
+| [trfae](./cose212/trfae/README.md) | `TRFAE` - `RFAE` with Type System |
+| [atfae](./cose212/atfae/README.md) | `ATFAE` - `TRFAE` with Algebraic Data Types |
+| [ptfae](./cose212/ptfae/README.md) | `PTFAE` - `TFAE` with Parametric Polymorphism |
+| [stfae](./cose212/stfae/README.md) | `STFAE` - `TFAE` with Subtype Polymorphism |
+| [tifae](./cose212/tifae/README.md) | `TIFAE` - `TRFAE` with Type Inference |
 
 #### 프로젝트
 
 | 이름 | 설명 |
 | :--: | ---- |
-| [cobalt](./cose212/cobalt/README.ko.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
-| [magnet](./cose212/magnet/README.ko.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
-| [battery](./cose212/battery/README.ko.md) | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism |
+| [cobalt](./cose212/cobalt/README.md) | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples |
+| [magnet](./cose212/magnet/README.md) | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions |
+| [battery](./cose212/battery/README.md) | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism |
 
 ### [COSE215: 계산이론](https://plrg.korea.ac.kr/courses/cose215/)
 
 | 이름 | 설명 |
 | :--: | ---- |
-| [fa-examples](./cose215/fa-examples/README.ko.md) | Finite Automata 예제 |
-| [equiv-re-fa](./cose215/equiv-re-fa/README.ko.md) | Regular Expression과 Finite Automata의 동치성 |
-| [equiv-pda-cfg](./cose215/equiv-pda-cfg/README.ko.md) | Pushdown Automata와 Context-Free Grammar의 동치성 |
+| [fa-examples](./cose215/fa-examples/README.md) | Finite Automata Examples |
+| [equiv-re-fa](./cose215/equiv-re-fa/README.md) | Equivalence of Regular Expressions and Finite Automata |
+| [equiv-pda-cfg](./cose215/equiv-pda-cfg/README.md) | Equivalence of Pushdown Automata and Context-Free Grammars |
 
 ## 사전 준비
 
@@ -73,7 +73,7 @@
 터미널에서 `sbt new ku-plrg-classroom/[assignment name].g8`를 실행합니다.
 현재 디렉토리 아래에 과제 이름과 동일한 디렉토리가 생성됩니다.
 
-> [!WARNING]
+> [!NOTE]
 >
 > `[assignment name]`을 과제 이름으로 바꿔주세요. 혹은, 각 과제의 문서에서
 > 명령어를 복사해서 붙여넣어도 됩니다.
@@ -86,7 +86,7 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 name [Scala Tutorial]:
 ```
 
-> [!WARNING]
+> [!NOTE]
 >
 > 기본 디렉토리 이름을 사용하려면 `Enter` 키를 눌러주세요.
 
@@ -260,7 +260,7 @@ scala> ...
 [블랙보드](https://kulms.korea.ac.kr/)를 사용하여 각 숙제의
 `Implementation.scala`를 제출하세요.
 
-> [!WARNING]
+> [!CAUTION]
 >
 > **기존에 존재하던 코드를 단순히 복사해서 제출하면 F를 받게 됩니다.** 각 숙제는
 > 반드시 혼자서 구현해야 합니다. 강의 자료, 강의 슬라이드, 인터넷 등을 참고할 수

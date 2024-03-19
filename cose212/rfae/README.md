@@ -1,7 +1,5 @@
 # `RFAE` - `FAE` with Recursion and Conditionals
 
-[English](./README.md) | [한국어](./README.ko.md)
-
 Please download the template code as follows:
 ```bash
 sbt new ku-plrg-classroom/rfae.g8

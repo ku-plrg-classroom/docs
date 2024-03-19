@@ -1,7 +1,5 @@
 # Equivalence of Regular Expressions and Finite Automata
 
-[English](./README.md) | [한국어](./README.ko.md)
-
 Please download the template code as follows:
 ```bash
 sbt new ku-plrg-classroom/equiv-re-fa.g8
