@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/fa-examples.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>fa-examples
@@ -50,7 +52,9 @@ the `Implementation.scala` file.**
 
 ## Automata Viewer
 
-> :warning: You can skip this section if you are not interested in the automata
+> [!WARNING]
+>
+> You can skip this section if you are not interested in the automata
 > viewer. However, it is HIGHLY RECOMMENDED to use the automata viewer to check
 > your automata when your implementation cannot pass the test cases.
 
@@ -148,7 +152,9 @@ $${\large
 L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011} \text{ is a subsequence of } w \rbrace
 }$$
 
-> :warning: Note that the SUBSEQUENCE is not necessarily contiguous unlike the SUBSTRING. For example, $\texttt{011}$ is a subsequence of $\texttt{10101}$ because the second ($\texttt{0}$), third ($\texttt{1}$), and fifth ($\texttt{1}$) characters of $\texttt{10101}$ are $\texttt{011}$.
+> [!WARNING]
+>
+> Note that the SUBSEQUENCE is not necessarily contiguous unlike the SUBSTRING. For example, $\texttt{011}$ is a subsequence of $\texttt{10101}$ because the second ($\texttt{0}$), third ($\texttt{1}$), and fifth ($\texttt{1}$) characters of $\texttt{10101}$ are $\texttt{011}$.
 
 For example, $\texttt{011}$, $\texttt{10101}$, $\texttt{101011}$, and $\texttt{10101011}$ are in the language, but $\texttt{0}$, $\texttt{1}$, $\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, and $\texttt{111}$ are not in the language.
 

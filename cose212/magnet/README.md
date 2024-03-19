@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/magnet.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>magnet
@@ -126,7 +128,9 @@ def reduce(st: State): State =
 After passing all the tests of the `reduce` function, you will implement the
 `bodyOfSquares` function.
 
-> :warning: If at least one test of the `reduce` function fails, the
+> [!WARNING]
+>
+> If at least one test of the `reduce` function fails, the
 > `bodyOfSquares` function will not be tested.  Therefore, you must pass all the
 > tests of the `reduce` function before implementing the `bodyOfSquares`
 
@@ -149,7 +153,9 @@ numbers from `from` to `to`. (Note that it returns an empty iterator if `from >
 to`, and you could assume that it always takes two number arguments.)
 ```scala
 
-> :warning: Note that the `squares` function is a **generator** function added
+> [!WARNING]
+>
+> Note that the `squares` function is a **generator** function added
 > in the `MAGNET` language, not a normal function. Please try to understand the
 > semantics of the generator function in the `MAGNET` language
 > [specification](./magnet-spec.pdf) and given test cases in `Spec.scala`.

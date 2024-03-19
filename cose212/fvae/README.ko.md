@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/fvae.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>fvae
@@ -72,7 +74,9 @@ def evalDS(str: String): String = interpDS(Expr(str), Map.empty).toString
 ```scala
 def interpDS(expr: Expr, env: Env): Value = ???
 ```
-> :warning: 기존의 `interp` 함수는 **정적 스코핑(static scoping)** 를 사용하지만,
+> [!WARNING]
+>
+> 기존의 `interp` 함수는 **정적 스코핑(static scoping)** 를 사용하지만,
 > `interpDS` 함수는 **동적 스코프(dynamic scoping)** 를 사용합니다. 이 두 가지
 > 스코핑 방식의 차이점은 [명세](./fvae-spec.pdf)의 4.1 절을 참조하세요.
 

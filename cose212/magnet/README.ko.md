@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/magnet.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>magnet
@@ -123,7 +125,9 @@ def reduce(st: State): State =
 
 `reduce` 함수의 모든 테스트를 통과한 후, `bodyOfSquares` 함수를 구현합니다.
 
-> :warning: 만약 `reduce` 함수의 테스트를 하나라도 통과하지 못한다면,
+> [!WARNING]
+>
+> 만약 `reduce` 함수의 테스트를 하나라도 통과하지 못한다면,
 > `bodyOfSquares` 함수는 테스트되지 않습니다.  따라서, `bodyOfSquares` 함수를
 > 구현하기 전에 `reduce` 함수의 모든 테스트를 통과해야 합니다.
 
@@ -145,7 +149,9 @@ def bodyOfSquares: String = ???
 함수입니다. (`from > to`인 경우 아무것도 생성하지 않고, 이 함수는 항상 두 개의
 숫자를 인자로 받는다고 가정합니다.)
 
-> :warning: `squares` 함수는 일반 함수가 아닌 이 언어에서 추가된 **제너레이터**
+> [!WARNING]
+>
+> `squares` 함수는 일반 함수가 아닌 이 언어에서 추가된 **제너레이터**
 > 함수인 점에 유의하세요. `MAGNET` 언어의 [명세](./magnet-spec.pdf)와
 > `Spec.scala`에 주어진 테스트를 참조하여 제너레이터 함수의 의미를 이해해
 > 보세요.

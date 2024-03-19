@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/cobalt.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>cobalt

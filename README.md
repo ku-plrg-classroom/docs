@@ -75,6 +75,7 @@ assignment directory whose name is the same as the assignment will be created
 under the current directory.
 
 > [!WARNING]
+>
 > You should **REPLACE** `[assignment name]` with the name of the assignment or
 > copy and paste the command from the document of each assignment.
 
@@ -87,6 +88,7 @@ name [Scala Tutorial]:
 ```
 
 > [!WARNING]
+>
 > Please type `Enter` key if you want to use the default directory name.
 
 ## Directory Structure
@@ -207,6 +209,7 @@ testExc(f(-1), "non-negative")
 ```
 
 > [!WARNING]
+>
 > Passing all the provided tests does not guarantee that your implementation is
 > correct. So, we **HIGHLY RECOMMEND** adding your own tests to check your
 > implementation.
@@ -263,6 +266,7 @@ Please use [Blackboard](https://kulms.korea.ac.kr/) to submit your code.
 You must submit your `Implementation.scala` of each assignment.
 
 > [!WARNING]
+>
 > **If you copy and paste existing code, you will get an F.** You must work on
 > each assignment by yourself without getting any help. You can refer to the
 > lecture materials, including the lecture slides, or even other materials on

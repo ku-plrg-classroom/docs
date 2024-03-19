@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/mfae.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>mfae
@@ -77,7 +79,9 @@ the result:
 ```scala
 def interpCBR(expr: Expr, env: Env, mem: Mem): (Value, Mem) = ???
 ```
-> :warning: The original `interp` function uses the **call-by-value (CBV)**
+> [!WARNING]
+>
+> The original `interp` function uses the **call-by-value (CBV)**
 > evaluation strategy. But, the `interpCBR` function uses the
 > **call-by-reference (CBR)** evaluation strategy. Please see the Section 4.1 of
 > the [spec](./mfae-spec.pdf) for the difference between the CBV and the CBR

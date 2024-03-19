@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/atfae.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>atfae

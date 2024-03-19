@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/equiv-re-fa.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>equiv-re-fa
@@ -88,7 +90,9 @@ expression**을 주어진 **initial state**를 가지는 **simplified ε-NFA**�
     case REParen(re) => ???
 ```
 
-> :warning: 하지만, `re2enfa` 함수를 `SimpleENFA` 클래스를 사용하지 않고
+> [!WARNING]
+>
+> 하지만, `re2enfa` 함수를 `SimpleENFA` 클래스를 사용하지 않고
 > 구현하고자 한다면, 그렇게 해도 상관은 없습니다.
 
 
@@ -141,7 +145,9 @@ expression**으로 변환하는 `dfa2re` 함수를 구현하는 것입니다:
     case _ => ???
 ```
 
-> :warning: 하지만, `reForPaths` 함수를 사용하지 않고 `dfa2re` 함수를 구현하고자
+> [!WARNING]
+>
+> 하지만, `reForPaths` 함수를 사용하지 않고 `dfa2re` 함수를 구현하고자
 > 한다면, 그렇게 해도 상관은 없습니다.
 
 디버깅을 위해, `dfa2re` 함수의 `debug` 옵션을 사용할 수 있습니다. 자세한 내용은
@@ -162,7 +168,9 @@ expression**으로 변환하는 `dfa2re` 함수를 구현하는 것입니다:
 
 ### Automata Viewer
 
-> :warning: 만약에 automata viewer를 사용하지 않고 싶다면, 이 설명을 건너뛰어도
+> [!WARNING]
+>
+> 만약에 automata viewer를 사용하지 않고 싶다면, 이 설명을 건너뛰어도
 > 됩니다. 하지만, 구현체의 디버깅을 위해서 automata viewer를 사용하는 것을
 > **매우 권장**합니다.
 
@@ -330,7 +338,9 @@ val dfa: DFA = DFA(
 - 네 번째 인자는 **final state의 집합** (예: `6`은 이진법으로 `110`이고,
     따라서 `Set(1, 2)`로 변환됩니다).
 
-> :warning: Initial state는 항상 `1`입니다.
+> [!WARNING]
+>
+> Initial state는 항상 `1`입니다.
 
 
 ### Regular expression의 String 형태

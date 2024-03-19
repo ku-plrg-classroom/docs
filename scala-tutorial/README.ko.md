@@ -8,6 +8,7 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 ```
 
 > [!WARNING]
+>
 > 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 - **[기본 데이터 타입 (10점)](#기본-데이터-타입-10점)**

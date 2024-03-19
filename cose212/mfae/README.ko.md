@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/mfae.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>mfae
@@ -77,7 +79,9 @@ def evalCBR(str: String): String =
 ```scala
 def interpCBR(expr: Expr, env: Env, mem: Mem): (Value, Mem) = ???
 ```
-> :warning: 기존의 `interp` 함수는 **값에 의한 호출(call-by-value)** 방식을
+> [!WARNING]
+>
+> 기존의 `interp` 함수는 **값에 의한 호출(call-by-value)** 방식을
 > 사용하지만, `interpCBR` 함수는 **참조에 의한 호출(call-by-reference)** 방식을
 > 사용합니다. 이 두 가지 호출 방식의 차이점은 [명세](./mfae-spec.pdf)의 4.1 절을
 > 참조하세요.

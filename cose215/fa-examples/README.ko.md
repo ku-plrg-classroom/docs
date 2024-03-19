@@ -7,7 +7,9 @@
 sbt new ku-plrg-classroom/fa-examples.g8
 ```
 
-> :warning: 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
+> [!WARNING]
+>
+> 아직 [공용 지침서](https://github.com/ku-plrg-classroom/docs/blob/main/README.ko.md)를 읽지 않았다면, 이 문서부터 읽어주세요.
 
 템플릿 코드는 다음과 같은 파일들을 포함합니다:
 <pre><code>fa-examples
@@ -49,7 +51,9 @@ sbt new ku-plrg-classroom/fa-examples.g8
 
 ## Automata Viewer
 
-> :warning: 만약에 automata viewer를 사용하지 않고 싶다면, 이 설명을 건너뛰어도
+> [!WARNING]
+>
+> 만약에 automata viewer를 사용하지 않고 싶다면, 이 설명을 건너뛰어도
 > 됩니다. 하지만, automata viewer를 사용하면 FA 객체들을 시각적으로 확인할 수
 > 있고, 구현체가 왜 각 테스트 케이스를 통과하지 못하는지 확인할 수 있습니다.
 > 따라서, automata viewer를 사용하는 것을 **매우 권장**합니다.
@@ -147,7 +151,9 @@ $${\large
 L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011} \text{ is a subsequence of } w \rbrace
 }$$
 
-> :warning: 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도 됩니다. 예를 들어, $\texttt{011}$은 $\texttt{10101}$의 subsequence입니다. 왜냐하면, $\texttt{10101}$의 두 번째 ($\texttt{0}$), 세 번째 ($\texttt{1}$), 그리고 다섯 번째 ($\texttt{1}$) 문자를 합치면, $\texttt{011}$이기 때문입니다.
+> [!WARNING]
+>
+> 이 정의에서, SUBSEQUENCE는 SUBSTRING과는 다르게 연속적이지 않아도 됩니다. 예를 들어, $\texttt{011}$은 $\texttt{10101}$의 subsequence입니다. 왜냐하면, $\texttt{10101}$의 두 번째 ($\texttt{0}$), 세 번째 ($\texttt{1}$), 그리고 다섯 번째 ($\texttt{1}$) 문자를 합치면, $\texttt{011}$이기 때문입니다.
 
 예를 들어, $\texttt{011}$, $\texttt{10101}$, $\texttt{101011}$, $\texttt{10101011}$등은 이 언어에 속해야 하지만, $\texttt{0}$, $\texttt{1}$, $\texttt{10}$, $\texttt{100}$, $\texttt{101}$, $\texttt{110}$, $\texttt{111}$, 등은 이 언어에 속해서는 안됩니다.
 

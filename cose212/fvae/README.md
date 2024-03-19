@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/fvae.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>fvae
@@ -71,7 +73,9 @@ environment `env` and returns the result:
 ```scala
 def interpDS(expr: Expr, env: Env): Value = ???
 ```
-> :warning: The original `interp` function uses the **static scoping** (i.e.,
+> [!WARNING]
+>
+> The original `interp` function uses the **static scoping** (i.e.,
 > lexical scoping). But, the `interpDS` function uses the **dynamic scoping**.
 > Please see the Section 4.1 of the [spec](./fvae-spec.pdf) for the difference
 > between the static scoping and the dynamic scoping.

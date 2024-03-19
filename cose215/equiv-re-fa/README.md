@@ -7,7 +7,9 @@ Please download the template code as follows:
 sbt new ku-plrg-classroom/equiv-re-fa.g8
 ```
 
-> :warning: Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
+> [!WARNING]
+>
+> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
 <pre><code>equiv-re-fa
@@ -91,7 +93,9 @@ follows:
     case REParen(re) => ???
 ```
 
-> :warning: However, since it is just a recommendation, implement the `re2enfa`
+> [!WARNING]
+>
+> However, since it is just a recommendation, implement the `re2enfa`
 > function without using the `SimpleENFA` class if you want to do so.
 
 ### Test Cases
@@ -144,7 +148,9 @@ body of the `reForPaths` function:
     case _ => ???
 ```
 
-> :warning: However, it is just a recommendation. If you want to implement the
+> [!WARNING]
+>
+> However, it is just a recommendation. If you want to implement the
 > `dfa2re` function without using the `reForPaths` function, you can do so.
 
 For debugging, you can use the `debug` option of the `dfa2re` function. Please
@@ -168,7 +174,9 @@ DFA](#short-definition-of-dfa) section.
 
 ### Automata Viewer
 
-> :warning: You can skip this section if you are not interested in the automata
+> [!WARNING]
+>
+> You can skip this section if you are not interested in the automata
 > viewer. However, it is HIGHLY RECOMMENDED to use it for debugging.
 
 You can dump the automata in HTML format by invoking the `dump` method of the
@@ -242,7 +250,9 @@ You can also check each step-by-step transition in the automata by clicking the
 possible states. Finally, you can stop the step-by-step execution by clicking
 the `STOP` button.
 
-> :warning: You can use the `dump` method for any finite automaton (i.e., DFA,
+> [!WARNING]
+>
+> You can use the `dump` method for any finite automaton (i.e., DFA,
 > NFA, and ENFA).
 
 
@@ -334,7 +344,9 @@ Each argument of the `DFA` constructor is explained as follows:
 - The fourth argument is **the set of final states** (e.g., `6` is the binary
     number `110`. Thus, it will be converted to the set `Set(1, 2)`).
 
-> :warning: The initial state is always `1`.
+> [!WARNING]
+>
+> The initial state is always `1`.
 
 
 ### String Form of Regular Expressions
