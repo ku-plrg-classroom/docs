@@ -176,7 +176,7 @@ Please implement the DFA `dfa_div_3_1` whose language is equal to the following
 language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}^* \rbrace \mid \mathbb{N}(w)
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \mathbb{N}(w)
 \equiv 1 (\text{mod } 3) \rbrace
 }$$
 
