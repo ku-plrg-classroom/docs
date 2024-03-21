@@ -226,11 +226,11 @@ L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
 
 where $\textsf{zeros}(w)$ and $\textsf{ones}(w)$ are the number of $\texttt{0}$
 and $\texttt{1}$, respectively. For example, $\textsf{zeros}(\texttt{10101}) =
-2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\epsilon$, $\texttt{01}$,
+2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\texttt{01}$,
 $\texttt{10}$, $\texttt{0010}$, $\texttt{1101}$, and $\texttt{100101}$ are in
-the language, but $\texttt{0}$, $\texttt{1}$, $\texttt{00}$, $\texttt{11}$,
-$\texttt{100}$, $\texttt{010}$, $\texttt{011}$, $\texttt{101}$, and
-$\texttt{0001001}$ are not in the language.
+the language, but $\epsilon$, $\texttt{0}$, $\texttt{1}$, $\texttt{00}$,
+$\texttt{11}$, $\texttt{100}$, $\texttt{010}$, $\texttt{011}$, $\texttt{101}$,
+and $\texttt{0001001}$ are not in the language.
 
 
 
