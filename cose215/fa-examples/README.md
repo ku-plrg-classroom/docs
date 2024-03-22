@@ -411,7 +411,7 @@ L = \lbrace (\texttt{a} (\texttt{b} \texttt{c}^i \texttt{b})^j \texttt{a})^k
 \mid i, j, k \geq 1 \rbrace
 }$$
 
-For example, $\epsilon, \texttt{abcba}$, $\texttt{abcccba}$,
-$\texttt{abcbbcba}$, and $\texttt{abcbaabcba}$, are in the language, but
-$\texttt{ab}$, $\texttt{bca}$, $\texttt{ccb}$, $\texttt{ca}$, $\texttt{aba}$,
-and $\texttt{abab}$ are not.
+For example, $\texttt{abcba}$, $\texttt{abcccba}$, $\texttt{abcbbcba}$, and
+$\texttt{abcbaabcba}$, are in the language, but $\epsilon$, $\texttt{ab}$,
+$\texttt{bca}$, $\texttt{ccb}$, $\texttt{ca}$, $\texttt{aba}$, and
+$\texttt{abab}$ are not.
