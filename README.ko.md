@@ -19,9 +19,9 @@
 
 ## 과제
 
-* [**COSE212: 프로그래밍 언어**](./cose212/README.md)
+* [**COSE212: 프로그래밍 언어**](./cose212/)
   * Course Page: https://plrg.korea.ac.kr/courses/cose212/
-* [**COSE215: 계산 이론**](./cose215/README.md)
+* [**COSE215: 계산 이론**](./cose215/)
   * Course Page: https://plrg.korea.ac.kr/courses/cose215/
 
 ## 사전 준비

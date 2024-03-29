@@ -19,9 +19,9 @@ This is a repository for assignment documents of courses by the [Programming Lan
 
 ## Assignments
 
-* [**COSE212: Programming Languages**](./cose212/README.md)
+* [**COSE212: Programming Languages**](./cose212/)
   * Course Page: https://plrg.korea.ac.kr/courses/cose212/
-* [**COSE215: Theory of Computation**](./cose215/README.md)
+* [**COSE215: Theory of Computation**](./cose215/)
   * Course Page: https://plrg.korea.ac.kr/courses/cose215/
 
 ## Prerequisites
