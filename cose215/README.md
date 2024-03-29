@@ -15,8 +15,9 @@ University](https://korea.ac.kr).
 
 | Name                                           | Explanation                                                                                                 |
 | :--------------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
-| [fa-examples](./fa-examples/README.md)         | Finite Automata Examples                                                                                     |
-| [equiv-re-fa](./equiv-re-fa/README.md)         | Equivalence of Regular Expressions and Finite Automata                                                       |
+| [fa-examples](./fa-examples/README.md)         | Finite Automata Examples                                                                                    |
+| [equiv-re-fa](./equiv-re-fa/README.md)         | Equivalence of Regular Expressions and Finite Automata                                                      |
+| [rl-closure](./rl-closure/README.md)           | Closure Properties of Regular Languages                                                                     |
 
 ## Pushdown Automata
 

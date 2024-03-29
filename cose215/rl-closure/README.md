@@ -1,8 +1,8 @@
-# Equivalence of Regular Expressions and Finite Automata
+# Closure Properties of Regular Languages
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/equiv-re-fa.g8
+sbt new ku-plrg-classroom/rl-closure.g8
 ```
 
 > [!WARNING]
@@ -10,7 +10,7 @@ sbt new ku-plrg-classroom/equiv-re-fa.g8
 > Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>equiv-re-fa
+<pre><code>rl-closure
 ├─ viewer
 │  ├── index.html ─────────────── The HTML file for the automata viewer
 │  ├── js/data.js ─────────────── The data of automata
@@ -31,12 +31,15 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-**The goal of this assignment is to implement the `enfaToDFA`, `reToENFA`, and
-`dfaToRE` function in the `Implementation.scala` file.**
+**The goal of this assignment is to implement six different functions applying
+corresponding operations on finite automata or regular expressions.**
 
-- [**(Problem #1) Regular Expressions to ε-NFA (30 points)**](#problem-1-regular-expressions-to-ε-nfa-30-points)
-- [**(Problem #2) DFA to Regular Expressions (30 points)**](#problem-2-dfa-to-regular-expressions-30-points)
-- [**(Problem #3) ε-NFA to DFA (40 points)**](#problem-3-ε-nfa-to-dfa-40-points)
+- [**(Problem #1) Complement of DFA (10 points)**](#problem-1-complement-of-dfa-10-points)
+- [**(Problem #2) Intersection of DFA (30 points)**](#problem-2-intersection-of-dfa-30-points)
+- [**(Problem #3) Reversal of ε-NFA (30 points)**](#problem-3-reversal-of-ε-nfa-30-points)
+- [**(Problem #4) Reversal of Regular Expressions (10 points)**](#problem-4-reversal-of-regular-expressions-10-points)
+- [**(Problem #5) Homomorphism of Regular Expressions (10 points)**](#problem-5-homomorphism-of-regular-expressions-10-points)
+- [**(Problem #6) Inverse Homomorphism of DFA (10 points)**](#problem-6-inverse-homomorphism-of-dfa-10-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
   - [Short Definition of FA](#short-definition-of-fa)
@@ -47,167 +50,73 @@ The template source code contains the following files:
 
 
 
-## (Problem 1) Regular Expressions to ε-NFA (30 points)
+## (Problem 1) Complement of DFA (10 points)
 
-The first task is to implement the `reToENFA` function that converts a **regular
-expression** to an **ε-Non-deterministic Finite Automaton (ε-NFA)**.
-
-We recommend you to utilize the **simplified ε-NFA** (`SFA` class defined in
-`Template.scala`).
+The first task is to implement the `complementDFA` function that returns the
+**complement** of the given **deterministic finite automaton (DFA)**.
 
 ```scala
-case class SFA(
-  from: State,
-  edges: Set[SFA.Edge],
-  to: State,
-):
-  def toENFA: ENFA = ENFA(
-    states = (from to to).toSet,
-    symbols = edges.flatMap(_.symbol).toSet,
-    trans = edges
-      .groupBy(t => (t.from, t.symbol))
-      .map((k, v) => (k, v.map(_.to).toSet))
-      .toMap
-      .withDefaultValue(Set()),
-    initState = from,
-    finalStates = Set(to),
-  )
-object SFA:
-  case class Edge(from: State, symbol: Option[Symbol], to: State)
+def complementDFA(dfa: DFA): DFA = ???
 ```
 
-If so, the `reToENFA` function is already implemented as follows:
+
+## (Problem 2) Intersection of DFA (30 points)
+
+The second task is to implement the `intersectDFA` function that returns the
+**intersection** of the given **deterministic finite automata (DFA)**.
 
 ```scala
-def reToENFA(re: RE): ENFA = reToSFA(re, 1).toENFA
+def intersectDFA(ldfa: DFA, rdfa: DFA): DFA = ???
 ```
 
-It first 1) converts a regular expression to a simplified ε-NFA (`SFA`) using
-`reToSFA` and 2) converts the simplified ε-NFA (`SFA`) to an ε-NFA (`ENFA`)
-using the `toENFA` method.
 
-Then, what you have to do is to fill out the remaining parts (`???`) in the body
-of the `reToSFA` function that converts a **regular expression** to a
-**simplified ε-NFA** with an **initial state**.
+## (Problem 3) Reversal of ε-NFA (30 points)
+
+The third task is to implement the `reverseENFA` function that returns the
+**reversal** of the given **ε-nondeterministic finite automaton (ε-NFA)**.
 
 ```scala
-def reToSFA(re: RE, i: State): SFA = ...
+def reverseENFA(enfa: ENFA): ENFA = ???
 ```
 
-> [!NOTE]
->
-> However, since it is just a recommendation, if you want to implement the
-> `reToENFA` function in a different way, you can do so by removing its body and
-> implementing it from scratch.
 
-### Test Cases
+## (Problem 4) Reversal of Regular Expressions (10 points)
 
-The test cases are defined in the `Spec.scala` file. You can add your own test
-cases in the `Spec.scala` file. The test cases are executed when you run `sbt
-test`.
-
-The test cases are defined using the string form of the regular expressions. If
-you want to understand the string form, please refer to [String Form of
-Regular Expressions](#string-form-of-regular-expressions).
-
-You can see the result of the conversion from a regular expression to an ε-NFA
-by using the `dump` method of the `ENFA` class. Please refer to the [Automata
-Viewer](#automata-viewer) section for more details.
-
-
-
-
-
-## (Problem 2) DFA to Regular Expressions (30 points)
-
-The second task is to implement the `dfaToRE` function that converts a
-**deterministic finite automaton (DFA)** to a **regular expression**:
-
-We recommend you to utilize the **inductive construction** algorithm to convert
-a regular expression from a DFA.
-
-If so, the `dfaToRE` function is already implemented as follows:
+The fourth task is to implement the `reverseRE` function that returns the
+**reversal** of the given **regular expression**.
 
 ```scala
-def dfaToRE(dfa: DFA): RE =
-  dfa.finalStates
-    .map(Implementation.reForPaths(dfa, dfa.initState, _, dfa.states.size))
-    .foldLeft(Emp)(Union(_, _))
+def reverseRE(re: RE): RE = ???
 ```
 
-It first 1) constructs a **regular expression representing the set of paths**
-from the **initial state** to **each final state** using the `reForPaths`
-function and 2) performs the **union** operation for all the regular
-expressions.
 
-Then, what you have to do is to fill out the remaining parts (`???`) in the
-body of the `reForPaths` function that constructs a **regular expression**
-representing the **set of paths** from the given state `i` to the given state
-`j` with intermediate states bounded by the given state `k` in the given DFA.
+## (Problem 5) Homomorphism of Regular Expressions (10 points)
+
+The fifth task is to implement the `homRE` function that returns the
+**homomorphism** of the given **regular expression**.
 
 ```scala
-def reForPaths(dfa: DFA, i: State, j: State, k: State): RE = k match
+def homRE(re: RE, h: Hom): RE = ???
 ```
 
-> [!NOTE]
->
-> However, since it is just a recommendation, if you want to implement the
-> `dfaToRE` function in a different way, you can do so by removing its body and
-> implementing it from scratch.
+where the `Hom` type is defined as a mapping from symbols to words in the `basics.scala` file as follows:
+```scala
+type Hom = Map[Symbol, Word]
+```
 
-### Test Cases
+## (Problem 6) Inverse Homomorphism of DFA (10 points)
 
-The test cases are defined in the `Spec.scala` file. You can add your own test
-cases in the `Spec.scala` file. The test cases are executed when you run `sbt
-test`.
-
-The test cases are defined using the short definition of the DFA. If you want to
-understand the short definition, please refer to [Short Definition of
-FA](#short-definition-of-fa) section.
-
-
-
-
-
-## (Problem 3) ε-NFA to DFA (40 points)
-
-The third task is to implement the `enfaToDFA` function that converts an
-**ε-nondeterministic finite automaton (ε-NFA)** to a **deterministic finite
-automaton (DFA)**.
-
-We recommend you to utilize the **subset construction** algorithm to convert an
-ε-NFA to a DFA. If so, the `enfaToDFA` function is already partially
-implemented.
-
-What you have to do is to fill out the missing parts (`???`) in the `enfaToDFA`
-function to return the equivalent DFA of the given ε-NFA.
+The sixth task is to implement the `ihomDFA` function that returns the **inverse
+homomorphism** of the given **deterministic finite automaton (DFA)**.
 
 ```scala
-def enfaToDFA(enfa: ENFA): DFA = ...
+def homRE(re: RE, h: Hom): RE = ???
 ```
 
-> [!NOTE]
->
-> However, since it is just a recommendation, if you want to implement the
-> `enfaToDFA` function in a different way, you can do so by removing its body
-> and implementing it from scratch.
-
-
-### Test Cases
-
-The test cases are defined in the `Spec.scala` file. You can add your own test
-cases in the `Spec.scala` file. The test cases are executed when you run `sbt
-test`.
-
-The test cases are defined using the short definition of the finite automata. If
-you want to understand the short definition, please refer to [Short Definition
-of FA](#short-definition-of-fa) section.
-
-You can see the result of the conversion from an ε-NFA to a DFA by using the
-`dump` method of the `DFA` class. Please refer to the [Automata
-Viewer](#automata-viewer) section for more details.
-
-
+where the `Hom` type is defined as a mapping from symbols to words in the `basics.scala` file as follows:
+```scala
+type Hom = Map[Symbol, Word]
+```
 
 
 
