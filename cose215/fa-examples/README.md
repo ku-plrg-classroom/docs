@@ -418,7 +418,7 @@ Then, the automaton will be dumped to `viewer/js/data.js`, and you can see the
 dumped automaton in the automata viewer by opening `viewer/index.html` in your
 browser (e.g., Chrome, Edge, Safari, Firefox, etc.):
 <p align="center">
-  <img src="../viewer.png" width="500px"/>
+  <img src="../viewer.png" width="800px"/>
 </p>
 
 Similarly, you can dump and visualize any other automata (including `DFA`,
