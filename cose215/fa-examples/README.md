@@ -32,7 +32,6 @@ The template source code contains the following files:
 **The goal of this assignment is to implement the finite automata (FA) objects in
 the `Implementation.scala` file.**
 
-- [Automata Viewer](#automata-viewer)
 - [**Deterministic Finite Automata (DFA) (40 points)**](#deterministic-finite-automata-dfa-40-points)
   - [(Problem #1) `dfa_a_b_star` (10 points)](#problem-1-dfa_a_b_star-10-points)
   - [(Problem #2) `dfa_div_3_1` (10 points)](#problem-2-dfa_div_3_1-10-points)
@@ -46,70 +45,9 @@ the `Implementation.scala` file.**
   - [(Problem #8) `enfa_ab_plus` (10 points)](#problem-8-enfa_ab_plus-10-points)
   - [(Problem #9) `enfa_same_digits` (10 points)](#problem-9-enfa_same_digits-10-points)
   - [(Problem #10) `enfa_complex` (10 points)](#problem-10-enfa_complex-10-points)
-
-
-
-
-## Automata Viewer
-
-> [!NOTE]
->
-> You can skip this section if you are not interested in the automata
-> viewer. However, it is **HIGHLY RECOMMENDED** to use the automata viewer to
-> check your automata when your implementation cannot pass the test cases.
-
-<details>
-  <summary>
-    <font color="blue">
-      <b>Click to read the details about the automata viewer</b>
-    </font>
-  </summary>
-
-  <br/>
-
-You can **dump your automata** in HTML format to interactively visualize them in
-the web browser.
-
-For example, you can dump the automaton `dfa_waa` to the automata viewer by
-invoking the `dump` method of `dfa_waa` in the playground:
-```scala
-object Implementation extends Template {
-  ...
-  @main def playground: Unit = {
-    ...
-    dfa_waa.dump
-    ...
-  }
-  ...
-}
-```
-and run the program using `sbt run`:
-```bash
-$ sbt run
-# Dumped the DFA to `./viewer/js/data.js`.
-# Please open `./viewer/index.html` in your browser.
-```
-Then, the automaton will be dumped to `viewer/js/data.js`, and you can see the
-dumped automaton in the automata viewer by opening `viewer/index.html` in your
-browser (e.g., Chrome, Safari, Firefox, etc.):
-<p align="center">
-  <img src="./viewer.png" width="500px"/>
-</p>
-
-Similarly, you can dump and visualize any other automata you implemented to
-check how they work.
-
-This automata viewer will help you to understand the automata you defined. You
-can check whether your automata accept a given word or not by entering the word
-in the text box and clicking the `ACCEPT` button (or pressing the `Enter` key).
-
-You can also check each step-by-step transition in the automata by clicking the
-`STEP` button after clicking the `START` button. It will highlight the current
-possible states. Finally, you can stop the step-by-step execution by clicking
-the `STOP` button.
-
-</details>
-
+- [Appendix](#appendix)
+  - [Playground](#playground)
+  - [Automata Viewer](#automata-viewer)
 
 
 
@@ -415,3 +353,82 @@ For example, $\texttt{abcba}$, $\texttt{abcccba}$, $\texttt{abcbbcba}$, and
 $\texttt{abcbaabcba}$, are in the language, but $\epsilon$, $\texttt{ab}$,
 $\texttt{bca}$, $\texttt{ccb}$, $\texttt{ca}$, $\texttt{aba}$, and
 $\texttt{abab}$ are not.
+
+
+
+## Appendix
+
+
+### Playground
+
+You can run your implementation in the `playground` method in the
+`Implementation.scala` file.
+
+```scala
+object Implementation extends Template {
+  ...
+  @main def playground: Unit = {
+    ...
+    // Do whatever you want here
+    // For example, you can print "Hello, World!" as follows:
+    println("Hello, World!")
+    ...
+  }
+  ...
+}
+```
+and run the program using `sbt run`:
+```bash
+$ sbt run
+# Hello, World!
+```
+
+
+### Automata Viewer
+
+> [!NOTE]
+>
+> You can skip this section if you are not interested in the automata
+> viewer. However, it is **HIGHLY RECOMMENDED** to use the automata viewer to
+> check your automata when your implementation cannot pass the test cases.
+
+You can **dump your automata** in HTML format to interactively visualize them in
+the web browser.
+
+For example, you can dump the automaton `dfa_waa` to the automata viewer by
+invoking the `dump` method of `dfa_waa` in the playground:
+```scala
+object Implementation extends Template {
+  ...
+  @main def playground: Unit = {
+    ...
+    dfa_waa.dump
+    ...
+  }
+  ...
+}
+```
+and run the program using `sbt run`:
+```bash
+$ sbt run
+# Dumped the DFA to `viewer/js/data.js`.
+# Please open `viewer/index.html` in your browser.
+```
+Then, the automaton will be dumped to `viewer/js/data.js`, and you can see the
+dumped automaton in the automata viewer by opening `viewer/index.html` in your
+browser (e.g., Chrome, Edge, Safari, Firefox, etc.):
+<p align="center">
+  <img src="./viewer.png" width="500px"/>
+</p>
+
+Similarly, you can dump and visualize any other automata (including `DFA`,
+`NFA`, and `ENFA`) that you implemented to check how they work.
+
+This automata viewer will help you to understand the automata you defined. You
+can check whether your automata accept a given word or not by entering the word
+in the text box and clicking the `ACCEPT` button (or pressing the `Enter` key).
+
+You can also check each step-by-step transition in the automata by clicking the
+`STEP` button after clicking the `START` button. It will highlight the current
+possible states. Finally, you can stop the step-by-step execution by clicking
+the `STOP` button.
