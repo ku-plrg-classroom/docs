@@ -34,12 +34,12 @@ The template source code contains the following files:
 **The goal of this assignment is to implement six different functions applying
 corresponding operations on finite automata or regular expressions.**
 
-- [**(Problem #1) Complement of DFA (10 points)**](#problem-1-complement-of-dfa-10-points)
-- [**(Problem #2) Intersection of DFA (30 points)**](#problem-2-intersection-of-dfa-30-points)
-- [**(Problem #3) Reversal of ε-NFA (30 points)**](#problem-3-reversal-of-ε-nfa-30-points)
-- [**(Problem #4) Reversal of Regular Expressions (10 points)**](#problem-4-reversal-of-regular-expressions-10-points)
-- [**(Problem #5) Homomorphism of Regular Expressions (10 points)**](#problem-5-homomorphism-of-regular-expressions-10-points)
-- [**(Problem #6) Inverse Homomorphism of DFA (10 points)**](#problem-6-inverse-homomorphism-of-dfa-10-points)
+- [**(Problem #1) `complementDFA`: Complement of DFA (15 points)**](#problem-1-complementdfa-complement-of-dfa-15-points)
+- [**(Problem #2) `intersectDFA`: Intersection of DFA (20 points)**](#problem-2-intersectdfa-intersection-of-dfa-20-points)
+- [**(Problem #3) `reverseENFA`: Reversal of ε-NFA (20 points)**](#problem-3-reverseenfa-reversal-of-ε-nfa-20-points)
+- [**(Problem #4) `reverseRE`: Reversal of Regular Expressions (15 points)**](#problem-4-reversere-reversal-of-regular-expressions-15-points)
+- [**(Problem #5) `homRE`: Homomorphism of Regular Expressions (15 points)**](#problem-5-homre-homomorphism-of-regular-expressions-15-points)
+- [**(Problem #6) `ihomDFA`: Inverse Homomorphism of DFA (15 points)**](#problem-6-ihomdfa-inverse-homomorphism-of-dfa-15-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
   - [Short Definition of FA](#short-definition-of-fa)
@@ -50,7 +50,7 @@ corresponding operations on finite automata or regular expressions.**
 
 
 
-## (Problem 1) Complement of DFA (10 points)
+## (Problem 1) `complementDFA`: Complement of DFA (15 points)
 
 The first task is to implement the `complementDFA` function that returns the
 **complement** of the given **deterministic finite automaton (DFA)**.
@@ -60,7 +60,7 @@ def complementDFA(dfa: DFA): DFA = ???
 ```
 
 
-## (Problem 2) Intersection of DFA (30 points)
+## (Problem 2) `intersectDFA`: Intersection of DFA (20 points)
 
 The second task is to implement the `intersectDFA` function that returns the
 **intersection** of the given **deterministic finite automata (DFA)**.
@@ -70,7 +70,7 @@ def intersectDFA(ldfa: DFA, rdfa: DFA): DFA = ???
 ```
 
 
-## (Problem 3) Reversal of ε-NFA (30 points)
+## (Problem 3) `reverseENFA`: Reversal of ε-NFA (20 points)
 
 The third task is to implement the `reverseENFA` function that returns the
 **reversal** of the given **ε-nondeterministic finite automaton (ε-NFA)**.
@@ -80,7 +80,7 @@ def reverseENFA(enfa: ENFA): ENFA = ???
 ```
 
 
-## (Problem 4) Reversal of Regular Expressions (10 points)
+## (Problem 4) `reverseRE`: Reversal of Regular Expressions (15 points)
 
 The fourth task is to implement the `reverseRE` function that returns the
 **reversal** of the given **regular expression**.
@@ -90,7 +90,7 @@ def reverseRE(re: RE): RE = ???
 ```
 
 
-## (Problem 5) Homomorphism of Regular Expressions (10 points)
+## (Problem 5) `homRE`: Homomorphism of Regular Expressions (15 points)
 
 The fifth task is to implement the `homRE` function that returns the
 **homomorphism** of the given **regular expression**.
@@ -104,13 +104,13 @@ where the `Hom` type is defined as a mapping from symbols to words in the `basic
 type Hom = Map[Symbol, Word]
 ```
 
-## (Problem 6) Inverse Homomorphism of DFA (10 points)
+## (Problem 6) `ihomDFA`: Inverse Homomorphism of DFA (15 points)
 
 The sixth task is to implement the `ihomDFA` function that returns the **inverse
 homomorphism** of the given **deterministic finite automaton (DFA)**.
 
 ```scala
-def homRE(re: RE, h: Hom): RE = ???
+def ihomDFA(dfa: DFA, h: Hom): DFA = ???
 ```
 
 where the `Hom` type is defined as a mapping from symbols to words in the `basics.scala` file as follows:
