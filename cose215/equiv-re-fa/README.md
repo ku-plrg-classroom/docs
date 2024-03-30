@@ -31,12 +31,12 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-**The goal of this assignment is to implement the `enfaToDFA`, `reToENFA`, and
-`dfaToRE` function in the `Implementation.scala` file.**
+**The goal of this assignment is to implement the `reToENFA`, `dfaToRE`, and
+`enfaToDFA` function in the `Implementation.scala` file.**
 
-- [**(Problem #1) Regular Expressions to ε-NFA (30 points)**](#problem-1-regular-expressions-to-ε-nfa-30-points)
-- [**(Problem #2) DFA to Regular Expressions (30 points)**](#problem-2-dfa-to-regular-expressions-30-points)
-- [**(Problem #3) ε-NFA to DFA (40 points)**](#problem-3-ε-nfa-to-dfa-40-points)
+- [**(Problem #1) `reToENFA`: Regular Expressions to ε-NFA (30 points)**](#problem-1-retoenfa-regular-expressions-to-ε-nfa-30-points)
+- [**(Problem #2) `dfaToRE`: DFA to Regular Expressions (30 points)**](#problem-2-dfatore-dfa-to-regular-expressions-30-points)
+- [**(Problem #3) `enfaToDFA`: ε-NFA to DFA (40 points)**](#problem-3-enfatodfa-ε-nfa-to-dfa-40-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
   - [Short Definition of FA](#short-definition-of-fa)
@@ -47,7 +47,7 @@ The template source code contains the following files:
 
 
 
-## (Problem 1) Regular Expressions to ε-NFA (30 points)
+## (Problem 1) `reToENFA`: Regular Expressions to ε-NFA (30 points)
 
 The first task is to implement the `reToENFA` function that converts a **regular
 expression** to an **ε-Non-deterministic Finite Automaton (ε-NFA)**.
@@ -147,7 +147,7 @@ Viewer](#automata-viewer) section for more details.
 
 
 
-## (Problem 2) DFA to Regular Expressions (30 points)
+## (Problem 2) `dfaToRE`: DFA to Regular Expressions (30 points)
 
 The second task is to implement the `dfaToRE` function that converts a
 **deterministic finite automaton (DFA)** to a **regular expression**:
@@ -198,7 +198,7 @@ FA](#short-definition-of-fa) section.
 
 
 
-## (Problem 3) ε-NFA to DFA (40 points)
+## (Problem 3) `enfaToDFA`: ε-NFA to DFA (40 points)
 
 The third task is to implement the `enfaToDFA` function that converts an
 **ε-nondeterministic finite automaton (ε-NFA)** to a **deterministic finite
