@@ -11,3 +11,7 @@
 ## [**COSE215: 계산 이론**](./cose215/)
 
 * 수업 홈페이지: https://plrg.korea.ac.kr/courses/cose215/
+
+## [**AAA705: 소프트웨어 테스팅 및 품질 보증**](./aaa705/)
+
+* 수업 홈페이지: https://plrg.korea.ac.kr/courses/cose215/

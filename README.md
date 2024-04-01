@@ -11,3 +11,7 @@ This is a repository for assignment documents of courses by the [Programming Lan
 ## [**COSE215: Theory of Computation**](./cose215/)
 
 * Course Page: https://plrg.korea.ac.kr/courses/cose215/
+
+## [**AAA705: Software Testing and Quality Assurance**](./aaa705/)
+
+* Course Page: https://plrg.korea.ac.kr/courses/aaa705/
