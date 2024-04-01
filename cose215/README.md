@@ -7,21 +7,21 @@ University](https://korea.ac.kr).
 
 > [!WARNING]
 >
-> Read the [common instructions](../scala.md) first if you have not read them.
+> Read the [common instructions](/scala.md) first if you have not read them.
 
 ## Basics
 
-| Name                                           | Explanation                                                                                                 |
-| :--------------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
-| [scala-tutorial](../scala-tutorial/README.md)  | Scala Tutorial                                                                                              |
+| Name                                               | Explanation                                                                                             |
+| :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [scala-tutorial](/scala-tutorial/README.md)        | Scala Tutorial                                                                                          |
 
 ## Finite Automata
 
-| Name                                           | Explanation                                                                                                 |
-| :--------------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
-| [fa-examples](./fa-examples/README.md)         | Finite Automata Examples                                                                                    |
-| [equiv-re-fa](./equiv-re-fa/README.md)         | Equivalence of Regular Expressions and Finite Automata                                                      |
-| [rl-closure](./rl-closure/README.md)           | Closure Properties of Regular Languages                                                                     |
+| Name                                               | Explanation                                                                                             |
+| :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [fa-examples](/cose215/fa-examples/README.md)      | Finite Automata Examples                                                                                |
+| [equiv-re-fa](/cose215/equiv-re-fa/README.md)      | Equivalence of Regular Expressions and Finite Automata                                                  |
+| [rl-closure](/cose215/rl-closure/README.md)        | Closure Properties of Regular Languages                                                                 |
 
 ## Pushdown Automata
 

@@ -7,7 +7,7 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
 
 > [!WARNING]
 >
-> Read the [common instructions](https://github.com/ku-plrg-classroom/docs/blob/main/README.md)
+> Read the [common instructions](/scala.md) first if you have not read them.
 > first if you have not read them.
 
 - **[Built-in Data Types (10 points)](#built-in-data-types-10-points)**
