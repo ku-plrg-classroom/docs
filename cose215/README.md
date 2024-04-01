@@ -5,6 +5,10 @@ Computation](https://plrg.korea.ac.kr/courses/cose215/) by the [Programming
 Languages Research Group (PLRG)](https://plrg.korea.ac.kr/) at [Korea
 University](https://korea.ac.kr).
 
+> [!WARNING]
+>
+> Read the [common instructions](../scala.md) first if you have not read them.
+
 ## Basics
 
 | Name                                           | Explanation                                                                                                 |
