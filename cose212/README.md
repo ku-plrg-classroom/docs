@@ -13,7 +13,7 @@ University](https://korea.ac.kr).
 
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
-| [scala-tutorial](/scala-tutorial/README.md)        | Scala Tutorial                                                                                          |
+| [scala-tutorial](/scala/scala-tutorial/README.md)  | Scala Tutorial                                                                                          |
 
 ## Untyped Languages
 
