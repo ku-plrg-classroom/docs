@@ -309,7 +309,7 @@ Each argument of the `DFA` constructor is explained as follows:
     > For example, `4` in base 36 is equal to `100` in base 2. In opposite
     > order, it means the final state is the state `3`.
 
-We can define an NFA and an ε-NFA in a similar way, If you want to see the
+We can define an NFA and an ε-NFA in a similar way. If you want to see the
 result of the short form of the automata, you can use the `dump` method of each
 automaton (Please refer to the [Automata Viewer](#automata-viewer) section for
 more details).

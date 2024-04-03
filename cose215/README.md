@@ -22,6 +22,7 @@ University](https://korea.ac.kr).
 | [fa-examples](/cose215/fa-examples/README.md)      | Finite Automata Examples                                                                                |
 | [equiv-re-fa](/cose215/equiv-re-fa/README.md)      | Equivalence of Regular Expressions and Finite Automata                                                  |
 | [rl-closure](/cose215/rl-closure/README.md)        | Closure Properties of Regular Languages                                                                 |
+| [dfa-eq-min](/cose215/dfa-eq-min/README.md)        | Equivalence and Minimization of Deterministic Finite Automata                                           |
 
 ## Pushdown Automata
 

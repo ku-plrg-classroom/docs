@@ -1,8 +1,8 @@
-# Closure Properties of Regular Languages
+# Equivalence and Minimization of Deterministic Finite Automata
 
 Please download the template code as follows:
 ```bash
-sbt new ku-plrg-classroom/rl-closure.g8
+sbt new ku-plrg-classroom/dfa-eq-min.g8
 ```
 
 > [!WARNING]
@@ -19,9 +19,6 @@ The template source code contains the following files:
    ├─ main/scala/kuplrg
    │  ├── FA.scala ────────────── The base class of finite automata (FA)
    │  ├── DFA.scala ───────────── The class of deterministic finite automata (DFA)
-   │  ├── NFA.scala ───────────── The class of nondeterministic finite automata (NFA)
-   │  ├── ENFA.scala ──────────── The class of ε-nondeterministic finite automata (ε-NFA)
-   │  ├── RE.scala ────────────── The class of regular expressions (REs)
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of FAs that you must implement
    │  ├── Fuzzer.scala ────────── The fuzzer for random generation of FAs and REs
@@ -31,92 +28,77 @@ The template source code contains the following files:
       ├─ Spec.scala ───────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
       └─ SpecBase.scala ───────── The base class of test cases</code></pre>
 
-**The goal of this assignment is to implement six different functions applying
-corresponding operations on finite automata or regular expressions.**
+**The goal of this assignment is to implement three functions to check the
+equivalence and minimize the deterministic finite automata (DFA).**
 
-- [**(Problem #1) `complementDFA`: Complement of DFA (15 points)**](#problem-1-complementdfa-complement-of-dfa-15-points)
-- [**(Problem #2) `intersectDFA`: Intersection of DFA (20 points)**](#problem-2-intersectdfa-intersection-of-dfa-20-points)
-- [**(Problem #3) `reverseENFA`: Reversal of ε-NFA (20 points)**](#problem-3-reverseenfa-reversal-of-ε-nfa-20-points)
-- [**(Problem #4) `reverseRE`: Reversal of Regular Expressions (15 points)**](#problem-4-reversere-reversal-of-regular-expressions-15-points)
-- [**(Problem #5) `homRE`: Homomorphism of Regular Expressions (15 points)**](#problem-5-homre-homomorphism-of-regular-expressions-15-points)
-- [**(Problem #6) `ihomDFA`: Inverse Homomorphism of DFA (15 points)**](#problem-6-ihomdfa-inverse-homomorphism-of-dfa-15-points)
+- [**(Problem #1) `nonEqPairs`: Table-Filling Algorithm (40 points)**](#problem-1-noneqpairs-table-filling-algorithm-40-points)
+- [**(Problem #2) `isEqual`: Equivalence of DFAs (30 points)**](#problem-2-isequal-equivalence-of-dfas-30-points)
+- [**(Problem #3) `minimize`: Minimization of DFAs (30 points)**](#problem-3-minimize-minimization-of-dfas-30-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
   - [Short Definition of FA](#short-definition-of-fa)
-  - [String Form of Regular Expressions](#string-form-of-regular-expressions)
   - [Automata Viewer](#automata-viewer)
 
 
 
+## (Problem 1) `nonEqPairs`: Table-Filling Algorithm (40 points)
 
-
-## (Problem 1) `complementDFA`: Complement of DFA (15 points)
-
-The first task is to implement the `complementDFA` function that returns the
-**complement** of the given **deterministic finite automaton (DFA)**.
+The first task is to implement the `nonEqPairs` function that returns the set of
+**non-equivalent pairs** of states in the given **deterministic finite automaton
+(DFA)** using the **table-filling algorithm**.
 
 ```scala
-def complementDFA(dfa: DFA): DFA = ???
+def nonEqPairs(dfa: DFA): Set[(State, State)] = ???
 ```
 
 
-## (Problem 2) `intersectDFA`: Intersection of DFA (20 points)
+## (Problem 2) `isEqual`: Equivalence of DFAs (30 points)
 
-The second task is to implement the `intersectDFA` function that returns the
-**intersection** of the given **deterministic finite automata (DFA)**.
+The second task is to implement the `isEqual` function that returns the
+**equivalence** of the given two **deterministic finite automata (DFAs)**.
+
+> [!TIP]
+>
+> Please use the `nonEqPairs` function you implemented in the previous problem.
 
 ```scala
-def intersectDFA(ldfa: DFA, rdfa: DFA): DFA = ???
+def isEqual(ldfa: DFA, rdfa: DFA): Boolean = ???
 ```
 
 
-## (Problem 3) `reverseENFA`: Reversal of ε-NFA (20 points)
+## (Problem 3) `minimize`: Minimization of DFAs (30 points)
 
-The third task is to implement the `reverseENFA` function that returns the
-**reversal** of the given **ε-nondeterministic finite automaton (ε-NFA)**.
+The third task is to implement the `minimize` function that returns the
+**minimized** version of **deterministic finite automaton (DFA)** of the given
+**DFA**. The number of states in the minimized DFA should be minimum compared to
+other equivalent DFAs.
 
-```scala
-def reverseENFA(enfa: ENFA): ENFA = ???
-```
-
-
-## (Problem 4) `reverseRE`: Reversal of Regular Expressions (15 points)
-
-The fourth task is to implement the `reverseRE` function that returns the
-**reversal** of the given **regular expression**.
+The `minimize` function already partially implemented as follows:
 
 ```scala
-def reverseRE(re: RE): RE = ???
+def minimize(dfa: DFA): DFA =
+  val DFA(states, symbols, trans, initState, finalStates) = dfa
+  val nonEqMap: Map[State, Set[State]] = nonEqPairs(dfa).foldLeft(
+    Map[State, Set[State]]().withDefaultValue(Set()),
+  ) { case (m, (p, q)) => m + (p -> (m(p) + q)) }
+  def aux(qs: List[State], visited: Set[State]): Set[State] = qs match
+    case Nil => visited
+    case q :: rest =>
+      aux(
+        (symbols.map(trans(q, _)) -- visited - q).toList.sorted ++ rest,
+        visited + q,
+      )
+  val reachable = aux(List(initState), Set())
+  ???
 ```
 
+You can fill in the `???` part to complete the implementation of the `minimize`
+function.
 
-## (Problem 5) `homRE`: Homomorphism of Regular Expressions (15 points)
-
-The fifth task is to implement the `homRE` function that returns the
-**homomorphism** of the given **regular expression**.
-
-```scala
-def homRE(re: RE, h: Hom): RE = ???
-```
-
-where the `Hom` type is defined as a mapping from symbols to words in the `basics.scala` file as follows:
-```scala
-type Hom = Map[Symbol, Word]
-```
-
-## (Problem 6) `ihomDFA`: Inverse Homomorphism of DFA (15 points)
-
-The sixth task is to implement the `ihomDFA` function that returns the **inverse
-homomorphism** of the given **deterministic finite automaton (DFA)**.
-
-```scala
-def ihomDFA(dfa: DFA, h: Hom): DFA = ???
-```
-
-where the `Hom` type is defined as a mapping from symbols to words in the `basics.scala` file as follows:
-```scala
-type Hom = Map[Symbol, Word]
-```
+> [!NOTE]
+>
+> However, it is just a hint, and you can implement the `minimize` function in
+> your way from scratch if you want.
 
 
 
@@ -146,6 +128,7 @@ and run the program using `sbt run`:
 $ sbt run
 # Hello, World!
 ```
+
 
 ### Short Definition of FA
 
@@ -189,78 +172,13 @@ Each argument of the `DFA` constructor is explained as follows:
     > For example, `4` in base 36 is equal to `100` in base 2. In opposite
     > order, it means the final state is the state `3`.
 
-We can define an NFA and an ε-NFA in a similar way. If you want to see the
-result of the short form of the automata, you can use the `dump` method of each
-automaton (Please refer to the [Automata Viewer](#automata-viewer) section for
-more details).
+If you want to see the result of the short form of the automata, you can use the
+`dump` method of each automaton (Please refer to the [Automata
+Viewer](#automata-viewer) section for more details).
 
 > [!NOTE]
 >
 > The initial state is always `1`.
-
-
-
-
-
-### String Form of Regular Expressions
-
-You can define a regular expression in a string form as follows:
-
-```scala
-RE("(a|b)*|</>|<e>c")
-```
-
-It is equivalent to the following definition:
-
-```scala
-import RE.*
-
-Union(
-  Union(
-    Star(
-      Union(
-        Sym('a'),
-        Sym('b')
-      ),
-    ),
-    Emp,
-  ),
-  Concat(
-    Eps,
-    Sym('c'),
-  ),
-)
-```
-
-The string form of the regular expression is defined as follows:
-- `</>` represents `Emp`
-- `<e>` represents `Eps`
-- `a` represents `Sym('a')` (You can use digits or lower case letters as
-    symbols: `0` to `9` and `a` to `z`)
-- `x|y` represents `Union(x, y)`
-- `xy` represents `Concat(x, y)`
-- `x*` represents `Star(x)`
-
-You can see the string form of the regular expression using the `dump` method:
-```scala
-object Implementation extends Template {
-  ...
-  @main def playground: Unit = {
-    ...
-    RE("(a|b)*|</>|<e>c").dump
-    ...
-  }
-  ...
-}
-```
-and run the program using `sbt run`:
-```bash
-$ sbt run
-# * A regular expression is dumped:
-#   * String form: (a|b)*|</>|<e>c
-#   * Scala object: Union(Union(Star(Union(Sym(a),Sym(b))),Emp),Concat(Eps,Sym(c)))
-```
-
 
 
 ### Automata Viewer
@@ -300,8 +218,8 @@ browser (e.g., Chrome, Edge, Safari, Firefox, etc.):
   <img src="../viewer.png" width="800px"/>
 </p>
 
-Similarly, you can dump and visualize any other automata (including `DFA`,
-`NFA`, and `ENFA`) that you implemented to check how they work.
+Similarly, you can dump and visualize any other `DFA` that you implemented to
+check how they work.
 
 This automata viewer will help you to understand the automata you defined. You
 can check whether your automata accept a given word or not by entering the word
