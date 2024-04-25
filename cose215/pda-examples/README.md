@@ -317,8 +317,8 @@ Please implement the PDA `pda_eq_pair_empty` whose language accepted by **empty
 stacks** is equal to the following language:
 
 $${\large
-L = \lbrace a_1 a_2 \cdots a_n \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid
-n \geq 1 \land a_i = a_{n+i} \text{ for some } 1 \leq i \leq n \rbrace
+L = \lbrace a_1 a_2 \cdots a_{2n} \in \lbrace \texttt{a}, \texttt{b} \rbrace^*
+\mid n \geq 1 \land a_i = a_{n+i} \text{ for some } 1 \leq i \leq n \rbrace
 }$$
 
 For example, the following words are **in the language**:
