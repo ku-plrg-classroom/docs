@@ -43,7 +43,6 @@ objects in the `Implementation.scala` file.**
 
 A **pushdown automaton (PDA)** is defined as the following `case class`:
 ```scala
-```scala
 case class PDA(
   states: Set[State],
   symbols: Set[Symbol],
@@ -55,7 +54,7 @@ case class PDA(
 ) extends Acceptable
 ```
 
-For instance, an example DFA `dfa_waa` is defined as follows:
+For instance, an example PDA `pda_an_bn_final` is defined as follows:
 ```scala
 val pda_an_bn_final: PDA = PDA(
   states = Set(0, 1, 2),
@@ -74,7 +73,7 @@ val pda_an_bn_final: PDA = PDA(
   finalStates = Set(2),
 )
 ```
-whose language is:
+whose language accepted by **final states** is equal to the following language:
 $${\large
 L = \lbrace \texttt{a}^n \texttt{b}^n \mid n \geq 0 \rbrace
 }$$
@@ -95,16 +94,16 @@ L = \lbrace w w^R \mid w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \rbrace
 
 where $w^R$ is the reverse of $w$.
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
-                // because ε = ε ε^R
-00              // because 00 = 0 0^R
-0110            // because 0110 = 01 (01)^R
-010010          // because 010010 = 010 (010)^R
-00110011        // because 00110011 = 0011 (0011)^R
-0100110010      // because 0100110010 = 01001 (01001)^R
+                // because ε      =    ε^R
+00              // because 0      =    0^R
+0110            // because 01     =    (01)^R
+010010          // because 010    =    (010)^R
+00111100        // because 0011   =    (1100)^R
+0100110010      // because 01001  =    (10010)^R
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 1               // because |w| is odd
 01              // because 0      !=   1^R
@@ -129,7 +128,7 @@ L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid N_a(w) > N_b(w)
 where $N_a(w)$ and $N_b(w)$ are the number of $\texttt{a}$ and $\texttt{b}$ in
 $w$, respectively.
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
 a               // because N_a(w) = 1   >   0 = N_b(w)
 aab             // because N_a(w) = 2   >   1 = N_b(w)
@@ -137,7 +136,7 @@ aba             // because N_a(w) = 2   >   1 = N_b(w)
 abaaba          // because N_a(w) = 4   >   2 = N_b(w)
 abaaababb       // because N_a(w) = 5   >   4 = N_b(w)
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 b               // because N_a(w) = 0   <   1 = N_b(w)
 ab              // because N_a(w) = 1   =   1 = N_b(w)
@@ -157,7 +156,7 @@ L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \land (i
 = j \lor i = k) \rbrace
 }$$
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
                 // because i = j = 0
 b               // because i = k = 0
@@ -167,7 +166,7 @@ abcccc          // because i = j = 1
 aaabccc         // because i = k = 3
 aabbbbcc        // because i = k = 2
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 a               // because i = 1 > 0 = j and i = 1 > 0 = k
 ba              // because not in the form of a^i b^j c^k
@@ -190,7 +189,7 @@ L = \lbrace \texttt{a}^i \texttt{b}^j \mid (i = 2n+1 \land j = 3m+1)
 \text{ for some } n, m \geq 0 \rbrace
 }$$
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
 ab              // because i = 1 = 2*0+1 and j = 1 = 3*0+1
 aaab            // because i = 3 = 2*1+1 and j = 1 = 3*0+1
@@ -198,7 +197,7 @@ abbbb           // because i = 1 = 2*0+1 and j = 4 = 3*1+1
 aaaaab          // because i = 5 = 2*2+1 and j = 1 = 3*0+1
 aaabbbb         // because i = 3 = 2*1+1 and j = 4 = 3*1+1
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
                 // because i = 0 = 2*0+0
 a               // because j = 0 = 3*0+0
@@ -222,7 +221,7 @@ L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \land j =
 i + 2k \rbrace
 }$$
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
                 // because j = 0   =   0 = 0 + 2*0 = i + 2k
 ab              // because j = 1   =   1 = 1 + 2*0 = i + 2k
@@ -231,7 +230,7 @@ abbbc           // because j = 3   =   3 = 1 + 2*1 = i + 2k
 aabbbbc         // because j = 4   =   4 = 2 + 2*1 = i + 2k
 aabbbbbbcc      // because j = 6   =   6 = 2 + 2*2 = i + 2k
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 a               // because j = 0   !=   1 = 0 + 2*0 = i + 2k
 b               // because j = 1   !=   0 = 0 + 2*0 = i + 2k
@@ -249,14 +248,14 @@ Please implement the PDA `pda_ord_brace_empty` whose language accepted by
 **empty stacks** is equal to the following language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{(}, \texttt{)}, \texttt{\{}, \texttt{\}},
+L = \lbrace w \in \lbrace \texttt{(}, \texttt{)}, \texttt{\\\{}, \texttt{\\\}},
 \texttt{[}, \texttt{]} \rbrace^* \mid w \text{ is well-formed and satisfies
- the order: } \texttt{()} \leq \texttt{\{\}} \leq \texttt{[]} \rbrace
+ the order: } \texttt{()} \leq \texttt{\\\{\\\}} \leq \texttt{[]} \rbrace
 }$$
-It means that $\texttt{[]}$ cannot be inside $\texttt{()}$ or $\texttt{\{\}}$,
-and $\texttt{\{\}}$ cannot be inside $\texttt{()}$.
+It means that $\texttt{[]}$ cannot be inside $\texttt{()}$ or $\texttt{\\\{\\\}}$,
+and $\texttt{\\\{\\\}}$ cannot be inside $\texttt{()}$.
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
                 // because well-formed and ordered
 ()              // because well-formed and ordered
@@ -265,7 +264,7 @@ For example, the following words are in the language:
 [{}{{()}}]      // because well-formed and ordered
 [(){}]{}()      // because well-formed and ordered
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 (               // because ill-formed
 }{              // because ill-formed
@@ -283,7 +282,7 @@ Please implement the PDA `pda_ae_even_final` whose language accepted by **final
 states** is equal to the following language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}, \texttt{+}, \texttt{*}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}, \texttt{+}, \texttt{\\*}
 \rbrace^* \mid w \text{ is an arithmetic expression evaluated to an even number}
 \rbrace
 }$$
@@ -291,7 +290,7 @@ L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}, \texttt{+}, \texttt{*}
 Note that only single-digit numbers ($\texttt{0}$ or $\texttt{1}$) are allowed,
 and multiple digits (e.g., $\texttt{110}$) are not allowed.
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
 0               // because 0 is an even number
 1+1             // because 1+1 = 2 is an even number
@@ -300,7 +299,7 @@ For example, the following words are in the language:
 1+1+1+1         // because 1+1+1+1 = 4 is an even number
 1+0*1+0*1+1     // because 1+0*1+0*1+1 = 2 is an even number
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 +               // because ill-formed
 1               // because 1 is an odd number
@@ -322,7 +321,7 @@ L = \lbrace a_1 a_2 \cdots a_n \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid
 n \geq 1 \land a_i = a_{n+i} \text{ for some } 1 \leq i \leq n \rbrace
 }$$
 
-For example, the following words are in the language:
+For example, the following words are **in the language**:
 ```plaintext
 aa              // because n = 1 and a_1 = a_2 = a
 abaa            // because n = 2 and a_1 = a_3 = a
@@ -330,7 +329,7 @@ bbbaba          // because n = 3 and a_2 = a_5 = b
 abbabbbb        // because n = 4 and a_2 = a_6 = a
 aaaaaaabaa      // because n = 5 and a_3 = a_8 = a
 ```
-However, the following words are not in the language:
+However, the following words are **not in the language**:
 ```plaintext
 a               // because |w| is odd
 ab              // because n = 1 and a_i != a_{n+i} for all i
