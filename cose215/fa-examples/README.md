@@ -1,4 +1,4 @@
-# Finite Automata Examples
+# Examples of Finite Automata
 
 Please download the template code as follows:
 ```bash

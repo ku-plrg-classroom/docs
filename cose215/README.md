@@ -15,15 +15,19 @@ University](https://korea.ac.kr).
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
 | [scala-tutorial](/scala/scala-tutorial/README.md)  | Scala Tutorial                                                                                          |
 
-## Finite Automata
+## Regular Languages (RLs) and Finite Automata (FAs)
 
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
-| [fa-examples](/cose215/fa-examples/README.md)      | Finite Automata Examples                                                                                |
+| [fa-examples](/cose215/fa-examples/README.md)      | Examples of Finite Automata                                                                             |
 | [equiv-re-fa](/cose215/equiv-re-fa/README.md)      | Equivalence of Regular Expressions and Finite Automata                                                  |
 | [rl-closure](/cose215/rl-closure/README.md)        | Closure Properties of Regular Languages                                                                 |
 | [dfa-eq-min](/cose215/dfa-eq-min/README.md)        | Equivalence and Minimization of Deterministic Finite Automata                                           |
 
-## Pushdown Automata
+## Context-Free Languages (CFLs) and Pushdown Automata (PDAs)
 
-## Turing Machines
+| Name                                               | Explanation                                                                                             |
+| :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [pda-examples](/cose215/pda-examples/README.md)    | Examples of Pushdown Automata                                                                           |
+
+## Recursively Enumerable Languages (RELs) and Turing Machines (TMs)
