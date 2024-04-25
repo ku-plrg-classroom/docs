@@ -282,7 +282,7 @@ Please implement the PDA `pda_ae_even_final` whose language accepted by **final
 states** is equal to the following language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}, \texttt{+}, \texttt{\\*}
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1}, \texttt{+}, \texttt{\*}
 \rbrace^* \mid w \text{ is an arithmetic expression evaluated to an even number}
 \rbrace
 }$$
