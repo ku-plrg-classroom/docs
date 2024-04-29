@@ -185,17 +185,16 @@ Please implement the PDA `pda_a2n1_b3m1_empty` whose language accepted by
 **empty stacks** is equal to the following language:
 
 $${\large
-L = \lbrace \texttt{a}^i \texttt{b}^j \mid (i = 2n+1 \land j = 3m+1)
-\text{ for some } n, m \geq 0 \rbrace
+L = \lbrace \texttt{a}^i \texttt{b}^j \mid (i = 2n+1 \land j = 3n+1)
+\text{ for some } n \geq 0 \rbrace
 }$$
 
 For example, the following words are **in the language**:
 ```plaintext
-ab              // because i = 1 = 2*0+1 and j = 1 = 3*0+1
-aaab            // because i = 3 = 2*1+1 and j = 1 = 3*0+1
-abbbb           // because i = 1 = 2*0+1 and j = 4 = 3*1+1
-aaaaab          // because i = 5 = 2*2+1 and j = 1 = 3*0+1
-aaabbbb         // because i = 3 = 2*1+1 and j = 4 = 3*1+1
+ab                // because i = 1 = 2*0+1 and j = 1 = 3*0+1 and n = 0
+aaabbbb           // because i = 3 = 2*1+1 and j = 4 = 3*1+1 and n = 1
+aaaaabbbbbbb      // because i = 5 = 2*2+1 and j = 7 = 3*2+1 and n = 2
+aaaaaaabbbbbbbbbb // because i = 7 = 2*3+1 and j = 10 = 3*3+1 and n = 3
 ```
 However, the following words are **not in the language**:
 ```plaintext
@@ -204,9 +203,10 @@ a               // because j = 0 = 3*0+0
 ba              // because not in the form of a^i b^j
 aa              // because i = 2 = 2*1+0
 abb             // because j = 0 = 3*0+2
+aaab            // because i = 3 = 2*1+1 but j = 1 = 3*0+1
 baba            // because not in the form of a^i b^j
-aabbbb          // because i = 2 = 2*1+0
-aaaaabb         // because j = 2 = 3*0+2
+aaabbb          // because i = 3 = 2*1+1 but j = 3 = 3*1+0
+aaaaabbbb       // because i = 5 = 2*2+1 but j = 4 = 3*1+1
 ```
 
 
