@@ -345,8 +345,14 @@ Please implement the ε-NFA `enfa_complex` whose language is equal to the
 following language:
 
 $${\large
-L = \lbrace (\texttt{a} (\texttt{b} \texttt{c}^i \texttt{b})^j \texttt{a})^k
-\mid i, j, k \geq 1 \rbrace
+L = L_1^+
+}$$
+where
+$${\large
+\begin{array}{l@{}l@{}l}
+L_1 &=& \lbrace \texttt{a} w \texttt{a} \mid w \in L_2^+ \rbrace\\
+L_2 &=& \lbrace \texttt{b} \texttt{c}^i \texttt{b} \mid i \geq 1 \rbrace\\
+\end{array}
 }$$
 
 For example, $\texttt{abcba}$, $\texttt{abcccba}$, $\texttt{abcbbcba}$, and
