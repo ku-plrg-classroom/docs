@@ -29,7 +29,7 @@ objects in the `Implementation.scala` file.**
   - [(Problem #1) `pda_even_pal_final` (10 points)](#problem-1-pda_even_pal_final-10-points)
   - [(Problem #2) `pda_more_as_empty` (10 points)](#problem-2-pda_more_as_empty-10-points)
   - [(Problem #3) `pda_abc_ij_ik_final` (10 points)](#problem-3-pda_abc_ij_ik_final-10-points)
-  - [(Problem #4) `pda_a2n1_b3m1_empty` (10 points)](#problem-4-pda_a2n1_b3m1_empty-10-points)
+  - [(Problem #4) `pda_a2n1_b3n1_empty` (10 points)](#problem-4-pda_a2n1_b3n1_empty-10-points)
   - [(Problem #5) `pda_abc_j_i2k_final` (15 points)](#problem-5-pda_abc_j_i2k_final-15-points)
   - [(Problem #6) `pda_ord_brace_empty` (15 points)](#problem-6-pda_ord_brace_empty-15-points)
   - [(Problem #7) `pda_ae_even_final` (15 points)](#problem-7-pda_ae_even_final-15-points)
@@ -179,9 +179,9 @@ aaabcc          // because i = 3 > 1 = j and i = 3 > 2 = k
 
 
 
-### (Problem #4) `pda_a2n1_b3m1_empty` (10 points)
+### (Problem #4) `pda_a2n1_b3n1_empty` (10 points)
 
-Please implement the PDA `pda_a2n1_b3m1_empty` whose language accepted by
+Please implement the PDA `pda_a2n1_b3n1_empty` whose language accepted by
 **empty stacks** is equal to the following language:
 
 $${\large
