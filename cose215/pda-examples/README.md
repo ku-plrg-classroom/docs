@@ -98,7 +98,7 @@ For example, the following words are **in the language**:
 ```plaintext
                 // because ε      =    ε^R
 00              // because 0      =    0^R
-0110            // because 01     =    (01)^R
+0110            // because 01     =    (10)^R
 010010          // because 010    =    (010)^R
 00111100        // because 0011   =    (1100)^R
 0100110010      // because 01001  =    (10010)^R
