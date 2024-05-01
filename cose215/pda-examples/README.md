@@ -305,7 +305,7 @@ However, the following words are **not in the language**:
 1               // because 1 is an odd number
 10              // because ill-formed (multiple digits)
 1+              // because ill-formed
-0*0             // because 0*0 = 0 is an odd number
+1*1             // because 1*1 = 1 is an odd number
 1+1*0           // because 1+1*0 = 1 is an odd number
 1+1*0+1+1*1     // because 1+1*0+1+1*1 = 3 is an odd number
 ```
