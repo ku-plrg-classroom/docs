@@ -29,5 +29,6 @@ University](https://korea.ac.kr).
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
 | [pda-examples](/cose215/pda-examples/README.md)    | Examples of Pushdown Automata                                                                           |
+| [equiv-cfg-pda](/cose215/equiv-cfg-pda/README.md)  | Equivalence of Context-Free Grammars and Pushdown Automata                                              |
 
 ## Recursively Enumerable Languages (RELs) and Turing Machines (TMs)
