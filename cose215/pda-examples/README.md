@@ -81,6 +81,30 @@ L = \lbrace \texttt{a}^n \texttt{b}^n \mid n \geq 0 \rbrace
 You need to implement the `PDA` instances whose languages are equal to the given
 languages.
 
+> [!CAUTION]
+>
+> While there is no restriction on the epsilon transitions in the original
+> definition of the PDA, we impose a restriction on the epsilon transitions in
+> this assignment for grading purposes.
+>
+> You **CANNOT** define any **epsilon transitions** that **increase** the stack
+> size in the `trans` field.
+>
+> For example, you **CANNOT** define the following epsilon transition:
+> ```scala
+> (0, None, "Z") -> Set((0, List("X", "Z")))
+> ```
+> because it **increases** the stack size by pushing the alphabet `X` into the
+> stack.
+>
+> However, you **CAN** define the following epsilon transitions:
+> ```scala
+> (0, None, "X") -> Set((0, List("Z")))   // preserve the stack size
+> (1, None, "Z") -> Set((1, List("X")))   // preserve the stack size
+> (2, None, "Z") -> Set((2, List()))      // decrease the stack size
+> ```
+> because they **preserve** or **decrease** the stack size.
+
 
 
 ### (Problem #1) `pda_even_pal_final` (10 points)
