@@ -10,7 +10,7 @@ sbt new ku-plrg-classroom/dfa-eq-min.g8
 > Read the [common instructions](/scala.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>rl-closure
+<pre><code>dfa-eq-min
 ├─ viewer
 │  ├── index.html ─────────────── The HTML file for the automata viewer
 │  ├── js/data.js ─────────────── The data of automata

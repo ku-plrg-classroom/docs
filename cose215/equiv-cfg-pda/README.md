@@ -10,7 +10,7 @@ sbt new ku-plrg-classroom/equiv-cfg-pda.g8
 > Read the [common instructions](/scala.md) first if you have not read them.
 
 The template source code contains the following files:
-<pre><code>fa-examples
+<pre><code>equiv-cfg-pda
 └─ src
    ├─ main/scala/kuplrg
    │  ├── CFG.scala ───────────── The class of Context-Free Grammars (CFG)

@@ -32,3 +32,7 @@ University](https://korea.ac.kr).
 | [equiv-cfg-pda](/cose215/equiv-cfg-pda/README.md)  | Equivalence of Context-Free Grammars and Pushdown Automata                                              |
 
 ## Recursively Enumerable Languages (RELs) and Turing Machines (TMs)
+
+| Name                                               | Explanation                                                                                             |
+| :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [tm-examples](/cose215/tm-examples/README.md)      | Examples of Turing Machines                                                                             |
