@@ -11,3 +11,4 @@ Below is the list of Scala programming assignments.
 | [scala-tutorial](/scala/scala-tutorial/README.md)  | Scala Tutorial                                                                                          |
 | [scala-nat-poly](/scala/scala-nat-poly/README.md)  | Natural Numbers and Polynomials in Scala                                                                |
 | [scala-num-list](/scala/scala-num-list/README.md)  | Infinite Lists for Number Data Types in Scala                                                           |
+| [scala-adv-feat](/scala/scala-adv-feat/README.md)  | Advanced Features in Scala                                                                              |
