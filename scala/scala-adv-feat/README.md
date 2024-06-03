@@ -39,15 +39,15 @@ follows:
 | $A \Rightarrow B$    | `A => B`                                  |
 | $A \Leftrightarrow B$| `type <=>[A, B] = (A => B) /\ (B => A)`   |
 | $\neg A$             | `type ![A] = A => False`                  |
-| $\forall A. \; P(A)$ | `[A] => P[A]`                             |
+| $\forall A. \\; P(A)$ | `[A] => P[A]`                             |
 
 And, we can represent **proofs** as **programs**. For example, $\textsf{True}$
 is always **true**, and we can prove it by providing a value of type `Unit`.
 However, $\textsf{False}$ is always **false**, and we cannot provide a value of
 type `Nothing`. In addition, let's consider the following proposition:
-$$
-\forall A, B. \; A \land B \Rightarrow A
-$$
+$${\large
+\forall A, B. \\; A \land B \Rightarrow A
+}$$
 This proposition is **true** because $A$ is always **true** if $A \land B$ is
 **true**. We can **prove** this proposition by providing a value of type
 `[A, B] => (A /\ B) => A` (i.e., `[A, B] => (A, B) => A`) as follows:
@@ -62,10 +62,10 @@ proposition in `Implementation.scala`.
 ### (Problem #1) `proof1` (10 points)
 
 The given **proposition** is:
-$$
-\forall A, B, C. \;
+$${\large
+\forall A, B, C. \\;
 (A \Rightarrow B) \land (B \Rightarrow C) \Rightarrow (A \Rightarrow C)
-$$
+}$$
 same as the following Scala **type**:
 ```scala
 type Prop1 = [A, B, C] => (
@@ -81,11 +81,11 @@ val proof1: Prop1 = ???
 ### (Problem #2) `proof2` (10 points)
 
 The given **proposition** is:
-$$
-\forall A, B, C, D. \;
+$${\large
+\forall A, B, C, D. \\;
 (A \Rightarrow B) \land (B \Rightarrow C) \land (C \Rightarrow D) \land (D
 \Rightarrow A) \Rightarrow (B \Leftrightarrow D)
-$$
+}$$
 same as the following Scala **type**:
 ```scala
 type Prop2 = [A, B, C, D] => (
@@ -101,11 +101,11 @@ val proof2: Prop2 = ???
 ### (Problem #3) `proof3` (10 points)
 
 The given **proposition** is:
-$$
-\forall P, Q. \;
-(\forall X, Y. \; (P(X) \land P(Y)) \Rightarrow Q(X, Y)) \Rightarrow
-(\forall Z. \; \neg Q(Z, Z) \Rightarrow \neg P(Z))
-$$
+$${\large
+\forall P, Q. \\;
+(\forall X, Y. \\; (P(X) \land P(Y)) \Rightarrow Q(X, Y)) \Rightarrow
+(\forall Z. \\; \neg Q(Z, Z) \Rightarrow \neg P(Z))
+}$$
 same as the following Scala **type**:
 ```scala
 type Prop3 = [P[_], Q[_, _]] => (
@@ -121,10 +121,10 @@ val proof3: Prop3 = ???
 ### (Problem #4) `proof4` (10 points)
 
 The given **proposition** is:
-$$
-(\forall A, B. \; (\neg A \land \neg B) \Rightarrow \neg (A \lor B)) \land
-(\forall A, B. \; \neg (A \lor B) \Rightarrow (\neg A \land \neg B))
-$$
+$${\large
+(\forall A, B. \\; (\neg A \land \neg B) \Rightarrow \neg (A \lor B)) \land
+(\forall A, B. \\; \neg (A \lor B) \Rightarrow (\neg A \land \neg B))
+}$$
 same as the following Scala **type**:
 ```scala
 type Prop4 =
@@ -140,11 +140,11 @@ val proof4: Prop4 = ???
 ### (Problem #5) `proof5` (10 points)
 
 The given **proposition** is:
-$$
-\forall A, B, C. \;
+$${\large
+\forall A, B, C. \\;
 ((\neg A \land B) \lor (\neg A \land C)) \Rightarrow \neg (A \lor (\neg B \lor
 \neg C))
-$$
+}$$
 same as the following Scala **type**:
 ```scala
 type Prop5 = [A, B, C] => (
