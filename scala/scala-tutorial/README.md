@@ -77,7 +77,7 @@ test(validString("Test", 4, 6), true)      // 4 is between 4 and 6
 #### (Problem #3) `factorial` (5 points)
 
 ```scala
-def factorial(x: Int): Int = ???
+def factorial(n: Int): Int = ???
 ```
 
 It takes an integer `n` between `0` and `10` (inclusive) and returns the
