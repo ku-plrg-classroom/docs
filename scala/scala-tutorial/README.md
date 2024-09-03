@@ -378,7 +378,7 @@ import BE.*
 // #t
 val be1: BE = T
 
-// (#t | #f)
+// (#t => #f)
 val be2: BE = Imply(T, F)
 
 // (!(#t | #f) & !(#f | #t))
