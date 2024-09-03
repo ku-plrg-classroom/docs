@@ -8,7 +8,6 @@ sbt new ku-plrg-classroom/scala-adv-feat.g8
 > [!WARNING]
 >
 > Read the [common instructions](/scala.md) first if you have not read them.
-> first if you have not read them.
 
 * **[Curry-Howard Correspondence (50 points)](#curry-howard-correspondence-50-points)**
   * [(Problem #1) `proof1` (10 points)](#problem-1-proof1-10-points)

@@ -8,7 +8,6 @@ sbt new ku-plrg-classroom/scala-nat-poly.g8
 > [!WARNING]
 >
 > Read the [common instructions](/scala.md) first if you have not read them.
-> first if you have not read them.
 
 * **[Natural Numbers (50 points)](#natural-numbers-50-points)**
   * [(Problem #1) `toInt` (10 points)](#problem-1-toint-10-points)

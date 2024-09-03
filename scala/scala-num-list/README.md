@@ -8,7 +8,6 @@ sbt new ku-plrg-classroom/scala-num-list.g8
 > [!WARNING]
 >
 > Read the [common instructions](/scala.md) first if you have not read them.
-> first if you have not read them.
 
 * **[Number Data Types (50 points)](#number-data-types-50-points)**
   * [(Problem #1) `bigIntNums` (10 points)](#problem-1-bigintnums-10-points)
