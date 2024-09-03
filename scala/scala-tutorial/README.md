@@ -384,11 +384,11 @@ val be2: BE = Imply(T, F)
 // (!(#t | #f) & !(#f | #t))
 val be3: BE = And(Not(Or(T, F)), Not(Or(F, T)))
 
-// ((#t => #f) => (#f => #t))
-val be4: BE = Imply(Imply(T, F), Imply(F, T))
+// ((#t & (#t => #f)) | (#f => (#t => #f)))
+val be4: BE = Or(And(T, Imply(T, F)), Imply(F, Imply(T, F)))
 
-// ((!#t => (#t & #f)) & (!#f => (#f | #t)))
-val be5: BE = And(Imply(Not(T), And(T, F)), Imply(Not(F), Or(F, T)))
+// (!(#t => (#t & #f)) & (!#f => (#f | #t)))
+val be5: BE = And(Not(Imply(T, And(T, F))), Imply(Not(F), Or(F, T)))
 ```
 
 #### (Problem #16) `isLiteral` (5 points)
@@ -435,7 +435,7 @@ literals in `expr` in the order of the
 test(literals(be1), List(true))
 test(literals(be2), List(true, false))
 test(literals(be3), List(true, false, false, true))
-test(literals(be4), List(true, false, false, true))
+test(literals(be4), List(true, true, false, false, true, false))
 test(literals(be5), List(true, true, false, false, false, true))
 ```
 
@@ -457,8 +457,8 @@ It takes a boolean expression `expr` and returns a string representation of
 test(getString(be1), "#t")
 test(getString(be2), "(#t => #f)")
 test(getString(be3), "(!(#t | #f) & !(#f | #t))")
-test(getString(be4), "((#t => #f) => (#f => #t))")
-test(getString(be5), "((!#t => (#t & #f)) & (!#f => (#f | #t)))")
+test(getString(be4), "((#t & (#t => #f)) | (#f => (#t => #f)))")
+test(getString(be5), "(!(#t => (#t & #f)) & (!#f => (#f | #t)))")
 ```
 
 #### (Problem #20) `eval` (5 points)
