@@ -34,13 +34,17 @@ sbt new ku-plrg-classroom/scala-tutorial.g8
   - [(Problem #16) `countLiterals` (5 points)](#problem-16-countliterals-5-points)
   - [(Problem #17) `countNots` (5 points)](#problem-17-countnots-5-points)
   - [(Problem #18) `depth` (5 points)](#problem-18-depth-5-points)
-  - [(Problem #19) `eval` (5 points)](#problem-19-eval-5-points)
-  - [(Problem #20) `getString` (5 points)](#problem-20-getstring-5-points)
+  - [(Problem #19) `getString` (5 points)](#problem-19-getstring-5-points)
+  - [(Problem #20) `eval` (5 points)](#problem-20-eval-5-points)
 
 
 ## Built-in Data Types (10 points)
 
 #### (Problem #1) `sqsum` (5 points)
+
+```scala
+def sqsum(x: Int, y: Int): Int = ???
+```
 
 It takes two integers `x` and `y` and returns the sum of the squares of `x` and
 `y`.
@@ -51,6 +55,10 @@ test(sqsum(-3, 4), 25)
 ```
 
 #### (Problem #2) `concat` (5 points)
+
+```scala
+def concat(left: String, right: String): String = ???
+```
 
 It takes two strings `x` and `y` and returns their concatenation.
 ```scala
@@ -63,6 +71,10 @@ test(concat("COSE", "215"), "COSE215")
 
 #### (Problem #3) `subN` (5 points)
 
+```scala
+def subN(n: Int): Int => Int = ???
+```
+
 It takes an integer `n` and returns a function that subtracts `n` from an
 integer.
 ```scala
@@ -73,6 +85,10 @@ test(subN(243)(-942), -1185)
 
 #### (Problem #4) `twice` (5 points)
 
+```scala
+def twice(f: Int => Int): Int => Int = ???
+```
+
 It takes a function `f` whose type is `Int => Int` and returns a function that
 applies `f` twice.
 ```scala
@@ -82,6 +98,10 @@ test(twice(_ * 10)(42), 4200)
 ```
 
 #### (Problem #5) `compose` (5 points)
+
+```scala
+def compose(f: Int => Int, g: Int => Int): Int => Int = ???
+```
 
 It takes two `Int => Int` functions `f` and `g` and returns their composition `f
 ∘ g`.
@@ -95,6 +115,10 @@ test(compose(subN(3), subN(2))(10), 5)
 
 #### (Problem #6) `sumOnlyOdd` (5 points)
 
+```scala
+def sumOnlyOdd(l: List[Int]): Int = ???
+```
+
 It takes an integer list `l` and returns the sum of the odd integers in `l`.
 ```scala
 test(sumOnlyOdd(List(2)), 0)
@@ -103,6 +127,10 @@ test(sumOnlyOdd(List(4, 2, 3, 7, 5)), 15)
 ```
 
 #### (Problem #7) `foldWith` (5 points)
+
+```scala
+def foldWith(f: (Int, Int) => Int): List[Int] => Int = ???
+```
 
 It takes a function `f` whose type is `(Int, Int) => Int` and produces a
 function that takes an integer list `l` and returns the result of folding `l`
@@ -117,6 +145,10 @@ test(foldWith(_ * 2 + _)(List(4, 7, 3, 2)), 68)
 ```
 
 #### (Problem #8) `toSet` (5 points)
+
+```scala
+def toSet(l: List[Int], from: Int): Set[Int] = ???
+```
 
 It takes an integer list `l` and an integer `from` and returns a set containing
 all integers in `l` whose indices are greater than or equal to `from`.
@@ -133,6 +165,10 @@ test(toSet(List(1, 5, 2, 7, 4, 2, 4), 4), Set(2, 4))
 
 #### (Problem #9) `getOrZero` (5 points)
 
+```scala
+def getOrZero(map: Map[String, Int], key: String): Int = ???
+```
+
 It takes a map `m` from strings to integers and a string `s` and returns the
 integer corresponding to `s` if `m` has such mapping and `0` otherwise.
 ```scala
@@ -142,6 +178,10 @@ test(getOrZero(Map("Park" -> 3, "Kim" -> 5), "Kim"), 5)
 ```
 
 #### (Problem #10) `setMinus` (5 points)
+
+```scala
+def setMinus(s1: Set[Int], s2: Set[Int]): Set[Int] = ???
+```
 
 It takes two sets `s1` and `s2` and returns the set containing all elements in
 `s1` that are not in `s2`.
@@ -194,6 +234,10 @@ val tree3: Tree = Branch(Leaf(2), 7, Branch(Branch(Leaf(1), 5, Leaf(8)), 3, Leaf
 
 #### (Problem #11) `has` (5 points)
 
+```scala
+def has(value: Int): Tree => Boolean = ???
+```
+
 It takes an integer `value` and produces a function that takes a tree `t` and
 returns `true` if `t` has a node with `value` and `false` otherwise.
 ```scala
@@ -203,6 +247,10 @@ test(has(1)(tree3), true)
 ```
 
 #### (Problem #12) `maxDepthOf` (5 points)
+
+```scala
+def maxDepthOf(value: Int): Tree => Option[Int] = ???
+```
 
 It takes an integer `value` and produces a function that takes a tree `t` and
 returns the maximum depth of a node with `value` in `t`. Note that the _depth_
@@ -216,6 +264,10 @@ test(maxDepthOf(1)(tree3), Some(3))
 
 #### (Problem #13) `mul` (5 points)
 
+```scala
+def mul(t: Tree): Int = ???
+```
+
 It takes a tree `t` and returns the product of all values in `t`.
 ```scala
 test(mul(tree1), 8)
@@ -225,6 +277,10 @@ test(mul(tree3), 1680)
 
 #### (Problem #14) `countLeaves` (5 points)
 
+```scala
+def countLeaves(t: Tree): Int = ???
+```
+
 It takes a tree `t` and returns the number of its leaf nodes.
 ```scala
 test(countLeaves(tree1), 1)
@@ -233,6 +289,10 @@ test(countLeaves(tree3), 4)
 ```
 
 #### (Problem #15) `postOrder` (5 points)
+
+```scala
+def postOrder(t: Tree): List[Int] = ???
+```
 
 It takes a tree `t` and returns a list containing all values in `t` in the
 [post-order traversal order](https://en.wikipedia.org/wiki/Tree_traversal#Post-order,_LRN).
@@ -278,6 +338,10 @@ val be3: BE = And(Not(And(Or(False, Not(True)), False)), And(True, Not(False)))
 
 #### (Problem #16) `countLiterals` (5 points)
 
+```scala
+def countLiterals(expr: BE): Int = ???
+```
+
 It takes a boolean expression `expr` and returns the number of literals in
 `expr`.
 ```scala
@@ -287,6 +351,10 @@ test(countLiterals(be3), 5)
 ```
 
 #### (Problem #17) `countNots` (5 points)
+
+```scala
+def countNots(expr: BE): Int = ???
+```
 
 It takes a boolean expression `expr` and returns the number of `Not` operations
 in `expr`.
@@ -298,6 +366,10 @@ test(countNots(be3), 3)
 
 #### (Problem #18) `depth` (5 points)
 
+```scala
+def depth(expr: BE): Int = ???
+```
+
 It takes a boolean expression `expr` and returns the depth of `expr`. Note that
 the _depth_ of an expression is the number of nested operations in the
 expression.
@@ -307,17 +379,11 @@ test(depth(be2), 3)
 test(depth(be3), 5)
 ```
 
-#### (Problem #19) `eval` (5 points)
+#### (Problem #19) `getString` (5 points)
 
-It takes a boolean expression `expr` and returns the result of evaluating
-`expr`.
 ```scala
-test(eval(be1), true)
-test(eval(be2), false)
-test(eval(be3), true)
+def getString(expr: BE): String = ???
 ```
-
-#### (Problem #20) `getString` (5 points)
 
 It takes a boolean expression `expr` and returns a string representation of
 `expr`:
@@ -330,4 +396,18 @@ It takes a boolean expression `expr` and returns a string representation of
 test(getString(be1), "(true | false)")
 test(getString(be2), "(!(true | false) & !(false | true))")
 test(getString(be3), "(!((false | !true) & false) & (true & !false))")
+```
+
+#### (Problem #20) `eval` (5 points)
+
+```scala
+def eval(expr: BE): Boolean = ???
+```
+
+It takes a boolean expression `expr` and returns the result of evaluating
+`expr`.
+```scala
+test(eval(be1), true)
+test(eval(be2), false)
+test(eval(be3), true)
 ```
