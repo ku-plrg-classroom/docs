@@ -354,7 +354,7 @@ test(inorder(tree5), List(7, 7, 9, 42, 3, 7, 4))
 
 ## Boolean Expressions (25 points)
 
-The `BE` type represents a boolean expression. A boolean expression (`BE`) is
+The `BE` type represents a _boolean expression_. A boolean expression (`BE`) is
 either a boolean literal (`Literal`), a binary operation (`And`, `Or`, or
 `Imply`), or a unary operation (`Not`).
 
