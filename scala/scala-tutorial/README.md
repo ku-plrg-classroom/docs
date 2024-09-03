@@ -98,8 +98,8 @@ def magic(x: Int): Int => Int = ???
 ```
 
 It takes an integer `x` between `2` and `10` (inclusive) and returns a function
-that takes an integer `y` and returns `y / x` if `y` is divisible by `x` and `(x
-+ 1) * y + (x - y % x)` otherwise.
+that takes an integer `y` and returns `y / x` if `y` is divisible by `x` and
+`(x + 1) * y + (x - y % x)` otherwise.
 
 ```scala
 test(magic(2)(7), 22)    // (2 + 1) * 7 + (2 - 7 % 2) = 22
