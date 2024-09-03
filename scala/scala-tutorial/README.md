@@ -220,7 +220,7 @@ test(validSums(List(1, 2), List(3, 4, 5), _ * _ > 3), Set(5, 6, 7))
 
 ## Trees (25 points)
 
-The `Tree` type represents a **binary tree**, which is either 1) a leaf node
+The `Tree` type represents a _binary tree_, which is either 1) a leaf node
 (`Leaf`) with a value or 2) a non-leaf node (`Branch`) with a value, left
 sub-tree, and right sub-tree.
 
