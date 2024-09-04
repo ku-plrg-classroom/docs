@@ -115,8 +115,8 @@ test(magic(10)(25), 280) // (10 + 1) * 25 + (10 - 25 % 10) = 280
 def applyK(f: Int => Int, k: Int): Int => Int = ???
 ```
 
-It takes a function `f` whose type is `Int => Int` and returns a function that
-applies `f` `k` times.
+It takes a function `f` whose type is `Int => Int` and a positive integer `k`
+and returns a function that applies `f` `k` times.
 ```scala
 test(applyK(_ + 3, 2)(1), 7)        // 2 -> 5 -> 7
 test(applyK(_ + 2, 5)(7), 17)       // 7 -> 9 -> 11 -> 13 -> 15 -> 17
