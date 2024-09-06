@@ -118,7 +118,7 @@ def applyK(f: Int => Int, k: Int): Int => Int = ???
 It takes a function `f` whose type is `Int => Int` and a positive integer `k`
 and returns a function that applies `f` `k` times.
 ```scala
-test(applyK(_ + 3, 2)(1), 7)        // 2 -> 5 -> 7
+test(applyK(_ + 3, 2)(1), 7)        // 1 -> 4 -> 7
 test(applyK(_ + 2, 5)(7), 17)       // 7 -> 9 -> 11 -> 13 -> 15 -> 17
 test(applyK(_ * 2, 10)(1), 1024)    // 1 -> 2 -> 4 -> 8 -> ... -> 512 -> 1024
 test(applyK(_ * 10, 3)(42), 42000)  // 42 -> 420 -> 4200 -> 42000
