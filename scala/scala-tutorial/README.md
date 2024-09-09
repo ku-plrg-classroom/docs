@@ -375,6 +375,9 @@ For example, the following boolean expressions are examples of `BE`:
 ```scala
 import BE.*
 
+val T = Literal(true)
+val F = Literal(false)
+
 // #t
 val be1: BE = T
 
