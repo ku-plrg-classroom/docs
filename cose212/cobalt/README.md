@@ -48,6 +48,7 @@ corresponding error messages containing their error kinds:
 | `empty list` | The list is empty in the list head or tail operation. |
 | `out of bounds` | The index is out of bounds in the tuple projection. |
 | `not a tuple` | The expression does not evaluate to a tuple in the tuple projection. |
+| `arity mismatch` | The number of arguments does not match the number of parameters. |
 
 Note that this language's semantics do not sometimes define the order of
 subexpressions. For example, the order between evaluating the subexpressions of
@@ -61,7 +62,7 @@ do not need to consider the order of subexpressions, and you can assume any
 convenient order. Also, we will not test such cases in this assignment.
 
 
-## (Problem #1) `interp`
+## (Problem #1) `interp` (80 points)
 
 The `eval` function is a wrapper of the `interp` function. It parses the given
 string into an expression and evaluates it with the empty environment:
@@ -81,9 +82,56 @@ You can implement and utilize the following helper functions, but it is not
 mandatory. You can also implement your own helper functions.
 ```scala
 def eq(left: Value, right: Value): Boolean = ???
-def length(list: Value): BigInt = ???
-def map(list: Value, fun: Value): Value = ???
+def map(list: Value, func: Value): Value = ???
 def join(list: Value): Value = ???
-def filter(list: Value, fun: Value): Value = ???
-def app(fun: Value, args: List[Value]): Value = ???
+def filter(list: Value, func: Value): Value = ???
+def foldLeft(list: Value, init: Value, func: Value): Value = ???
+def app(func: Value, args: List[Value]): Value = ???
 ```
+
+## (Problem #2) `sqsumIfExpr` (20 points)
+
+After passing all the tests of the `interp` function, you will implement the
+`subExpr1` and `subExpr2` functions to complete the `sqsumIfExpr` function.
+
+> [!WARNING]
+>
+> If at least one test of the `interp` function fails, the `sqsumIfExpr`
+> function will not be tested.  Therefore, you must pass all the tests of the
+> `interp` function before implementing the `sqsumIfExpr`
+
+
+The `sqsumIfExpr` function takes
+- a string `lists` that represents a list of lists of integers, and
+- a string `pred` that represents a predicate function that takes an integer and
+  returns a boolean.
+and returns a string that computes the sum of the squares of the integers in the
+lists that satisfy the predicate function.
+
+The `subExpr1` and `subExpr2` are its subexpressions that you need to implement.
+
+```scala
+def sqsumIfExpr(lists: String, pred: String): String = s"""
+  val sumIf = (lists, pred) => {
+    (for {
+      $subExpr1
+    } yield $subExpr2)
+      .foldLeft(0, (x, y) => x + y)
+  };
+  sumIf($lists, $pred)
+"""
+
+def subExpr1: String = ???
+
+def subExpr2: String = ???
+```
+
+> [!WARNING]
+>
+> Note that the generated expression utilizes **for-comprehension** language
+> feature added in the `COBALT` language. Please try to understand the
+> **for-comprehension** feature by reading the `COBALT` language
+> [specification](./cobalt-spec.pdf) and given test cases in `Spec.scala`.
+
+**Please implement the `subExpr1` and `subExpr2` functions in the
+`Implementation.scala` file.**
