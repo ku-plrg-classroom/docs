@@ -149,7 +149,6 @@ def bodyOfSquares: String = ???
 The `squares` function is a **generator** function that generates the squares of
 numbers from `from` to `to`. (Note that it returns an empty iterator if `from >
 to`, and you could assume that it always takes two number arguments.)
-```scala
 
 > [!WARNING]
 >
