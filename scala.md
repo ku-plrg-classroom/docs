@@ -141,7 +141,7 @@ You can write your own test cases in `Spec.scala`. You can use the `check`,
 * The `test` function takes two expressions whose types are equal to each other
     and checks if they are equal.
 * The `testExc` function takes an expression and a string. It checks if the
-    expression throws a `PLError` exception whose message contains the given
+    expression throws a `PLError` exception whose message starts with the given
     string.
 
 For example, you can write the following test cases for the `f` function in
@@ -158,7 +158,7 @@ check(f(3))
 // test f(3) == 3
 test(f(3), 3)
 
-// test f(-1) throws a `PLError` with the message containing "non-negative"
+// test f(-1) throws a `PLError` with the message starting with "non-negative"
 testExc(f(-1), "non-negative")
 ```
 
