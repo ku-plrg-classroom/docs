@@ -91,8 +91,8 @@ def app(func: Value, args: List[Value]): Value = ???
 
 ## (Problem #2) `sqsumIfExpr` (20 points)
 
-After passing all the tests of the `interp` function, you will implement the
-`subExpr1` and `subExpr2` functions to complete the `sqsumIfExpr` function.
+In this problem, you will implement the `subExpr1` and `subExpr2` functions to
+complete the `sqsumIfExpr` function.
 
 > [!WARNING]
 >
