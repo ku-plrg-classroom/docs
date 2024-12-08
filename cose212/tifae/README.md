@@ -55,9 +55,9 @@ The `eval` function is a wrapper of the `typeCheck` and `interp` functions and
 performs the following three steps:
 
 1. It parses the given string into an expression.
-1. It checks the type of the expression with the empty type environment and 
+1. It checks the type of the expression with the empty type environment and
    the empty solution using the `typeCheck` function.
-1. It converts the final type into a polymorphic type.
+1. It converts the final type into a type scheme.
 1. It evaluates the expression with the empty environment using the `interp`
    function
 
@@ -66,7 +66,7 @@ and the type of the expression:
 ```scala
 def eval(str: String): String =
   val expr = Expr(str)
-  val t = PolyType.from(typeCheck(expr, Map.empty, Map.empty))
+  val t = TypeScheme.from(typeCheck(expr, Map.empty, Map.empty))
   val v = interp(expr, Map.empty)
   s"${v.str}: ${t.str}"
 ```
