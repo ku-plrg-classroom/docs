@@ -19,7 +19,7 @@ read the following instructions carefully before starting the assignments.
 
 ## Prerequisites
 
-* JDK >= 8 (<https://www.oracle.com/java/technologies/downloads/>)
+* JDK >= 11
 * sbt (<https://www.scala-sbt.org/download.html>)
 
 ## Download
@@ -52,7 +52,8 @@ You can find the following directories and files in the assignment directory:
 <pre><code>src
 ├─ main/scala/kuplrg
 │  ├─ Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
-│  └─ Template.scala
+│  ├─ Template.scala
+│  └─ error.scala
 └─ test/scala/kuplrg
    ├─ Spec.scala ──────────── <b style='color:red;'>[[ ADD YOUR OWN TESTS ]]</b>
    └─ SpecBase.scala</code></pre>
@@ -216,7 +217,7 @@ scala> ...
 
 ## Submission
 
-Please use [Blackboard](https://kulms.korea.ac.kr/) to submit your code.
+Please use [LMS](https://lms.korea.ac.kr/) to submit your code.
 You must submit your `Implementation.scala` of each assignment.
 
 > [!CAUTION]
