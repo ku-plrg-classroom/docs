@@ -19,7 +19,7 @@
 
 ## 사전 준비
 
-* JDK >= 8 (<https://www.oracle.com/java/technologies/downloads/>)
+* JDK >= 11
 * sbt (<https://www.scala-sbt.org/download.html>)
 
 ## 다운로드
@@ -51,7 +51,8 @@ name [Scala Tutorial]:
 <pre><code>src
 ├─ main/scala/kuplrg
 │  ├── Implementation.scala ── <b style='color:red;'>[[ 이 파일을 수정하고 제출하세요. ]]</b>
-│  └─ Template.scala
+│  ├─ Template.scala
+│  └─ error.scala
 └─ test/scala/kuplrg
    ├─ Spec.scala ───────────── <b style='color:red;'>[[ 이 파일에 테스트 케이스를 추가하세요. ]]</b>
    └─ SpecBase.scala</code></pre>
@@ -211,8 +212,8 @@ scala> ...
 
 ## 제출
 
-[블랙보드](https://kulms.korea.ac.kr/)를 사용하여 각 숙제의
-`Implementation.scala`를 제출하세요.
+[LMS](https://lms.korea.ac.kr/)를 사용하여 각 숙제의 `Implementation.scala`를
+제출하세요.
 
 > [!CAUTION]
 >
