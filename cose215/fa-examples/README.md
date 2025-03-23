@@ -165,11 +165,11 @@ L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
 
 where $\textsf{zeros}(w)$ and $\textsf{ones}(w)$ are the number of $\texttt{0}$
 and $\texttt{1}$, respectively. For example, $\textsf{zeros}(\texttt{10101}) =
-2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\texttt{00}$,
+2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\epsilon$, $\texttt{00}$,
 $\texttt{11}$, $\texttt{1010}$, $\texttt{1111}$, and $\texttt{110101}$ are in
-the language, but $\epsilon$, $\texttt{1}$, $\texttt{0}$, $\texttt{10}$,
-$\texttt{01}$, $\texttt{110}$, $\texttt{010}$, $\texttt{0100}$, $\texttt{1110}$,
-and $\texttt{101001}$ are not in the language.
+the language, but $\texttt{1}$, $\texttt{0}$, $\texttt{10}$, $\texttt{01}$,
+$\texttt{110}$, $\texttt{010}$, $\texttt{0100}$, $\texttt{1110}$, and
+$\texttt{101001}$ are not in the language.
 
 
 
@@ -239,12 +239,12 @@ Please implement the NFA `nfa_not_substr_bab` whose language is equal to the
 following language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \texttt{abb}
-\text{ is not a substring of } w \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \texttt{bab}
+\text{ is }\textbf{NOT}\text{ a substring of } w \rbrace
 }$$
 
-For example, $\texttt{aba}$, $\texttt{abab}$, and $\texttt{baaab}$ are in the
-language, but $\texttt{abba}$, $\texttt{abb}$, and $\texttt{babba}$ are not
+For example, $\texttt{aba}$, $\texttt{abaa}$, and $\texttt{baaab}$ are in the
+language, but $\texttt{abbab}$, $\texttt{ababa}$, and $\texttt{babba}$ are not
 in the language.
 
 
@@ -314,12 +314,12 @@ Please implement the ε-NFA `enfa_aba_plus` whose language is equal to the
 following language:
 
 $${\large
-L = \lbrace (\texttt{ab})^n \mid n \geq 1 \rbrace
+L = \lbrace (\texttt{aba})^n \mid n \geq 1 \rbrace
 }$$
 
-For example, $\texttt{ab}$, $\texttt{abab}$, and $\texttt{ababab}$ are in the
-language, but $\epsilon$, $\texttt{a}$, $\texttt{b}$, and $\texttt{abba}$ are
-not.
+For example, $\texttt{aba}$, $\texttt{abaaba}$, and $\texttt{abaabaaba}$ are in
+the language, but $\epsilon$, $\texttt{abb}$, $\texttt{abaa}$, and
+$\texttt{abba}$ are not.
 
 
 
@@ -333,9 +333,9 @@ L = \lbrace \texttt{0}^n \mid n \geq 1 \rbrace \cup \lbrace \texttt{1}^n \mid n
 \geq 1 \rbrace
 }$$
 
-For example, \texttt{0}$, $\texttt{1}$, $\texttt{000}$, and $\texttt{11111}$ are
-in the language, but $\epsilon, $\texttt{01}$, $\texttt{10}$, and $\texttt{011}$
-are not.
+For example, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$, and $\texttt{11111}$
+are in the language, but $\epsilon$, $\texttt{01}$, $\texttt{10}$, and
+$\texttt{011}$ are not.
 
 
 
