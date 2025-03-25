@@ -345,7 +345,7 @@ Please implement the ε-NFA `enfa_complex` whose language is equal to the
 following language:
 
 $${\large
-L = (L_1 \cup L_2)^+
+L = L_1 \cap L_2
 }$$
 where
 $${\large
@@ -353,17 +353,15 @@ $${\large
 L_1 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
 \mathbb{N}(w) \equiv 1 (\text{mod } 3) \rbrace \\
 L_2 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
-\mathbb{N}(w) \equiv 0 (\text{mod } 4) \rbrace \\
+\textsf{zeros}(w) \equiv 1 (\text{mod } 3) \rbrace \\
 \end{array}
 }$$
 
-where $\mathbb{N}(w)$ is the natural number represented by $w$ in binary.
-For example, $\texttt{100011101100}$ is in the language because
-$\texttt{100011101100}$ is the concatenation of $\texttt{1000}$,
-$\texttt{111}$, and $\texttt{01100}$, and
-$\mathbb{N}(\texttt{1000}) = 8 \equiv 0 (\text{mod } 4)$,
-$\mathbb{N}(\texttt{111}) = 4 + 2 + 1 = 7 \equiv 1 (\text{mod } 3)$, and
-$\mathbb{N}(\texttt{01100}) = 8 + 4 = 12 \equiv 0 (\text{mod } 4)$.
+where $\mathbb{N}(w)$ is the natural number represented by $w$ in binary, and
+$\textsf{zeros}(w)$ is the number of $\texttt{0}$'s in $w$.
+For example, $\texttt{1001100}$ is in the language because
+$\mathbb{N}(\texttt{1001100}) = 64 + 8 + 4 = 76 \equiv 1 (\text{mod } 3)$ and
+$\textsf{zeros}(\texttt{1001100}) = 4 \equiv 1 (\text{mod } 3)$.
 
 
 
