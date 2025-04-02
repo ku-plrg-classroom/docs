@@ -311,3 +311,83 @@ You can also check each step-by-step transition in the automata by clicking the
 `STEP` button after clicking the `START` button. It will highlight the current
 possible states. Finally, you can stop the step-by-step execution by clicking
 the `STOP` button.
+
+
+### Fuzzer for Your Own Test
+
+You can generate random finite automata (FA) or regular expressions (RE) to 
+test your implementation.
+
+```scala
+  val dfa = fuzzDFA(n = 3, symbols = "01")
+  val enfa = fuzzENFA(n = 3, symbols = "01")
+  val re = fuzzRE(depth = 3, symbols = "01")
+```
+
+- To generate random FAs, specify **the number of states** and the set of 
+  symbols.
+- To generate random REs, specify **the maximum depth** and the set of symbols.
+- You can find the full implementation of these fuzzers in `Fuzzer.scala`.
+
+You can try them out in the playground as follows:
+```scala
+object Implementation extends Template {
+  ...
+  @main def playground: Unit = {
+    ...
+    val re = fuzzRE(depth = 3, symbols = "01")
+    println("--------------------Random RE---------------------")
+    re.dump
+    println("-------------------Reversed RE--------------------")
+    reverseRE(re).dump
+    ...
+  }
+  ...
+}
+```
+and run the program using `sbt run`:
+```bash
+$ sbt run
+# --------------------Random RE---------------------
+# * A regular expression is dumped:
+#   * String form: 0*(<e>|</>)
+#   * Scala object: Concat(Star(Sym(0)),Union(Eps,Emp))
+# -------------------Reversed RE--------------------
+# * A regular expression is dumped:
+#   * String form: (<e>|</>)0*
+#   * Scala object: Concat(Union(Eps,Emp),Star(Sym(0)))
+```
+
+You can also write your own tests in `src/test/scala/kuplrg/Spec.scala`:
+```scala
+class Spec extends SpecBase {
+  ...
+  /* Write your own tests */
+  import Fuzzer.*
+
+  val re = fuzzRE(depth = 3, symbols = "01")
+  ...
+  check(reverseRE(re).mustEqual(re.lang.reverse, TRIAL))
+  ...
+}
+```
+Then run the test suite using `sbt test` to check whether your functions work 
+correctly:
+```bash
+$ sbt test
+# ...
+# [test] reverseRE(re).mustEqual(re.lang.reverse, TRIAL) - PASS
+# ...
+```
+
+You can use `mustEqual` to check whether two language definitions are 
+equivalent:
+```scala
+check(myRE.mustEqual(expectedRE, NUM))
+```
+- `myRE` is your implementation of an FA or RE
+- `expectedRE` is the reference or expected language
+- `NUM` is the number of randomly generated words to test
+
+The function automatically generates random words and checks if both 
+implementations accept the same set of words.
