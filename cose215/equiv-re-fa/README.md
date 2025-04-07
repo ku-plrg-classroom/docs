@@ -46,7 +46,6 @@ The template source code contains the following files:
 
 
 
-
 ## (Problem 1) `reToENFA`: Regular Expressions to ε-NFA (30 points)
 
 The first task is to implement the `reToENFA` function that converts a **regular
@@ -143,6 +142,14 @@ You can see the result of the conversion from a regular expression to an ε-NFA
 by using the `dump` method of the `ENFA` class. Please refer to the [Automata
 Viewer](#automata-viewer) section for more details.
 
+> [!NOTE]
+> The **default time limit** for this homework is **60 seconds**. The primary
+> goal of this assignment is not the efficiency of the implementation but its
+> correctness. Thus, you don't have to worry about the timeout error, and we
+> will grade this homework with enough time limit. Nevertheless, if you want to
+> increase the time limit, please modify the `time_limit` file in the root
+> directory of the framework.
+
 
 
 
@@ -227,17 +234,6 @@ def enfaToDFA(enfa: ENFA): DFA = ...
 The test cases are defined in the `Spec.scala` file. You can add your own test
 cases in the `Spec.scala` file. The test cases are executed when you run `sbt
 test`.
-
-For certain problems—particularly Problem 3—some test cases may fail due to time
-limit exceedance if the implemented algorithm is inefficient or if the machine’s
-performance is suboptimal.
-
-However, for this assignment, the primary focus is not on the efficiency of the
-algorithm, but rather on the correctness of its implementation. 
-
-In other words, the time limits set for the test cases(default
-is 5 seconds) are intentionally conservative and will be **more generously
-adjusted** during the actual grading process.
 
 The test cases are defined using the short definition of the finite automata. If
 you want to understand the short definition, please refer to [Short Definition
