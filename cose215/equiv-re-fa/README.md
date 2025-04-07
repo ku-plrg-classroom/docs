@@ -228,6 +228,17 @@ The test cases are defined in the `Spec.scala` file. You can add your own test
 cases in the `Spec.scala` file. The test cases are executed when you run `sbt
 test`.
 
+For certain problems—particularly Problem 3—some test cases may fail due to time
+limit exceedance if the implemented algorithm is inefficient or if the machine’s
+performance is suboptimal.
+
+However, for this assignment, the primary focus is not on the efficiency of the
+algorithm, but rather on the correctness of its implementation. 
+
+In other words, the time limits set for the test cases(default
+is 5 seconds) are intentionally conservative and will be **more generously
+adjusted** during the actual grading process.
+
 The test cases are defined using the short definition of the finite automata. If
 you want to understand the short definition, please refer to [Short Definition
 of FA](#short-definition-of-fa) section.
