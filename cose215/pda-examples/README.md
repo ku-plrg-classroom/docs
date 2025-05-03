@@ -338,6 +338,7 @@ $${\large
 L = \lbrace x\texttt{\\\$}y \mid x, y \in \lbrace 0, 1 \rbrace^* \text{ and }
 \mathbb{N}(x) + 1 = \mathbb{N}(y^R) \rbrace
 }$$
+
 where $w^R$ is the reverse of $w$, and $\mathbb{N}(w)$ is the natural number
 represented by $w$ in binary. For example, $\mathbb{N}(\texttt{101}) = 4 + 1 =
 5$ and $\mathbb{N}(\texttt{111}) = 4 + 2 + 1 = 7$. In addition, it allows the
