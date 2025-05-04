@@ -142,7 +142,7 @@ However, the following words are **not in the language**:
 
 ### (Problem #2) `pda_more_bs_empty` (10 points)
 
-Please implement the PDA `pdan_more_bs_empty` whose language accepted by **empty
+Please implement the PDA `pda_more_bs_empty` whose language accepted by **empty
 stacks** is equal to the following language:
 
 $${\large
