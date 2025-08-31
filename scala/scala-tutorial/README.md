@@ -127,7 +127,7 @@ def productDigits(n: Int): Int = n.toString.map(_.asDigit).product
 #### (Problem #5) `applyK` (5 points)
 
 ```scala
-def applyK(f: Int => Int, n: Int): Int => Int = ???
+def applyK(f: Int => Int, k: Int): Int => Int = ???
 ```
 
 It takes a function `f` whose type is `Int => Int` and a positive integer `k`
@@ -151,7 +151,7 @@ def sumEven(l: List[Int]): Int = ???
 It takes an integer list `l` and returns the sum of all even integers in `l`.
 
 ```scala
-test(sumEven(Nil), 0)                       // no even numbers
+test(sumEven(Nil), 0)                       // no numbers
 test(sumEven(List(1, 3, 5)), 0)             // no even numbers
 test(sumEven(List(2, 4, 6)), 12)            // 2 + 4 + 6 = 12
 test(sumEven(List(1, 2, 3, 4, 5)), 6)       // 2 + 4 = 6
@@ -164,8 +164,8 @@ test(sumEven(List(1, 2, 3, 4, 5, 6)), 12)   // 2 + 4 + 6 = 12
 def double(l: List[Int]): List[Int] = ???
 ```
 
-It takes an integer list `l` and returns a list containing all elements in `l`
-doubled.
+It takes an integer list `l` and returns a list in which each element of `l` is
+duplicated consecutively, preserving order.
 
 ```scala
 test(double(Nil), Nil)
@@ -173,12 +173,6 @@ test(double(List(42)), List(42, 42))
 test(double(List(1, 2, 3)), List(1, 1, 2, 2, 3, 3))
 test(double(List(5, 5, 5)), List(5, 5, 5, 5, 5, 5))
 test(double(List(1, 2, 3, 4)), List(1, 1, 2, 2, 3, 3, 4, 4))
-```
-where the following helper functions are defined:
-```scala
-def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
-def sumDigits(n: Int): Int = n.toString.map(_.asDigit).sum
-def productDigits(n: Int): Int = n.toString.map(_.asDigit).product
 ```
 
 #### (Problem #8) `generate` (5 points)
@@ -198,6 +192,7 @@ test(generate(gcd(48, _))(18), List(18, 6))
 test(generate(sumDigits)(123456), List(123456, 21, 3))
 test(generate(productDigits)(327), List(327, 42, 8))
 ```
+with the helper functions defined in [Problem #4](#problem-4-fixpoint-5-points).
 
 #### (Problem #9) `join` (5 points)
 
@@ -231,10 +226,11 @@ def subsets(set: Set[Int]): List[Set[Int]] = ???
 ```
 
 It takes a set of integers `set` and returns a list of all non-empty subsets of
-`set`. The subsets should be sorted in ascending order by their lexicographical
-(i.e., dictionary) order. The lexicographical order is defined as follows:
-* `[2, 1] < [10]` because at the first position `2 < 10`.
-* `[1, 2, 3] < [1, 3, 1]` because `2 < 3` at the second position.
+`set`. Each subset is considered as a list of its elements sorted in ascending
+order, and the resulting subsets are ordered lexicographically based on these
+lists as follows:
+* `[1, 2] < [3]` because at the first position `1 < 3`.
+* `[1, 2, 3] < [1, 3, 4]` because `2 < 3` at the second position.
 * `[1, 2] < [1, 2, 3]` because the first two numbers are the same, but the first
   list is shorter.
 
@@ -349,9 +345,7 @@ def postorder(t: Tree): List[Int] = ???
 
 It takes a tree `t` and returns a list containing all values in `t` in the
 [post-order traversal order](https://en.wikipedia.org/wiki/Tree_traversal#Post-order,_LRN).
-```scala
 
-It takes a tree `t` and returns the minimum value in `t`.
 ```scala
 test(postorder(tree1), List(8))
 test(postorder(tree2), List(2, 3, 1))
@@ -405,12 +399,13 @@ test(merge(tree4, tree5), Branch(Leaf(9), 49, Branch(Leaf(8), 10, Leaf(5))))
 ## Boolean Expressions (25 points)
 
 The `BE` type represents a _boolean expression_. A boolean expression (`BE`) is
-either a boolean literal (`Literal`), a binary operation (`And`, `Or`, or
-`Imply`), or a unary operation (`Not`).
+either a boolean literal (`Literal`), a variable (`Variable`), a binary
+operation (`And`, `Or`, or `Imply`), or a unary operation (`Not`).
 
 ```scala
 enum BE:
   case Literal(value: Boolean)
+  case Variable(name: String)
   case And(left: BE, right: BE)
   case Or(left: BE, right: BE)
   case Imply(left: BE, right: BE)
@@ -452,7 +447,7 @@ val be5: BE = Imply(And(Not(Imply(T, And(X, Y))), Imply(Not(F), Or(F, X))), Y)
 def isImply(expr: BE): Boolean = ???
 ```
 
-It takes a boolean expression `expr` and returns whether `expr` is an `Imply`
+It takes a boolean expression `expr` and returns whether `expr` is an `Imply`.
 ```scala
 test(isImply(be1), false)
 test(isImply(be2), true)
@@ -516,8 +511,8 @@ It takes a boolean expression `expr` and returns a string representation of
 - `Literal(true)` is represented as `#t`.
 - `Literal(false)` is represented as `#f`.
 - `Variable(name)` is represented as `name`.
-- `And(left, right)` is represented as `(<left> & <right>)`.
-- `Or(left, right)` is represented as `(<left> | <right>)`.
+- `And(left, right)` is represented as `(<left> && <right>)`.
+- `Or(left, right)` is represented as `(<left> || <right>)`.
 - `Imply(left, right)` is represented as `(<left> => <right>)`.
 - `Not(expr)` is represented as `!<expr>`.
 ```scala
@@ -540,11 +535,11 @@ names to boolean values, and returns the result of evaluating `expr` under
 it should be treated as `false`.
 
 ```scala
-test(eval(be1), true)
-test(eval(be2), false)
-test(eval(be3), false)
-test(eval(be4), true)
-test(eval(be5), true)
+test(eval(be1, env1), true)
+test(eval(be2, env1), true)
+test(eval(be3, env2), false)
+test(eval(be4, env2), false)
+test(eval(be5, env2), false)
 ```
 where the following helper environments are defined:
 ```scala
