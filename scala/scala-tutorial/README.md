@@ -48,6 +48,9 @@ It takes three integers `lower`, `x`, and `upper` and returns `x` if `x` is
 between `lower` and `upper` (inclusive). It returns `lower` if `x` is less than
 `lower` and `upper` if `x` is greater than `upper`.
 
+> [!NOTE]
+> You may assume that `lower <= upper`.
+
 ```scala
 test(clamp(2, 3, 5), 3)         // 2 <= 3 <= 5
 test(clamp(2, 1, 5), 2)         // 1 < 2
