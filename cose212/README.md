@@ -46,6 +46,7 @@ University](https://korea.ac.kr).
 
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [mini-fsharp](/cose212/mini-fsharp/README.md)      | `MiniFSharp` - A Small Subset of F# Language                                                            |
 | [cobalt](/cose212/cobalt/README.md)                | `COBALT` - Comprehension-supported Boolean and Arithmetic Expression with Lists and Tuples              |
 | [magnet](/cose212/magnet/README.md)                | `MAGNET` - Mutable Arithmetic Expressions with Generators and Exceptions                                |
 | [battery](/cose212/battery/README.md)              | `BATTERY` - Basic and Algebraic Data Type-supported Typed Expressions with Recursions and Polymorphism  |
