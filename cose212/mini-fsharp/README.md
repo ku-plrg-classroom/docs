@@ -43,7 +43,7 @@ corresponding error messages containing their error kinds:
 | `not a function` | The expression does not evaluate to a function in the function application. |
 | `not a boolean` | The expression does not evaluate to a boolean in the conditional expression. |
 | `not a list` | The expression does not evaluate to a list in the list operation. |
-| `pattern match failure` | The pattern does not match the given value. |
+| `invalid pattern match` | The pattern does not match the given value. |
 | `unmatched value` | The value does not match any of the cases in the match expression. |
 
 Note that this language's semantics do not sometimes define the order of
@@ -130,8 +130,8 @@ so on.
 
 > [!WARNING]
 >
-> If at least one test of the `interp` function fails, the `sqsumIfExpr`
+> If at least one test of the `interp` function fails, the `hanoiMovesBody`
 > function will not be tested.  Therefore, you must pass all the tests of the
-> `interp` function before implementing the `sqsumIfExpr`
+> `interp` function before implementing the `hanoiMovesBody` function.
 
 **Please implement the `hanoiMovesBody` in the `Implementation.scala` file.**
