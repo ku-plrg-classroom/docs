@@ -13,7 +13,7 @@ The template source code contains the following files:
 <pre><code>mini-fsharp
 └─ src
    ├─ main/scala/kuplrg
-   │  ├── MiniFSharp.scala ────────── The definition of the mini-fsharp and parsers
+   │  ├── MiniFSharp.scala ────── The definition of the mini-fsharp and parsers
    │  ├── Implementation.scala ── <b style='color:red;'>[[ IMPLEMENT AND SUBMIT THIS FILE ]]</b>
    │  ├── Template.scala ──────── The templates of target functions
    │  └── error.scala ─────────── The definition of the `error` function
