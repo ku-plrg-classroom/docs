@@ -37,10 +37,10 @@ If the given program stops with a run-time error with an error kind (i.e.,
 exception using the `error` function with the string form (i.e., `_.str`) of the
 error kind.
 
-For example, the following code should throw a `NameError` exception:
+For example, the following code should throw a `NameError` error:
 ```python
 # MiniPython
-x           # it should raise a `NameError`
+x           # it should raise an error with a message: `NameError: x`
 ```
 because the reduction rule in [`mini-python-spec.pdf`](./mini-python-spec.pdf)
 raises a `NameError` for this case but there is no `try`-`except` block to catch
