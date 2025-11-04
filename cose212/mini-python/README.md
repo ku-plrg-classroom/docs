@@ -43,7 +43,7 @@ For example, the following code should throw a `NameError` exception:
 x
 ```
 because the reduction rule for variable lookup raises a `NameError` in the
-[specification](./mini-python-spec.pdf) for this case but there is no
+[`mini-python-spec.pdf`](./mini-python-spec.pdf) for this case but there is no
 `try`-`except` block to catch it.
 
 
@@ -131,6 +131,6 @@ def locals(block: Block): Set[String] = ???
 ```
 
 The foraml definition of the `locals` function and other helper functions are
-provided in the [specification](./mini-python-spec.pdf).
+provided in the [`mini-python-spec.pdf`](./mini-python-spec.pdf).
 
 **Please implement the `locals` function in the `Implementation.scala` file.**
