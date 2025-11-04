@@ -133,4 +133,4 @@ def locals(block: Block): Set[String] = ???
 The foraml definition of the `locals` function and other helper functions are
 provided in the [specification](./mini-python-spec.pdf).
 
-**Please implement the `reduce` function in the `Implementation.scala` file.**
+**Please implement the `locals` function in the `Implementation.scala` file.**
