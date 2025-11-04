@@ -40,7 +40,7 @@ error kind.
 For example, the following code should throw a `NameError` exception:
 ```python
 # MiniPython
-x
+x           # it should raise a `NameError`
 ```
 because the reduction rule in [`mini-python-spec.pdf`](./mini-python-spec.pdf)
 raises a `NameError` for this case but there is no `try`-`except` block to catch
