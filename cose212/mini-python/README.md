@@ -42,9 +42,9 @@ For example, the following code should throw a `NameError` exception:
 # MiniPython
 x
 ```
-because the reduction rule for variable lookup raises a `NameError` in the
-[`mini-python-spec.pdf`](./mini-python-spec.pdf) for this case but there is no
-`try`-`except` block to catch it.
+because the reduction rule in [`mini-python-spec.pdf`](./mini-python-spec.pdf)
+raises a `NameError` for this case but there is no `try`-`except` block to catch
+it.
 
 
 
