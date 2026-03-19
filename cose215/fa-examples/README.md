@@ -33,17 +33,17 @@ The template source code contains the following files:
 the `Implementation.scala` file.**
 
 - [**Deterministic Finite Automata (DFA) (40 points)**](#deterministic-finite-automata-dfa-40-points)
-  - [(Problem #1) `dfa_a_b_plus` (10 points)](#problem-1-dfa_a_b_plus-10-points)
-  - [(Problem #2) `dfa_div_3_2` (10 points)](#problem-2-dfa_div_3_2-10-points)
-  - [(Problem #3) `dfa_subseq_011` (10 points)](#problem-3-dfa_subseq_011-10-points)
-  - [(Problem #4) `dfa_even_0_1` (10 points)](#problem-4-dfa_even_0_1-10-points)
+  - [(Problem #1) `dfa_len_div_3` (10 points)](#problem-1-dfa_len_div_3-10-points)
+  - [(Problem #2) `dfa_same_start_end` (10 points)](#problem-2-dfa_same_start_end-10-points)
+  - [(Problem #3) `dfa_not_substr_101` (10 points)](#problem-3-dfa_not_substr_101-10-points)
+  - [(Problem #4) `dfa_div_4_1` (10 points)](#problem-4-dfa_div_4_1-10-points)
 - [**Nondeterministic Finite Automata (NFA) (30 points)**](#nondeterministic-finite-automata-nfa-30-points)
-  - [(Problem #5) `nfa_most_three_0` (10 points)](#problem-5-nfa_most_three_0-10-points)
-  - [(Problem #6) `nfa_not_substr_bab` (10 points)](#problem-6-nfa_not_substr_bab-10-points)
-  - [(Problem #7) `nfa_comb_aaa_bb` (10 points)](#problem-7-nfa_comb_aaa_bb-10-points)
+  - [(Problem #5) `nfa_comb_aaa_bb` (10 points)](#problem-5-nfa_comb_aaa_bb-10-points)
+  - [(Problem #6) `nfa_101_or_110` (10 points)](#problem-6-nfa_101_or_110-10-points)
+  - [(Problem #7) `nfa_has_aa_or_bb` (10 points)](#problem-7-nfa_has_aa_or_bb-10-points)
 - [**ε-Nondeterministic Finite Automata (ε-NFA) (30 points)**](#ε-nondeterministic-finite-automata-ε-nfa-30-points)
-  - [(Problem #8) `enfa_aba_plus` (10 points)](#problem-8-enfa_aba_plus-10-points)
-  - [(Problem #9) `enfa_same_digits` (10 points)](#problem-9-enfa_same_digits-10-points)
+  - [(Problem #8) `enfa_opt_pre_post` (10 points)](#problem-8-enfa_opt_pre_post-10-points)
+  - [(Problem #9) `enfa_some_plus` (10 points)](#problem-9-enfa_some_plus-10-points)
   - [(Problem #10) `enfa_complex` (10 points)](#problem-10-enfa_complex-10-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
@@ -65,27 +65,25 @@ case class DFA(
 ) extends FA
 ```
 
-For instance, an example DFA `dfa_waa` is defined as follows:
+For instance, you can define a DFA `dfa_waa` as follows:
 ```scala
 def dfa_waa: DFA = DFA(
   states      = Set(0, 1, 2),
   symbols     = Set('a', 'b'),
-  trans       = Map(
-    (0, 'a') -> 1,
-    (0, 'b') -> 0,
-    (1, 'a') -> 2,
-    (1, 'b') -> 0,
-    (2, 'a') -> 2,
-    (2, 'b') -> 0,
-  ),
   initState   = 0,
   finalStates = Set(2),
+)(
+  (0, 'a') -> 1,
+  (0, 'b') -> 0,
+  (1, 'a') -> 2,
+  (1, 'b') -> 0,
+  (2, 'a') -> 2,
+  (2, 'b') -> 0,
 )
 ```
 whose language is:
 $${\large
-L = \lbrace w \texttt{aa} \mid w \in \lbrace \texttt{a}, \texttt{b} \rbrace^*
-\rbrace
+L = \lbrace w \texttt{aa} \mid w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \rbrace
 }$$
 
 In this part, you need to implement the `DFA` instances whose languages are
@@ -93,83 +91,70 @@ equal to the given languages.
 
 
 
-### (Problem #1) `dfa_a_b_plus` (10 points)
+### (Problem #1) `dfa_len_div_3` (10 points)
 
-Please implement the DFA `dfa_a_b_plus` whose language is equal to the following
-language:
-
-$${\large
-L = \lbrace \texttt{a} \texttt{b}^n \mid n \geq 1 \rbrace
-}$$
-
-For example, $\texttt{ab}$, $\texttt{abb}$, and $\texttt{abbbbb}$ are in the
-language, but $\texttt{a}$, $\texttt{b}$, $\texttt{ba}$, $\texttt{bb}$,
-$\texttt{aaa}$, and $\texttt{abab}$ are not in the language.
-
-
-
-### (Problem #2) `dfa_div_3_2` (10 points)
-
-Please implement the DFA `dfa_div_3_2` whose language is equal to the following
-language:
+Please implement the DFA `dfa_len_div_3` whose language represents words whose
+length is divisible by 3 over the alphabet $\lbrace \texttt{a}, \texttt{b}
+\rbrace$:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \mathbb{N}(w)
-\equiv 2 (\text{mod } 3) \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid |w| \equiv 0 \pmod 3 \rbrace
 }$$
 
-where $\mathbb{N}(w)$ is the natural number represented by $w$ in binary. For
-example, $\mathbb{N}(\texttt{101}) = 4 + 1 = 5$ and $\mathbb{N}(\texttt{111}) =
-4 + 2 + 1 = 7$. In addition, it allows the leading zeroes, so
-$\mathbb{N}(\epsilon) = 0$ and $\mathbb{N}(\texttt{00101}) = 4 + 1 = 5$. Thus,
-$\texttt{101}$, $\texttt{10001}$, and $\texttt{01000}$ are in the language, but
-$\texttt{11}$, $\texttt{100}$, $\texttt{110}$, and $\texttt{1101}$ are not in
-the language.
+- **Accepted:** $\epsilon$, `aaa`, `aba`, `bbabab`
+- **Rejected:** `a`, `ab`, `aaaa`
 
 
 
-### (Problem #3) `dfa_subseq_011` (10 points)
+### (Problem #2) `dfa_same_start_end` (10 points)
 
-Please implement the DFA `dfa_subseq_011` whose language is equal to the
-following language:
+Please implement the DFA `dfa_same_start_end` whose language represents words
+that start and end with the same symbol over the alphabet $\lbrace \texttt{a},
+\texttt{b} \rbrace$:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{011}
-\text{ is a subsequence of } w \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^+ \mid \text{first}(w) = \text{last}(w) \rbrace
 }$$
+
+- **Accepted:** `a`, `b`, `aba`, `baab`, `abbaa`
+- **Rejected:** $\epsilon$, `ab`, `ba`, `abab`
+
+
+### (Problem #3) `dfa_not_substr_101` (10 points)
+
+Please implement the DFA `dfa_not_substr_101` whose language represents words
+that do not contain `101` as a substring over the alphabet $\lbrace \texttt{0},
+\texttt{1} \rbrace$:
+
+$${\large
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \texttt{101} \text{ is not a substring of } w \rbrace
+}$$
+
+- **Accepted:** $\epsilon$, `000`, `111`, `1100`, `1001`
+- **Rejected:** `101`, `0101`, `11010`
 
 > [!WARNING]
 >
-> Note that the **SUBSEQUENCE** is not necessarily contiguous unlike the
-> **SUBSTRING**. For example, $\texttt{011}$ is a subsequence of
-> $\texttt{00101}$ because the first ($\texttt{0}$), third ($\texttt{1}$), and
-> fifth ($\texttt{1}$) characters of $\texttt{00101}$ are $\texttt{101}$.
-
-For example, $\texttt{011}$, $\texttt{01001}$, $\texttt{100011}$, and
-$\texttt{10100010}$ are in the language, but $\texttt{0}$, $\texttt{1}$,
-$\texttt{10}$, $\texttt{100}$, $\texttt{10000}$, $\texttt{00001000}$, and
-$\texttt{1111100}$ are not in the language.
+> Note that the **SUBSTRING** is a contiguous sequence of characters within a
+> string.
 
 
 
-### (Problem #4) `dfa_even_0_1` (10 points)
 
-Please implement the DFA `dfa_even_0_1` whose language is equal to the following
-language:
+### (Problem #4) `dfa_div_4_1` (10 points)
+
+Please implement the DFA `dfa_div_4_1` whose language represents words that
+represent natural numbers that are congruent to 1 modulo 4 over the alphabet
+$\lbrace \texttt{1}, \texttt{2}, \texttt{3} \rbrace$:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
-\textsf{zeros}(w) \equiv 0 (\text{mod } 2) \wedge \textsf{ones}(w) \equiv 0
-(\text{mod } 2) \rbrace
+L = \lbrace w \in \lbrace \texttt{1}, \texttt{2}, \texttt{3} \rbrace^+ \mid \mathbb{N}_10(w) \equiv 1 \pmod 4 \rbrace
 }$$
 
-where $\textsf{zeros}(w)$ and $\textsf{ones}(w)$ are the number of $\texttt{0}$
-and $\texttt{1}$, respectively. For example, $\textsf{zeros}(\texttt{10101}) =
-2$ and $\textsf{ones}(\texttt{10101}) = 3$. Thus, $\epsilon$, $\texttt{00}$,
-$\texttt{11}$, $\texttt{1010}$, $\texttt{1111}$, and $\texttt{110101}$ are in
-the language, but $\texttt{1}$, $\texttt{0}$, $\texttt{10}$, $\texttt{01}$,
-$\texttt{110}$, $\texttt{010}$, $\texttt{0100}$, $\texttt{1110}$, and
-$\texttt{101001}$ are not in the language.
+where $\mathbb{N}_10(w)$ is the natural number represented by $w$ in base 10.
+
+- **Accepted:** `1`, `13`, `21`, `33`, `121`
+- **Rejected:** $\epsilon$, `2`, `3`, `11`, `12`, `22`
 
 
 
@@ -188,82 +173,87 @@ case class NFA(
 ) extends FA
 ```
 
-For instance, an example NFA `nfa_least_two_0` is defined as follows:
+For instance, you can define a NFA `nfa_least_two_0` as follows:
 ```scala
 def nfa_least_two_0: NFA = NFA(
-  states      = Set(0, 1, 2),
-  symbols     = Set('0', '1'),
-  trans       = Map(
-    (0, '0') -> Set(0, 1),
-    (0, '1') -> Set(0),
-    (1, '0') -> Set(1, 2),
-    (1, '1') -> Set(1),
-    (2, '0') -> Set(2),
-    (2, '1') -> Set(2),
-  ).withDefaultValue(Set()),
-  initState   = 0,
+  states = Set(0, 1, 2),
+  symbols = Set('0', '1'),
+  initState = 0,
   finalStates = Set(2),
+)(
+  (0, '0') -> 0,
+  (0, '0') -> 1,
+  (0, '1') -> 0,
+  (1, '0') -> 1,
+  (1, '0') -> 2,
+  (1, '1') -> 1,
+  (2, '0') -> 2,
+  (2, '1') -> 2,
 )
 ```
 whose language is:
 $${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{
-contains at least two } \texttt{0} \text{'s} \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{ contains at least two } \texttt{0} \text{'s} \rbrace
 }$$
+
+> [!NOTE]
+>
+> In an NFA, there can be multiple transitions for the same state and symbol.
+> For example, in the above NFA `nfa_least_two_0`, there are two transitions
+> from state 0 on symbol `0`: one goes to state 0 and the other goes to state 1.
 
 In this part, you need to implement the `NFA` instances whose languages are
 equal to the given languages.
 
 
 
-### (Problem #5) `nfa_most_three_0` (10 points)
+### (Problem #5) `nfa_comb_aaa_bb` (10 points)
 
-Please implement the NFA `nfa_most_three_0` whose language is equal to the
-following language:
-
-$${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{
-contains at most three } \texttt{0} \text{'s} \rbrace
-}$$
-
-For example, $\epsilon$, $\texttt{11}$, $\texttt{101}$, $\texttt{010}$,
-$\texttt{100}$, $\texttt{01010}$, and $\texttt{110110101}$ are in the language,
-but $\texttt{0000}$, $\texttt{00010}$, $\texttt{010100}$, $\texttt{00000}$,
-$\texttt{01010110}$, and $\texttt{11011011010}$ are not in the language.
-
-
-
-### (Problem #6) `nfa_not_substr_bab` (10 points)
-
-Please implement the NFA `nfa_not_substr_bab` whose language is equal to the
-following language:
+Please implement the NFA `nfa_comb_aaa_bb` whose language represents words that
+are concatenations of `aaa` and `bb` over the alphabet $\lbrace \texttt{a},
+\texttt{b} \rbrace$, and you must implement it using **5 or fewer transitions**:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \texttt{bab}
-\text{ is }\textbf{NOT}\text{ a substring of } w \rbrace
+L = \lbrace \texttt{aaa}, \texttt{bb} \rbrace^*
 }$$
 
-For example, $\texttt{aba}$, $\texttt{abaa}$, and $\texttt{baaab}$ are in the
-language, but $\texttt{abbab}$, $\texttt{ababa}$, and $\texttt{babba}$ are not
-in the language.
+- **Accepted:** $\epsilon$, `aaa`, `bb`, `aaabb`, `bbaaa`, `bbbb`
+- **Rejected:** `a`, `aa`, `b`, `aaab`, `baaa`
 
 
 
-### (Problem #7) `nfa_comb_aaa_bb` (10 points)
+### (Problem #6) `nfa_101_or_110` (10 points)
 
-Please implement the NFA `nfa_comb_aaa_bb` whose language is equal to the
-following language:
+Please implement the NFA `nfa_101_or_110` whose language represents words that
+end with `101` or `110` over the alphabet $\lbrace \texttt{0}, \texttt{1}
+\rbrace$, and you must implement it using **7 or fewer transitions**:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid w
-\text{ is any combination of } \texttt{aaa} \text{ and } \texttt{bb} \rbrace
+L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{ ends with } \texttt{101} \text{ or } \texttt{110} \rbrace
 }$$
 
-For example, $\epsilon$, $\texttt{aaa}$, $\texttt{bb}$, $\texttt{aaabb}$,
-and $\texttt{aaabbaaa}$ are in the language, but $\texttt{aba}$,
-$\texttt{aaaba}$, $\texttt{bbaab}$, $\texttt{aabb}$, $\texttt{ababa}$,
-$\texttt{aaabbaab}$, and $\texttt{bbbbb}$ are not in the language.
+- **Accepted:** `101`, `110`, `0101`, `11110`, `000110`, `101110`, `110101`
+- **Rejected:** $\epsilon$, `10`, `11`, `1011`, `1100`, `1010`, `1101`
 
+
+
+### (Problem #7) `nfa_has_aa_or_bb` (10 points)
+
+Please implement the NFA `nfa_has_aa_or_bb` whose language represents words that
+contain `aa` or `bb` as a substring over the alphabet $\lbrace \texttt{a},
+\texttt{b} \rbrace$, and you must implement it using **8 or fewer transitions**:
+
+$${\large
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid w \text{ contains } \texttt{aa} \text{ or } \texttt{bb} \text{ as a substring} \rbrace
+}$$
+
+- **Accepted:** `aa`, `bb`, `abaa`, `bababbb`
+- **Rejected:** $\epsilon$, `a`, `b`, `ab`, `aba`, `bab`
+
+> [!WARNING]
+>
+> Note that the **SUBSTRING** is a contiguous sequence of characters within a
+> string.
 
 
 
@@ -281,20 +271,19 @@ case class ENFA(
 ) extends FA
 ```
 
-For instance, an example ε-NFA `enfa_ai_bj_ck` is defined as follows:
+For instance, you can define a ε-NFA `enfa_ai_bj_ck` as follows:
 ```scala
 def enfa_ai_bj_ck: ENFA = ENFA(
-  states      = Set(0, 1, 2),
-  symbols     = Set('a', 'b', 'c'),
-  trans       = Map(
-    (0, None)      -> Set(1),
-    (0, Some('a')) -> Set(0),
-    (1, None)      -> Set(2),
-    (1, Some('b')) -> Set(1),
-    (2, Some('c')) -> Set(2),
-  ).withDefaultValue(Set()),
-  initState   = 0,
+  states = Set(0, 1, 2),
+  symbols = Set('a', 'b', 'c'),
+  initState = 0,
   finalStates = Set(2),
+)(
+  (0, EPS) -> 1,
+  (0, 'a') -> 0,
+  (1, EPS) -> 2,
+  (1, 'b') -> 1,
+  (2, 'c') -> 2,
 )
 ```
 whose language is:
@@ -302,66 +291,76 @@ $${\large
 L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \rbrace
 }$$
 
+> [!NOTE]
+>
+> The `EPS` symbol represents the ε-transition.
+
 In this part, you need to implement the `ENFA` instances whose languages are
 equal to the given languages.
 
 
 
 
-### (Problem #8) `enfa_aba_plus` (10 points)
+### (Problem #8) `enfa_opt_pre_post` (10 points)
 
-Please implement the ε-NFA `enfa_aba_plus` whose language is equal to the
-following language:
-
-$${\large
-L = \lbrace (\texttt{aba})^n \mid n \geq 1 \rbrace
-}$$
-
-For example, $\texttt{aba}$, $\texttt{abaaba}$, and $\texttt{abaabaaba}$ are in
-the language, but $\epsilon$, $\texttt{abb}$, $\texttt{abaa}$, and
-$\texttt{abba}$ are not.
-
-
-
-### (Problem #9) `enfa_same_digits` (10 points)
-
-Please implement the ε-NFA `enfa_same_digits` whose language is equal to the
-following language:
+Please implement the ε-NFA `enfa_opt_pre_post` whose language represents words
+that optionally start with `aa` and/or end with `bb` over the alphabet $\lbrace
+\texttt{a}, \texttt{b}, \texttt{c} \rbrace$, and you must implement it using **7
+or fewer transitions**:
 
 $${\large
-L = \lbrace \texttt{0}^n \mid n \geq 1 \rbrace \cup \lbrace \texttt{1}^n \mid n
-\geq 1 \rbrace
+L = \lbrace \epsilon, \texttt{aa} \rbrace \lbrace \texttt{c}^n \mid n \geq 0 \rbrace \lbrace \epsilon, \texttt{bb} \rbrace
 }$$
 
-For example, $\texttt{0}$, $\texttt{1}$, $\texttt{000}$, and $\texttt{11111}$
-are in the language, but $\epsilon$, $\texttt{01}$, $\texttt{10}$, and
-$\texttt{011}$ are not.
+- **Accepted:** $\epsilon$, `aa`, `bb`, `c`, `aac`, `cbb`, `aacbb`, `ccbb`,
+  `aacccc`, `ccccbb`
+- **Rejected:** `a`, `b`, `ac`, `cb`, `aab`, `abb`, `aaca`, `ccbbcc`
+
+
+
+### (Problem #9) `enfa_some_plus` (10 points)
+
+Please implement the ε-NFA `enfa_some_plus` whose language represents words that
+are concatenations of `aca`, `acb`, `bca`, and `bcb` over the alphabet $\lbrace
+\texttt{a}, \texttt{b}, \texttt{c} \rbrace$, and you must implement it using **6
+or fewer transitions**:
+
+$${\large
+L = \lbrace \texttt{aca}, \texttt{acb}, \texttt{bca}, \texttt{bcb} \rbrace^+
+}$$
+
+- **Accepted:** `aca`, `bcb`, `acabca`, `bcbacb`
+- **Rejected:** $\epsilon$, `ac`, `bc`, `acac`, `acbcb`, `bcbca`, `acbabc`
 
 
 
 ### (Problem #10) `enfa_complex` (10 points)
 
-Please implement the ε-NFA `enfa_complex` whose language is equal to the
-following language:
+Please implement the ε-NFA `enfa_complex` whose language represents words that
+represent natural numbers that are congruent to 1 modulo 3 or contain a number
+of `0`'s that is congruent to 1 modulo 3 over the alphabet $\lbrace \texttt{0},
+\texttt{1} \rbrace$, and you must implement it using **14 or fewer
+transitions**:
 
 $${\large
-L = L_1 \cap L_2
+L = L_1 \cup L_2
 }$$
 where
 $${\large
 \begin{array}{l@{}l@{}l}
-L_1 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
-\mathbb{N}(w) \equiv 1 (\text{mod } 3) \rbrace \\
-L_2 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid
-\textsf{zeros}(w) \equiv 1 (\text{mod } 3) \rbrace \\
+L_1 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \mathbb{N}_2(w) \equiv 1 \pmod 3 \rbrace \\
+L_2 &=& \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid \textsf{zeros}(w) \equiv 1 \pmod 3 \rbrace \\
 \end{array}
 }$$
 
-where $\mathbb{N}(w)$ is the natural number represented by $w$ in binary, and
-$\textsf{zeros}(w)$ is the number of $\texttt{0}$'s in $w$.
-For example, $\texttt{1001100}$ is in the language because
-$\mathbb{N}(\texttt{1001100}) = 64 + 8 + 4 = 76 \equiv 1 (\text{mod } 3)$ and
-$\textsf{zeros}(\texttt{1001100}) = 4 \equiv 1 (\text{mod } 3)$.
+where $\mathbb{N}_2(w)$ is the natural number represented by $w$ in binary that
+allows leading zeros, and $\mathbb{N}_2(\epsilon) = 0$. Also,
+$\textsf{zeros}(w)$ is the number of `0`'s in $w$.
+
+- **Accepted:** `0`, `1`, `01`, `10`, `001`, `1010`, `11100`, `0010110`,
+  `1011111`
+- **Rejected:** $\epsilon$, `00`, `11`, `000`, `010`, `0010`, `0011`,
+  `00011`, `01011`,`100011`
 
 
 
