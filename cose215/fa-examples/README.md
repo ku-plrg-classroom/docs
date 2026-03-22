@@ -233,7 +233,7 @@ L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w \text{ ends wi
 }$$
 
 - **Accepted:** `101`, `110`, `0101`, `11110`, `000110`, `101110`, `110101`
-- **Rejected:** $\epsilon$, `10`, `11`, `1011`, `1100`, `1010`, `1101`
+- **Rejected:** $\epsilon$, `10`, `11`, `1011`, `1100`, `1010`, `1011`
 
 
 
