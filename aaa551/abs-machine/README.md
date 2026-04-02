@@ -40,8 +40,7 @@ If the given expression meets the following conditions during evaluation, the
 | `free identifier` | The given identifier is not bound in the environment. |
 | `invalid operation` | The given operation is not defined for the given operands. |
 | `not a function` | The expression does not evaluate to a function or continuation in the function application. |
-| `not a list` | The expression does not evaluate to a list in the `::`
-operation or the `match` expression. |
+| `not a list` | The expression does not evaluate to a list in the `::` operation or the `match` expression. |
 
 ## (Problem #1) `reduce`
 
