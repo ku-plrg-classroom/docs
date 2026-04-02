@@ -35,6 +35,14 @@ language.
 If the given expression meets the following conditions during evaluation, the
 `reduce` function should throw an exception using the `error` function.
 
+| Error kind | Description |
+|:-----------|:------------|
+| `free identifier` | The given identifier is not bound in the environment. |
+| `invalid operation` | The given operation is not defined for the given operands. |
+| `not a function` | The expression does not evaluate to a function or continuation in the function application. |
+| `not a list` | The expression does not evaluate to a list in the `::`
+operation or the `match` expression. |
+
 ## (Problem #1) `reduce`
 
 The `eval` function is an interpreter that takes an expression in a string form
@@ -49,9 +57,12 @@ def eval(str: String): String =
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
 ```
 
-The `reduce` function represents the transition rules of the language as a
-function that reduces a state `(k, s)` consisting of a continuation `k` and a
-stack `s` into a new state `(k', s')`:
+The `reduce` function performs a single step of state transition in the abstract
+machine by converting a state `(k, s)` consisting of a continuation `k` and a
+stack `s` into a new state `(k', s')`. The `eval` function repeats this process
+until it reaches the final state `(EmptyK, List(v))`, where `v` is the final
+result of the evaluation.
+
 ```scala
 def reduce(k: Cont, s: Stack): (Cont, Stack) = (k, s) match
   case (EvalK(env, expr, k), s) =>
