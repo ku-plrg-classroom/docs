@@ -169,8 +169,8 @@ over the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that all
 non-empty prefixes of the word have different numbers of `a`s and `b`s:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \forall \text{a
-non-empty } u { prefix of } w, N_a(u) \neq N_b(u) \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \forall
+\text{non-empty prefix } u \text{ of } w, N_a(u) \neq N_b(u) \rbrace
 }$$
 
 where $N_a(u)$ and $N_b(u)$ are the number of `a`s and `b`s in $u$,
