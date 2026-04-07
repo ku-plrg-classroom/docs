@@ -84,6 +84,7 @@ def cfg_an_bn: CFG = CFG("""
 """)
 ```
 whose language is equal to the following language:
+
 $${\large
 L = \lbrace \texttt{a}^n \texttt{b}^n \mid n \geq 0 \rbrace
 }$$
@@ -140,6 +141,7 @@ L = \lbrace \texttt{a}^n \texttt{b}^m \mid n \neq m \rbrace
 Please implement the CFG `cfg_ai_bj_ak` that accepts the language of words
 consisting of $i$ `a`s followed by $j$ `b`s followed by $k$ `a`s, where $i + k =
 j$:
+
 $${\large
 L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{a}^k \mid i + k = j \rbrace
 }$$
