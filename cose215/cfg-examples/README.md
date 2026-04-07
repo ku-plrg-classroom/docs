@@ -108,6 +108,7 @@ balanced parentheses string} \rbrace
 
 Please implement the CFG `cfg_an_b2n` that accepts the language of words
 consisting of $n$ `a`s followed by $2n$ `b`s:
+
 $${\large
 L = \lbrace \texttt{a}^n \texttt{b}^{2n} \mid n \geq 0 \rbrace
 }$$
@@ -118,6 +119,7 @@ L = \lbrace \texttt{a}^n \texttt{b}^{2n} \mid n \geq 0 \rbrace
 Please implement the CFG `cfg_an_bm_between` that accepts the language of
 words consisting of $n$ `a`s followed by $m$ `b`s, where $m$ is between $n$
 and $2n$:
+
 $${\large
 L = \lbrace \texttt{a}^n \texttt{b}^m \mid n \leq m \leq 2n \rbrace
 }$$
@@ -127,6 +129,7 @@ L = \lbrace \texttt{a}^n \texttt{b}^m \mid n \leq m \leq 2n \rbrace
 
 Please implement the CFG `cfg_an_bm_neq` that accepts the language of words
 consisting of $n$ `a`s followed by $m$ `b`s, where $n$ and $m$ are different:
+
 $${\large
 L = \lbrace \texttt{a}^n \texttt{b}^m \mid n \neq m \rbrace
 }$$
@@ -147,10 +150,12 @@ L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{a}^k \mid i + k = j \rbrace
 Please implement the CFG `cfg_more_bs` that accepts the language of words over
 the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that the number of
 `a`s is less than or equal to the number of `b`s:
+
 $${\large
 L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid N_a(w) \leq
 N_b(w) \rbrace
 }$$
+
 where $N_a(w)$ and $N_b(w)$ are the number of `a`s and `b`s in $w$,
 respectively.
 
@@ -160,10 +165,12 @@ respectively.
 Please implement the CFG `cfg_prefix_neq` that accepts the language of words
 over the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that all
 non-empty prefixes of the word have different numbers of `a`s and `b`s:
+
 $${\large
 L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid \forall u \text{
 is a non-empty prefix of } w, N_a(u) \neq N_b(u) \rbrace
 }$$
+
 where $N_a(u)$ and $N_b(u)$ are the number of `a`s and `b`s in $u$,
 respectively.
 
@@ -178,10 +185,12 @@ respectively.
 Please implement the CFG `cfg_between` that accepts the language of words over
 the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that the number of
 `b`s is between the number of `a`s and twice the number of `a`s:
+
 $${\large
 L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid N_a(w) \leq
 N_b(w) \leq 2N_a(w) \rbrace
 }$$
+
 where $N_a(w)$ and $N_b(w)$ are the number of `a`s and `b`s in $w$,
 respectively.
 
@@ -191,10 +200,12 @@ respectively.
 Please implement the CFG `cfg_neq_reverse` that accepts the language of words
 over the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that the word
 is not equal to its reverse:
+
 $${\large
 L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid w \neq w^R
 \rbrace
 }$$
+
 where $w^R$ is the reverse of $w$.
 
 
@@ -203,9 +214,11 @@ where $w^R$ is the reverse of $w$.
 Please implement the CFG `cfg_not_ww` that accepts the language of words over
 the alphabet $\lbrace \texttt{a}, \texttt{b} \rbrace$ such that the word is
 not of the form $ww$ for some word $w$:
+
 $${\large
 L = \lbrace w w \mid w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \rbrace^c
 }$$
+
 where $L^c$ is the complement of $L$.
 
 
