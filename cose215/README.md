@@ -28,6 +28,7 @@ University](https://korea.ac.kr).
 
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
+| [cfg-examples](/cose215/cfg-examples/README.md)    | Examples of Context-Free Grammars                                                                       |
 | [pda-examples](/cose215/pda-examples/README.md)    | Examples of Pushdown Automata                                                                           |
 | [equiv-cfg-pda](/cose215/equiv-cfg-pda/README.md)  | Equivalence of Context-Free Grammars and Pushdown Automata                                              |
 
