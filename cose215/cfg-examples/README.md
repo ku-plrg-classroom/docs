@@ -47,7 +47,7 @@ implement the CFG instances in the `Implementation.scala` file.**
 
 A **context-free grammar (CFG)** is defined as the following `case class`:
 ```scala
-case class CFG(
+final case class CFG(
   nts: Set[Nt],
   symbols: Set[Symbol],
   start: Nt,
