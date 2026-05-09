@@ -26,14 +26,14 @@ The template source code contains the following files:
 objects in the `Implementation.scala` file.**
 
 - [**Pushdown Automata (PDA)**](#pushdown-automata-pda)
-  - [(Problem #1) `pda_even_pal_final` (10 points)](#problem-1-pda_even_pal_final-10-points)
-  - [(Problem #2) `pda_more_bs_empty` (10 points)](#problem-2-pda_more_bs_empty-10-points)
-  - [(Problem #3) `pda_abc_ij_jk_final` (10 points)](#problem-3-pda_abc_ij_jk_final-10-points)
-  - [(Problem #4) `pda_a2n1_b3n2_empty` (10 points)](#problem-4-pda_a2n1_b3n2_empty-10-points)
-  - [(Problem #5) `pda_abc_j_i2k_final` (15 points)](#problem-5-pda_abc_j_i2k_final-15-points)
-  - [(Problem #6) `pda_ord_brace_empty` (15 points)](#problem-6-pda_ord_brace_empty-15-points)
-  - [(Problem #7) `pda_eq_pair_final` (15 points)](#problem-7-pda_eq_pair_final-15-points)
-  - [(Problem #8) `pda_inc_empty` (15 points)](#problem-8-pda_inc_empty-15-points)
+  - [(Problem #1) `pda_eq_a_c_empty` (10 points)](#problem-1-pda_eq_a_c_empty-10-points)
+  - [(Problem #2) `pda_excess_a_final` (10 points)](#problem-2-pda_excess_a_final-10-points)
+  - [(Problem #3) `pda_ab_2c_empty` (10 points)](#problem-3-pda_ab_2c_empty-10-points)
+  - [(Problem #4) `pda_hamming_one_final` (15 points)](#problem-4-pda_hamming_one_final-15-points)
+  - [(Problem #5) `pda_pal_concat_empty` (15 points)](#problem-5-pda_pal_concat_empty-15-points)
+  - [(Problem #6) `pda_block_pal_match_final` (15 points)](#problem-6-pda_block_pal_match_final-15-points)
+  - [(Problem #7) `pda_pal_factor_empty` (15 points)](#problem-7-pda_pal_factor_empty-15-points)
+  - [(Problem #8) `pda_triple_final` (15 points)](#problem-8-pda_triple_final-15-points)
 - [Appendix](#appendix)
   - [Playground](#playground)
 
@@ -81,288 +81,305 @@ L = \lbrace \texttt{a}^n \texttt{b}^n \mid n \geq 0 \rbrace
 You need to implement the `PDA` instances whose languages are equal to the given
 languages.
 
-> [!CAUTION]
->
-> While there is no restriction on the epsilon transitions in the original
-> definition of the PDA, we impose a restriction on the epsilon transitions in
-> this assignment for grading purposes.
->
-> You **CANNOT** define any **epsilon transitions** that **increase** the stack
-> size in the `trans` field.
->
-> For example, you **CANNOT** define the following epsilon transition:
-> ```scala
-> (0, None, "Z") -> Set((0, List("X", "Z")))
-> ```
-> because it **increases** the stack size by pushing the alphabet `X` into the
-> stack.
->
-> However, you **CAN** define the following epsilon transitions:
-> ```scala
-> (0, None, "X") -> Set((0, List("Z")))   // preserve the stack size
-> (1, None, "Z") -> Set((1, List("X")))   // preserve the stack size
-> (2, None, "Z") -> Set((2, List()))      // decrease the stack size
-> ```
-> because they **preserve** or **decrease** the stack size.
 
 
+### (Problem #1) `pda_eq_a_c_empty` (10 points)
 
-### (Problem #1) `pda_even_pal_final` (10 points)
-
-Please implement the PDA `pda_even_pal_final` whose language accepted by **final
-states** is equal to the following language:
-
-$${\large
-L = \lbrace w \in \lbrace \texttt{0}, \texttt{1} \rbrace^* \mid w = w^R \land
-|w| \text{ is even} \rbrace
-}$$
-
-where $w^R$ is the reverse of $w$.
-
-For example, the following words are **in the language**:
-```plaintext
-                // because ε           =    ε^R
-00              // because 00          =    (00)^R
-0110            // because 0110        =    (0110)^R
-010010          // because 010010      =    (010010)^R
-00111100        // because 00111100    =    (00111100)^R
-0100110010      // because 0100110010  =    (0100110010)^R
-```
-However, the following words are **not in the language**:
-```plaintext
-1               // because |w| is odd
-01              // because 01          !=   (01)^R
-0101            // because 0101        !=   (0101)^R
-001101          // because 001101      !=   (001101)^R
-11100110        // because 11100110    !=   (11100110)^R
-1001111101      // because 1001111101  !=   (1001111101)^R
-```
-
-
-
-### (Problem #2) `pda_more_bs_empty` (10 points)
-
-Please implement the PDA `pda_more_bs_empty` whose language accepted by **empty
+Please implement the PDA `pda_eq_a_c_empty` whose language accepted by **empty
 stacks** is equal to the following language:
 
 $${\large
-L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid N_a(w) \leq
-N_b(w) \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b}, \texttt{c} \rbrace^* \mid
+N_a(w) = N_c(w) \rbrace
 }$$
 
-where $N_a(w)$ and $N_b(w)$ are the number of $\texttt{a}$ and $\texttt{b}$ in
-$w$, respectively.
+where $N_a(w)$ and $N_c(w)$ are the number of $\texttt{a}$ and $\texttt{c}$ in
+$w$, respectively. The number of $\texttt{b}$'s is unconstrained.
 
 For example, the following words are **in the language**:
 ```plaintext
-b               // because N_a(w) = 0   <   1 = N_b(w)
-ab              // because N_a(w) = 1   =   1 = N_b(w)
-bab             // because N_a(w) = 1   <   2 = N_b(w)
-aabb            // because N_a(w) = 2   =   2 = N_b(w)
-abaabbb         // because N_a(w) = 3   <   4 = N_b(w)
+                // because N_a(w) = 0   =   0 = N_c(w)
+ac              // because N_a(w) = 1   =   1 = N_c(w)
+ca              // because N_a(w) = 1   =   1 = N_c(w)
+abc             // because N_a(w) = 1   =   1 = N_c(w)
+bbb             // because N_a(w) = 0   =   0 = N_c(w)
+acca            // because N_a(w) = 2   =   2 = N_c(w)
+abcbabc         // because N_a(w) = 2   =   2 = N_c(w)
 ```
 However, the following words are **not in the language**:
 ```plaintext
-a               // because N_a(w) = 1   >   0 = N_b(w)
-aab             // because N_a(w) = 2   >   1 = N_b(w)
-aba             // because N_a(w) = 2   >   1 = N_b(w)
-abaaba          // because N_a(w) = 4   >   2 = N_b(w)
-abaaababb       // because N_a(w) = 5   >   4 = N_b(w)
+a               // because N_a(w) = 1   !=  0 = N_c(w)
+c               // because N_a(w) = 0   !=  1 = N_c(w)
+ab              // because N_a(w) = 1   !=  0 = N_c(w)
+aac             // because N_a(w) = 2   !=  1 = N_c(w)
+abca            // because N_a(w) = 2   !=  1 = N_c(w)
+ccab            // because N_a(w) = 1   !=  2 = N_c(w)
 ```
 
 
-### (Problem #3) `pda_abc_ij_jk_final` (10 points)
 
-Please implement the PDA `pda_abc_ij_jk_final` whose language accepted by
+### (Problem #2) `pda_excess_a_final` (10 points)
+
+Please implement the PDA `pda_excess_a_final` whose language accepted by
 **final states** is equal to the following language:
 
 $${\large
-L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \land (i
-= j \lor j = k) \rbrace
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid N_a(w) \geq
+N_b(w) + 2 \rbrace
 }$$
+
+That is, the count of $\texttt{a}$'s exceeds the count of $\texttt{b}$'s by at
+least two.
 
 For example, the following words are **in the language**:
 ```plaintext
-                // because i = j = 0
-a               // because j = k = 0
-bc              // because j = k = 1
-aabb            // because i = j = 2
-abcccc          // because i = j = 1
-abbbccc         // because j = k = 3
-aaaabbcc        // because j = k = 2
+aa              // because N_a(w) = 2   =   0 + 2 = N_b(w) + 2
+aaa             // because N_a(w) = 3   >   0 + 2 = N_b(w) + 2
+aaab            // because N_a(w) = 3   =   1 + 2 = N_b(w) + 2
+aabaa           // because N_a(w) = 4   >   1 + 2 = N_b(w) + 2
+baaaa           // because N_a(w) = 4   >   1 + 2 = N_b(w) + 2
+abaaba          // because N_a(w) = 4   =   2 + 2 = N_b(w) + 2
 ```
 However, the following words are **not in the language**:
 ```plaintext
-b               // because i = 0 != 1 = j and j = 1 != 0 = k
-ba              // because not in the form of a^i b^j c^k
-ac              // because i = 1 != 0 = j and j = 0 != 1 = k
-bb              // because i = 0 != 2 = j and j = 2 != 0 = k
-cbab            // because not in the form of a^i b^j c^k
-bcc             // because i = 0 != 1 = j and j = 1 != 2 = k
-abbbcc          // because i = 1 != 3 = j and j = 3 != 2 = k
+                // because N_a(w) = 0   <   0 + 2 = N_b(w) + 2
+a               // because N_a(w) = 1   <   0 + 2 = N_b(w) + 2
+b               // because N_a(w) = 0   <   1 + 2 = N_b(w) + 2
+ab              // because N_a(w) = 1   <   1 + 2 = N_b(w) + 2
+aab             // because N_a(w) = 2   <   1 + 2 = N_b(w) + 2
+abab            // because N_a(w) = 2   <   2 + 2 = N_b(w) + 2
+aabb            // because N_a(w) = 2   <   2 + 2 = N_b(w) + 2
 ```
 
 
 
-### (Problem #4) `pda_a2n1_b3n2_empty` (10 points)
+### (Problem #3) `pda_ab_2c_empty` (10 points)
 
-Please implement the PDA `pda_a2n1_b3n2_empty` whose language accepted by
-**empty stacks** is equal to the following language:
-
-$${\large
-L = \lbrace \texttt{a}^i \texttt{b}^j \mid (i = 2n+1 \land j = 3n+2)
-\text{ for some } n \geq 0 \rbrace
-}$$
-
-For example, the following words are **in the language**:
-```plaintext
-abb                // because i = 1 = 2*0+1 and j = 1 = 3*0+2 and n = 0
-aaabbbbb           // because i = 3 = 2*1+1 and j = 4 = 3*1+2 and n = 1
-aaaaabbbbbbbb      // because i = 5 = 2*2+1 and j = 7 = 3*2+2 and n = 2
-aaaaaaabbbbbbbbbbb // because i = 7 = 2*3+1 and j = 10 = 3*3+2 and n = 3
-```
-However, the following words are **not in the language**:
-```plaintext
-                // because i = 0 = 2*0+0
-a               // because j = 0 = 3*0+0
-ba              // because not in the form of a^i b^j
-aa              // because i = 2 = 2*1+0
-ab              // because j = 1 = 3*0+1
-aaab            // because i = 3 = 2*1+1 but j = 1 = 3*0+1
-baba            // because not in the form of a^i b^j
-aaabbb          // because i = 3 = 2*1+1 but j = 3 = 3*1+0
-aaaaabbbb       // because i = 5 = 2*2+1 but j = 4 = 3*1+1
-```
-
-
-
-### (Problem #5) `pda_abc_j_i2k_final` (15 points)
-
-Please implement the PDA `pda_abc_j_i2k_final` whose language accepted by
-**final states** is equal to the following language:
-
-$${\large
-L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \land j =
-i + 2k \rbrace
-}$$
-
-For example, the following words are **in the language**:
-```plaintext
-                // because j = 0   =   0 = 0 + 2*0 = i + 2k
-ab              // because j = 1   =   1 = 1 + 2*0 = i + 2k
-bbc             // because j = 2   =   2 = 0 + 2*1 = i + 2k
-abbbc           // because j = 3   =   3 = 1 + 2*1 = i + 2k
-aabbbbc         // because j = 4   =   4 = 2 + 2*1 = i + 2k
-aabbbbbbcc      // because j = 6   =   6 = 2 + 2*2 = i + 2k
-```
-However, the following words are **not in the language**:
-```plaintext
-a               // because j = 0   !=   1 = 0 + 2*0 = i + 2k
-b               // because j = 1   !=   0 = 0 + 2*0 = i + 2k
-cba             // because not in the form of a^i b^j c^k
-abbb            // because j = 3   !=   1 = 1 + 2*0 = i + 2k
-abbbcc          // because j = 3   !=   5 = 1 + 2*2 = i + 2k
-aabbbcc         // because j = 3   !=   6 = 2 + 2*2 = i + 2k
-```
-
-
-
-### (Problem #6) `pda_ord_brace_empty` (15 points)
-
-Please implement the PDA `pda_ord_brace_empty` whose language accepted by
-**empty stacks** is equal to the following language:
-
-$${\large
-L = \lbrace w \in \lbrace \texttt{(}, \texttt{)}, \texttt{\\\{}, \texttt{\\\}},
-\texttt{[}, \texttt{]} \rbrace^* \mid w \text{ is well-formed and satisfies
- the order: } \texttt{()} < \texttt{\\\{\\\}} < \texttt{[]} \rbrace
-}$$
-It means that $\texttt{[]}$ cannot be inside $\texttt{()}$ or $\texttt{\\\{\\\}}$,
-and $\texttt{\\\{\\\}}$ cannot be inside $\texttt{()}$.
-
-For example, the following words are **in the language**:
-```plaintext
-                // because well-formed and ordered
-()              // because well-formed and ordered
-(){}[]          // because well-formed and ordered
-(()())          // because well-formed and ordered
-[{}{{()}}]      // because well-formed and ordered
-[(){}]{}()      // because well-formed and ordered
-```
-However, the following words are **not in the language**:
-```plaintext
-(               // because ill-formed
-}{              // because ill-formed
-([])            // because well-formed but not ordered
-({}{})          // because well-formed but not ordered
-{[()()]}        // because well-formed but not ordered
-{[()]}{}()      // because well-formed but not ordered
-```
-
-
-### (Problem #7) `pda_eq_pair_final` (15 points)
-
-Please implement the PDA `pda_eq_pair_final` whose language accepted by **final
-states** is equal to the following language:
-
-$${\large
-L = \lbrace a_1 a_2 \cdots a_{2n} \in \lbrace \texttt{a}, \texttt{b} \rbrace^*
-\mid n \geq 1 \land a_i = a_{n+i} \text{ for some } 1 \leq i \leq n \rbrace
-}$$
-
-For example, the following words are **in the language**:
-```plaintext
-aa              // because n = 1 and a_1 = a_2 = a
-abaa            // because n = 2 and a_1 = a_3 = a
-bbbaba          // because n = 3 and a_2 = a_5 = b
-abbabbbb        // because n = 4 and a_2 = a_6 = a
-aaaaaaabaa      // because n = 5 and a_3 = a_8 = a
-```
-However, the following words are **not in the language**:
-```plaintext
-a               // because |w| is odd
-ab              // because n = 1 and a_i != a_{n+i} for all i
-abba            // because n = 2 and a_i != a_{n+i} for all i
-aabbba          // because n = 3 and a_i != a_{n+i} for all i
-abbabaab        // because n = 4 and a_i != a_{n+i} for all i
-ababababab      // because n = 5 and a_i != a_{n+i} for all i
-```
-
-
-### (Problem #8) `pda_inc_empty` (15 points)
-
-Please implement the PDA `pda_inc_empty` whose language accepted by **empty
+Please implement the PDA `pda_ab_2c_empty` whose language accepted by **empty
 stacks** is equal to the following language:
 
 $${\large
-L = \lbrace x\texttt{\\\$}y \mid x, y \in \lbrace 0, 1 \rbrace^* \text{ and }
-\mathbb{N}(x) + 1 = \mathbb{N}(y^R) \rbrace
+L = \lbrace \texttt{a}^i \texttt{b}^j \texttt{c}^k \mid i, j, k \geq 0 \land i +
+j = 2k \rbrace
+}$$
+
+That is, $w$ is in the form $\texttt{a}^i \texttt{b}^j \texttt{c}^k$ where the
+total count of $\texttt{a}$'s and $\texttt{b}$'s equals twice the count of
+$\texttt{c}$'s.
+
+For example, the following words are **in the language**:
+```plaintext
+                // because i = j = k = 0   and   0 + 0 = 0 = 2*0
+aac             // because i = 2, j = 0, k = 1   and   2 + 0 = 2 = 2*1
+abc             // because i = 1, j = 1, k = 1   and   1 + 1 = 2 = 2*1
+bbc             // because i = 0, j = 2, k = 1   and   0 + 2 = 2 = 2*1
+aabbcc          // because i = 2, j = 2, k = 2   and   2 + 2 = 4 = 2*2
+aaaacc          // because i = 4, j = 0, k = 2   and   4 + 0 = 4 = 2*2
+abbbcc          // because i = 1, j = 3, k = 2   and   1 + 3 = 4 = 2*2
+```
+However, the following words are **not in the language**:
+```plaintext
+ac              // because i + j = 1   !=  2 = 2k
+acc             // because i + j = 1   !=  4 = 2k
+abcc            // because i + j = 2   !=  4 = 2k
+aabc            // because i + j = 3   !=  2 = 2k
+ca              // because not in the form of a^i b^j c^k
+cab             // because not in the form of a^i b^j c^k
+```
+
+
+
+### (Problem #4) `pda_hamming_one_final` (15 points)
+
+Please implement the PDA `pda_hamming_one_final` whose language accepted by
+**final states** is equal to the following language:
+
+$${\large
+L = \lbrace x \texttt{\\\#} y \mid x, y \in \lbrace \texttt{a}, \texttt{b}
+\rbrace^* \land |x| = |y| \land \mathrm{Hamming}(y, x^R) = 1 \rbrace
+}$$
+
+where $w^R$ is the reverse of $w$ and $\mathrm{Hamming}(u, v)$ is the number of
+positions where $u$ and $v$ differ. That is, $y$ has the same length as $x$ and
+differs from $x^R$ at **exactly one** position.
+
+For example, the following words are **in the language**:
+```plaintext
+a#b             // because x^R = a,    y = b,    1 mismatch
+b#a             // because x^R = b,    y = a,    1 mismatch
+aa#ab           // because x^R = aa,   y = ab,   1 mismatch at position 2
+aa#ba           // because x^R = aa,   y = ba,   1 mismatch at position 1
+ab#aa           // because x^R = ba,   y = aa,   1 mismatch at position 1
+ab#bb           // because x^R = ba,   y = bb,   1 mismatch at position 2
+aab#aaa         // because x^R = baa,  y = aaa,  1 mismatch at position 1
+aab#bba         // because x^R = baa,  y = bba,  1 mismatch at position 3
+```
+However, the following words are **not in the language**:
+```plaintext
+                // because no separator
+#               // because |x| = |y| = 0   and   0 mismatches
+a#a             // because 0 mismatches (palindrome with separator)
+ab#ba           // because 0 mismatches
+aab#aab         // because x^R = baa,  y = aab,  2 mismatches
+aab#bab         // because x^R = baa,  y = bab,  2 mismatches
+a#ab            // because |x| = 1   !=  2 = |y|
+ab#a            // because |x| = 2   !=  1 = |y|
+a##a            // because more than one '#'
+```
+
+
+
+### (Problem #5) `pda_pal_concat_empty` (15 points)
+
+Please implement the PDA `pda_pal_concat_empty` whose language accepted by
+**empty stacks** is equal to the following language:
+
+$${\large
+L = \lbrace u u^R v v^R \mid u, v \in \lbrace \texttt{a}, \texttt{b} \rbrace^+
+\rbrace
+}$$
+
+That is, $w$ is the concatenation of two non-empty even-length palindromes.
+
+For example, the following words are **in the language**:
+```plaintext
+aaaa            // because u = a,    uu^R = aa     and  v = a,    vv^R = aa
+aabb            // because u = a,    uu^R = aa     and  v = b,    vv^R = bb
+bbaa            // because u = b,    uu^R = bb     and  v = a,    vv^R = aa
+abbaaa          // because u = ab,   uu^R = abba   and  v = a,    vv^R = aa
+aaabba          // because u = a,    uu^R = aa     and  v = ab,   vv^R = abba
+abbaabba        // because u = ab,   uu^R = abba   and  v = ab,   vv^R = abba
+```
+However, the following words are **not in the language**:
+```plaintext
+                // because length must be at least 4
+aa              // because |v| = 0
+abba            // because single segment, no second non-empty segment
+ab              // because halves are not even palindromes
+abab            // because halves "ab" and "ab" are not palindromes
+aaa             // because length is odd
+aabba           // because length is odd
+```
+
+
+
+### (Problem #6) `pda_block_pal_match_final` (15 points)
+
+Please implement the PDA `pda_block_pal_match_final` whose language accepted by
+**final states** is equal to the following language:
+
+$${\large
+L = \lbrace x_1 \texttt{\\\#} x_2 \texttt{\\\#} \cdots \texttt{\\\#} x_n
+\texttt{\\\#} \mid n \geq 2 \land \exists i \neq j.\ x_i = x_j^R \rbrace
+}$$
+
+where each $x_k \in \lbrace \texttt{a}, \texttt{b} \rbrace^*$. That is, the
+input is a sequence of segments separated by `#` and ending with `#`, with at
+least two segments, and there exists a pair of distinct segments such that one
+is the reverse of the other.
+
+For example, the following words are **in the language**:
+```plaintext
+##              // because x_1 = x_2 = ε   and   ε = ε^R
+a#a#            // because x_1 = x_2 = a   and   a = a^R
+ab#ba#          // because x_1 = ab,   x_2 = ba   and   ab = ba^R
+ab#aa#ba#       // because x_1 = ab,   x_3 = ba   and   ab = ba^R
+abb#aab#bba#    // because x_1 = abb,  x_3 = bba  and   abb = bba^R
+ab#ab#ba#       // because x_2 = ab,   x_3 = ba   and   ab = ba^R
+```
+However, the following words are **not in the language**:
+```plaintext
+                // because empty input
+#               // because n = 1
+a               // because no '#'
+a#              // because n = 1
+ab              // because no '#'
+ab#ab#          // because x_1 = x_2 = ab   and   ab != ba = ab^R
+##a             // because does not end with '#'
+ab#ba           // because does not end with '#'
+```
+
+
+
+### (Problem #7) `pda_pal_factor_empty` (15 points)
+
+Please implement the PDA `pda_pal_factor_empty` whose language accepted by
+**empty stacks** is equal to the following language:
+
+$${\large
+L = \lbrace w \in \lbrace \texttt{a}, \texttt{b} \rbrace^* \mid w = p_1 p_2
+\cdots p_n \text{ for some } n \geq 0 \text{ and each } p_i \text{ is a
+palindrome with } |p_i| \geq 2 \rbrace
+}$$
+
+That is, $w$ can be written as a concatenation of zero or more palindromes,
+each of length at least two. The empty word is in the language with $n = 0$.
+
+For example, the following words are **in the language**:
+```plaintext
+                // because n = 0 (empty factorization)
+aa              // because single palindrome aa of length 2
+bb              // because single palindrome bb of length 2
+aba             // because single palindrome aba of length 3
+abba            // because single palindrome abba of length 4
+aabb            // because aa + bb (two palindromes)
+aabaa           // because single palindrome aabaa of length 5
+aaaa            // because single palindrome OR aa + aa
+ababbaba        // because single palindrome ababbaba of length 8
+```
+However, the following words are **not in the language**:
+```plaintext
+a               // because length < 2
+b               // because length < 2
+ab              // because length 2 but not a palindrome
+ba              // because not a palindrome
+aab             // because no valid factorization
+abb             // because no valid factorization
+abab            // because no valid factorization
+aabba           // because no valid factorization
+```
+
+
+
+### (Problem #8) `pda_triple_final` (15 points)
+
+Please implement the PDA `pda_triple_final` whose language accepted by **final
+states** is equal to the following language:
+
+$${\large
+L = \lbrace x \texttt{\\\$} y \mid x, y \in \lbrace \texttt{0}, \texttt{1}
+\rbrace^* \land \mathbb{N}(y^R) = 3 \cdot \mathbb{N}(x) \rbrace
 }$$
 
 where $w^R$ is the reverse of $w$, and $\mathbb{N}(w)$ is the natural number
-represented by $w$ in binary. For example, $\mathbb{N}(\texttt{101}) = 4 + 1 =
-5$ and $\mathbb{N}(\texttt{111}) = 4 + 2 + 1 = 7$. In addition, it allows the
-leading zeroes, so $\mathbb{N}(\epsilon) = 0$ and $\mathbb{N}(\texttt{00101}) =
-4 + 1 = 5$.
+represented by $w$ in binary (MSB-first). For example,
+$\mathbb{N}(\texttt{101}) = 4 + 1 = 5$ and $\mathbb{N}(\texttt{0}) = 0$. It
+allows the leading zeroes, so $\mathbb{N}(\epsilon) = 0$ and
+$\mathbb{N}(\texttt{0011}) = 2 + 1 = 3$.
 
 For example, the following words are **in the language**:
 ```plaintext
-$1              // because 0 + 1 = 1
-000$1000        // because 0 + 1 = 1
-11$001          // because 3 + 1 = 4
-1100$1011       // because 12 + 1 = 13
-1000$1001       // because 8 + 1 = 9
-1111$00001      // because 15 + 1 = 16
-010011$00101000 // because 19 + 1 = 20
+$               // because 3 * 0 = 0
+0$              // because 3 * 0 = 0
+$0              // because 3 * 0 = 0
+0$0             // because 3 * 0 = 0
+1$11            // because 3 * 1 = 3   =   N(11^R) = N(11)
+10$011          // because 3 * 2 = 6   =   N(011^R) = N(110)
+11$1001         // because 3 * 3 = 9   =   N(1001^R) = N(1001)
+100$0011        // because 3 * 4 = 12  =   N(0011^R) = N(1100)
 ```
 However, the following words are **not in the language**:
 ```plaintext
-0$0$1           // because invalid format
-11$01           // because 3 + 1 != 2
-000$0           // because 0 + 1 != 0
-000$0000        // because 0 + 1 != 0
-010101$1111000  // because 21 + 1 != 15
+                // because no '$'
+1               // because no '$'
+1$              // because 3 * 1 = 3   !=  0 = N(ε)
+1$1             // because 3 * 1 = 3   !=  1 = N(1^R)
+10$10           // because 3 * 2 = 6   !=  1 = N(10^R) = N(01)
+11$11           // because 3 * 3 = 9   !=  3 = N(11^R)
+$1              // because 3 * 0 = 0   !=  1 = N(1^R)
+1$$1            // because more than one '$'
 ```
+
 
 
 ## Appendix
