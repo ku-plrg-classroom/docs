@@ -60,17 +60,16 @@ val pda_an_bn_final: PDA = PDA(
   states = Set(0, 1, 2),
   symbols = Set('a', 'b'),
   alphabets = Set("X", "Z"),
-  trans = Map(
-    (0, Some('a'), "Z") -> Set((0, List("X", "Z"))),
-    (0, Some('a'), "X") -> Set((0, List("X", "X"))),
-    (0, None, "Z") -> Set((1, List("Z"))),
-    (0, None, "X") -> Set((1, List("X"))),
-    (1, Some('b'), "X") -> Set((1, List())),
-    (1, None, "Z") -> Set((2, List("Z"))),
-  ).withDefaultValue(Set()),
   initState = 0,
   initAlphabet = "Z",
   finalStates = Set(2),
+)(
+  (0, 'a', "Z") -> (0, List("X", "Z")),
+  (0, 'a', "X") -> (0, List("X", "X")),
+  (0, EPS, "Z") -> (1, List("Z")),
+  (0, EPS, "X") -> (1, List("X")),
+  (1, 'b', "X") -> (1, List()),
+  (1, EPS, "Z") -> (2, List("Z")),
 )
 ```
 whose language accepted by **final states** is equal to the following language:
