@@ -32,6 +32,7 @@ University](https://korea.ac.kr).
 | [pda-examples](/cose215/pda-examples/README.md)    | Examples of Pushdown Automata                                                                           |
 | [equiv-cfg-pda](/cose215/equiv-cfg-pda/README.md)  | Equivalence of Context-Free Grammars and Pushdown Automata                                              |
 | [cfg-cnf](/cose215/cfg-cnf/README.md)              | Conversion to Chomsky Normal Form (CNF)                                                                 |
+| [cfl-closure](/cose215/cfl-closure/README.md)      | Closure Properties of Context-Free Languages                                                            |
 
 ## Recursively Enumerable Languages (RELs) and Turing Machines (TMs)
 
