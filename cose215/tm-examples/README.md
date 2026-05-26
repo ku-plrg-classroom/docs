@@ -26,9 +26,9 @@ The template source code contains the following files:
 `Implementation.scala` file.**
 
 - [**Turing Machines (TMs)**](#turing-machines-tms)
-  - [(Problem #1) `tm_square` (20 points)](#problem-1-tm_square-20-points)
+  - [(Problem #1) `tm_tri` (20 points)](#problem-1-tm_tri-20-points)
   - [(Problem #2) `tm_fib` (20 points)](#problem-2-tm_fib-20-points)
-  - [(Problem #3) `tm_eq_abc` (20 points)](#problem-3-tm_eq_abc-20-points)
+  - [(Problem #3) `tm_sum_abc` (20 points)](#problem-3-tm_sum_abc-20-points)
   - [(Problem #4) `tm_dec` (20 points)](#problem-4-tm_dec-20-points)
   - [(Problem #5) `tm_add` (20 points)](#problem-5-tm_add-20-points)
 - [Appendix](#appendix)
@@ -57,16 +57,16 @@ For instance, an example TM `tm_an_bn_cn` is defined as follows:
     states = Set(0, 1, 2, 3, 4, 5),
     symbols = Set('a', 'b', 'c'),
     tapeSymbols = Set('a', 'b', 'c', 'X', 'Y', 'Z', 'B'),
-    trans = Map(
+    initState = 0,
+    blank = 'B',
+    finalStates = Set(5),
+  )(
       (0, 'a') -> (1, 'X', R), (0, 'Y') -> (4, 'Y', R), (0, 'B') -> (5, 'B', L),
       (1, 'a') -> (1, 'a', R), (1, 'Y') -> (1, 'Y', R), (1, 'b') -> (2, 'Y', R),
       (2, 'b') -> (2, 'b', R), (2, 'Z') -> (2, 'Z', R), (2, 'c') -> (3, 'Z', L),
       (3, 'a') -> (3, 'a', L), (3, 'b') -> (3, 'b', L), (3, 'Y') -> (3, 'Y', L),
       (3, 'Z') -> (3, 'Z', L), (3, 'X') -> (0, 'X', R), (4, 'Y') -> (4, 'Y', R),
-      (4, 'Z') -> (4, 'Z', R), (4, 'B') -> (5, 'B', L),),
-    initState = 0,
-    blank = 'B',
-    finalStates = Set(5),
+      (4, 'Z') -> (4, 'Z', R), (4, 'B') -> (5, 'B', L),
   )
 ```
 whose language is equal to the following language:
@@ -85,30 +85,30 @@ languages.
 
 
 
-### (Problem #1) `tm_square` (20 points)
+### (Problem #1) `tm_tri` (20 points)
 
-Please implement the **TM** `tm_square` whose language is equal to the following
+Please implement the **TM** `tm_tri` whose language is equal to the following
 **language**:
 
 $${\large
-L = \lbrace \texttt{a}^{n^2} \mid n \geq 0 \rbrace
+L = \lbrace \texttt{a}^{n(n+1)/2} \mid n \geq 0 \rbrace
 }$$
 
 For example, the following words are **in the language**:
 ```plaintext
-                         // because 0      =    0^2
-a                        // because 1      =    1^2
-aaaa                     // because 4      =    2^2
-aaaaaaaaa                // because 9      =    3^2
-aaaaaaaaaaaaaaaa         // because 16     =    4^2
+                         // because 0      =    0(0+1)/2
+a                        // because 1      =    1(1+1)/2
+aaa                      // because 3      =    2(2+1)/2
+aaaaaa                   // because 6      =    3(3+1)/2
+aaaaaaaaaa               // because 10     =    4(4+1)/2
 ```
 However, the following words are **not in the language**:
 ```plaintext
-aa                       // because 2 is not a square number
-aaaaa                    // because 5 is not a square number
-aaaaaaaa                 // because 8 is not a square number
-aaaaaaaaaaaa             // because 12 is not a square number
-aaaaaaaaaaaaaaaaa        // because 17 is not a square number
+aa                       // because 2 is not a triangular number
+aaaa                     // because 4 is not a triangular number
+aaaaa                    // because 5 is not a triangular number
+aaaaaaaa                 // because 8 is not a triangular number
+aaaaaaaaa                // because 9 is not a triangular number
 ```
 
 
@@ -148,35 +148,34 @@ aaaaaaaaaaaaaaaaa        // because 17 is not a Fibonacci number
 ```
 
 
-### (Problem #3) `tm_eq_abc` (20 points)
+### (Problem #3) `tm_sum_abc` (20 points)
 
-Please implement the **TM** `tm_eq_abc` whose language is equal to the following
+Please implement the **TM** `tm_sum_abc` whose language is equal to the following
 **language**:
 
 $${\large
 L = \lbrace w \in \lbrace \texttt{a}, \texttt{b}, \texttt{c} \rbrace^* \mid
-N_a(w) = N_b(w) = N_c(w) \rbrace
+N_a(w) + N_b(w) = N_c(w) \rbrace
 }$$
 where $N_a(w)$, $N_b(w)$, and $N_c(w)$ are the number of $\texttt{a}$,
 $\texttt{b}$, and $\texttt{c}$ in $w$, respectively.
 
 For example, the following words are **in the language**:
 ```plaintext
-                         // because N_a(w) = N_b(w) = N_c(w) = 0
-bac                      // because N_a(w) = N_b(w) = N_c(w) = 1
-bccaba                   // because N_a(w) = N_b(w) = N_c(w) = 2
-abcabcabc                // because N_a(w) = N_b(w) = N_c(w) = 3
-bcbacbaca                // because N_a(w) = N_b(w) = N_c(w) = 3
-cbbacbacbaca             // because N_a(w) = N_b(w) = N_c(w) = 4
+                         // because N_a(w) + N_b(w) = 0 + 0 = 0 = N_c(w)
+ac                       // because N_a(w) + N_b(w) = 1 + 0 = 1 = N_c(w)
+bc                       // because N_a(w) + N_b(w) = 0 + 1 = 1 = N_c(w)
+abcc                     // because N_a(w) + N_b(w) = 1 + 1 = 2 = N_c(w)
+ccabac                   // because N_a(w) + N_b(w) = 2 + 1 = 3 = N_c(w)
+ccabcacbac               // because N_a(w) + N_b(w) = 3 + 2 = 5 = N_c(w)
 ```
 However, the following words are **not in the language**:
 ```plaintext
-a                        // because N_a(w) = 1   !=   0 = N_b(w)
-ab                       // because N_a(w) = 1   !=   0 = N_c(w)
-abcbb                    // because N_a(w) = 1   !=   3 = N_b(w)
-aabbcab                  // because N_a(w) = 3   !=   1 = N_c(w)
-bacbabcabac              // because N_a(w) = 4   !=   3 = N_c(w)
-aaabbcccbabcbaacc        // because N_a(w) = 6   !=   5 = N_b(w)
+a                        // because N_a(w) + N_b(w) = 1   !=   0 = N_c(w)
+c                        // because N_a(w) + N_b(w) = 0   !=   1 = N_c(w)
+abc                      // because N_a(w) + N_b(w) = 2   !=   1 = N_c(w)
+aabbcc                   // because N_a(w) + N_b(w) = 4   !=   2 = N_c(w)
+bccaba                   // because N_a(w) + N_b(w) = 4   !=   2 = N_c(w)
 ```
 
 
