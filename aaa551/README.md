@@ -20,3 +20,4 @@ University](https://korea.ac.kr).
 | Name                                               | Explanation                                                                                             |
 | :------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |
 | [abs-machine](/aaa551/abs-machine/README.md)       | `AbsMachine` - Abstract Machine for a Simple Functional Language                                        |
+| [occur-ty](/aaa551/occur-ty/README.md)             | `OccurTy` - Occurrence Typing for a Simple Functional Language                                          |
