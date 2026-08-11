@@ -8,18 +8,28 @@ programming assignments on **Windows**, **macOS**, and **Linux**.
 - [macOS](#macos)
 - [Linux](#linux)
 - [Verifying Your Installation](#verifying-your-installation)
+- [Scala REPL (Optional)](#scala-repl-optional)
 - [Setting Up VS Code](#setting-up-vs-code)
 - [Troubleshooting](#troubleshooting)
 
 ## Requirements
 
-| | Version | Note |
-| :-- | :-- | :-- |
-| **JDK** | **21** (recommended) or **17** | Do **not** use 25 or later |
-| **sbt** | any recent version | The version is chosen by the project |
+You only need **two** things. Everything else is handled for you.
 
-The assignments are pinned to **Scala 3.3.3** and **sbt 1.9.9** in each project,
-so you do not choose those yourself. You only install a **JDK** and **sbt**.
+| Tool | What it is for | Required? |
+| :-- | :-- | :-- |
+| **JDK 21** (or 17) | runs Scala and sbt | **Yes** |
+| **sbt** (any recent version) | builds and tests the assignments | **Yes** |
+| **Scala** (`scala` command) | the REPL, for trying code by hand | No |
+
+> [!IMPORTANT]
+>
+> You do **not** need to install Scala itself. Each assignment pins
+> **Scala 3.3.3** and **sbt 1.9.9** in its build files, and sbt downloads them
+> for you.
+>
+> Install Scala only if you want the **REPL** to try code by hand --
+> see [Scala REPL (Optional)](#scala-repl-optional).
 
 > [!WARNING]
 >
@@ -126,6 +136,44 @@ sbt test
 
 The first run downloads Scala 3.3.3, sbt 1.9.9, and the libraries, so it can
 take several minutes. Later runs are much faster.
+
+## Scala REPL (Optional)
+
+The **REPL** (Read-Eval-Print-Loop) lets you evaluate Scala expressions
+interactively. It is useful for trying things out during lectures, but it is
+**not needed for the assignments**.
+
+### Option 1: On the web, with nothing to install
+
+Use the Scala Playground: <https://scastie.scala-lang.org/>
+
+### Option 2: A standalone `scala` command
+
+This needs a **JDK**, so install one first by following
+[Windows](#windows), [macOS](#macos), or [Linux](#linux) above. Then install
+Scala itself:
+
+* **macOS:** `brew install scala`
+* **Linux:** `sdk install scala`
+* **Windows:** install [Coursier](https://get-coursier.io/docs/cli-installation)
+  and run `cs setup`
+
+Check that it works with:
+
+```bash
+scala -version
+```
+
+> [!WARNING]
+>
+> On Windows, do **not** use `winget install Scala.Scala` -- that package only
+> provides **Scala 2**, not Scala 3.
+
+> [!NOTE]
+>
+> The Scala version you get here may be newer than the **3.3.3** used by the
+> assignments. That is fine for trying things out in the REPL, but always build
+> and test the assignments with `sbt`, which uses 3.3.3.
 
 ## Setting Up VS Code
 
