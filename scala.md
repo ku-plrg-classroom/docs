@@ -1,7 +1,5 @@
 # Common Instructions for Scala Programming Assignments
 
-[English](./scala.md) | [한국어](./scala.ko.md)
-
 This is the **common instruction** for Scala programming assignments. Please
 read the following instructions carefully before starting the assignments.
 
@@ -19,8 +17,16 @@ read the following instructions carefully before starting the assignments.
 
 ## Prerequisites
 
-* JDK >= 11
-* sbt (<https://www.scala-sbt.org/download.html>)
+* **JDK 21 (LTS)** -- JDK 17 also works.
+* **sbt**
+
+> [!WARNING]
+>
+> Do **NOT** install **JDK 25 or later**. These assignments use **Scala 3.3.3**,
+> which supports JDK 21 at the newest.
+
+See the [**installation guide**](./INSTALL.md) for step-by-step instructions on
+Windows, macOS, and Linux.
 
 ## Download
 
