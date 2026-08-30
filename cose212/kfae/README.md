@@ -56,7 +56,7 @@ def eval(str: String): String =
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
 ```
 
-The `reduce` function represents the reduction rules of the `KFAE` language as a
+The `reduce` function represents the small-step rules of the `KFAE` language as a
 function that reduces a state `(k, s)` consisting of a continuation `k` and a
 stack `s` into a new state `(k', s')`:
 ```scala

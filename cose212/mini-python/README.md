@@ -42,7 +42,7 @@ For example, the following code should throw a `NameError` error:
 # MiniPython
 x           # it should raise an error with a message: `NameError: x`
 ```
-because the reduction rule in [`mini-python-spec.pdf`](./mini-python-spec.pdf)
+because the small-step rule in [`mini-python-spec.pdf`](./mini-python-spec.pdf)
 raises a `NameError` for this case but there is no `try`-`except` block to catch
 it.
 
@@ -110,7 +110,7 @@ def eval(str: String, debug: Boolean = false): String =
 
 ## The `reduce` function
 
-The `reduce` function represents the reduction relation of the `MiniPython`
+The `reduce` function represents the small-step relation of the `MiniPython`
 language as a function that reduces a state `st` to another state:
 ```scala
 def reduce(st: State): State =
