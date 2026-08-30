@@ -24,7 +24,7 @@ The template source code contains the following files:
 The `FAE-cps` language is exactly the same as the [`FAE`](../fae/README.md)
 language, but it uses the **continuation-passing style** (CPS) for the
 interpreter. In this assignment, you will implement two functions: `interpCPS`
-and `reduce`.
+and `step`.
 
 ## Specification of `FAE-cps` language
 
@@ -35,7 +35,7 @@ continuation-passing style (CPS) in [`fae-cps-spec.pdf`](./fae-cps-spec.pdf).
 ### Run-time Errors
 
 If the given expression meets the following conditions during evaluation, the
-`interpCPS` or `reduce` function should throw an exception using the `error`
+`interpCPS` or `step` function should throw an exception using the `error`
 function with corresponding error messages containing their error kinds:
 
 | Error kind | Description |
@@ -61,23 +61,23 @@ def interpCPS(expr: Expr, env: Env, k: Value => Value): Value = ???
 ```
 **Please implement the `interpCPS` function in the `Implementation.scala` file.**
 
-## (Problem #2) `reduce` (50 points)
+## (Problem #2) `step` (50 points)
 
 The `evalK` function is another way to implement the interpreter by repeatedly
-calling the `reduce` function until the continuation becomes empty:
+calling the `step` function until the continuation becomes empty:
 ```scala
 def evalK(str: String): String =
   import Cont.*
-  def aux(k: Cont, s: Stack): Value = reduce(k, s) match
+  def aux(k: Cont, s: Stack): Value = step(k, s) match
     case (EmptyK, List(v)) => v
     case (k, s) => aux(k, s)
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
 ```
 
-The `reduce` function reduces a state `(k, s)` consisting of a continuation `k`
-and a stack `s` into a new state `(k', s')`:
+The `step` function takes a state `(k, s)` consisting of a continuation `k`
+and a stack `s`, and returns the next state `(k', s')`:
 ```scala
-def reduce(k: Cont, s: Stack): (Cont, Stack) = ???
+def step(k: Cont, s: Stack): (Cont, Stack) = ???
 ```
 
-**Please implement the `reduce` function in the `Implementation.scala` file.**
+**Please implement the `step` function in the `Implementation.scala` file.**

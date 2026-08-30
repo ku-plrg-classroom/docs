@@ -23,7 +23,7 @@ The template source code contains the following files:
 
 The `KFAE` language is an extension of the [`FAE`](../fae/README.md) language
 with **first-class continuations**. In this assignment, you will implement the
-`reduce` function.
+`step` function.
 
 ## Specification of `KFAE` language
 
@@ -33,7 +33,7 @@ See the [`kfae-spec.pdf`](./kfae-spec.pdf) for the syntax and semantics of the
 ### Run-time Errors
 
 If the given expression meets the following conditions during evaluation, the
-`reduce` function should throw an exception using the `error` function with
+`step` function should throw an exception using the `error` function with
 corresponding error messages containing their error kinds:
 
 | Error kind | Description |
@@ -42,25 +42,25 @@ corresponding error messages containing their error kinds:
 | `invalid operation` | The given operation is not defined for the given operands. |
 | `not a function` | The expression does not evaluate to a function or continuation in the function application. |
 
-## (Problem #1) `reduce`
+## (Problem #1) `step`
 
 The `eval` function is a `KFAE` interpreter that takes an expression in a
-string form and repeatedly calls the `reduce` function until the continuation
+string form and repeatedly calls the `step` function until the continuation
 becomes empty to compute the final result:
 ```scala
 def eval(str: String): String =
   import Cont.*
-  def aux(k: Cont, s: Stack): Value = reduce(k, s) match
+  def aux(k: Cont, s: Stack): Value = step(k, s) match
     case (EmptyK, List(v)) => v
     case (k, s) => aux(k, s)
   aux(EvalK(Map.empty, Expr(str), EmptyK), List.empty).str
 ```
 
-The `reduce` function represents the small-step rules of the `KFAE` language as a
-function that reduces a state `(k, s)` consisting of a continuation `k` and a
-stack `s` into a new state `(k', s')`:
+The `step` function represents the small-step rules of the `KFAE` language as a
+function that maps a state `(k, s)` consisting of a continuation `k` and a
+stack `s` to the next state `(k', s')`:
 ```scala
-def reduce(k: Cont, s: Stack): (Cont, Stack) = ???
+def step(k: Cont, s: Stack): (Cont, Stack) = ???
 ```
 
-**Please implement the `reduce` function in the `Implementation.scala` file.**
+**Please implement the `step` function in the `Implementation.scala` file.**

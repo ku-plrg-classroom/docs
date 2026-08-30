@@ -33,7 +33,7 @@ semantics of the `MiniPython` language.
 ### Run-time Errors
 
 If the given program stops with a run-time error with an error kind (i.e.,
-`Error` class in `MiniPython.scala`), the `reduce` function should throw an
+`Error` class in `MiniPython.scala`), the `step` function should throw an
 exception using the `error` function with the string form (i.e., `_.str`) of the
 error kind.
 
@@ -51,7 +51,7 @@ it.
 ## The `eval` function
 
 The `eval` function is an interpreter of the `MiniPython` language. It takes a
-program in a string form and repeatedly calls the `reduce` function until the
+program in a string form and repeatedly calls the `step` function until the
 continuation becomes empty to compute the final result:
 ```scala
 def eval(str: String, debug: Boolean = false): String =
@@ -62,7 +62,7 @@ def eval(str: String, debug: Boolean = false): String =
         val result = v.str(mem)
         if (debug) log("Result: " + result)
         result
-      case _ => aux(reduce(st))
+      case _ => aux(step(st))
   def log(msg: String): Unit = println("-" * 80 + "\n" + msg)
   val Program(stmts, expr) = Program(str)
   val xs = if (stmts.isEmpty) Nil else locals(Block(stmts)).toList
@@ -80,7 +80,7 @@ def eval(str: String, debug: Boolean = false): String =
 > ```scala
 > eval("1 + 2 * 3", debug = true)
 > ```
-> After implementing the `reduce` function, it will print the following:
+> After implementing the `step` function, it will print the following:
 > ```
 > --------------------------------------------------------------------------------
 > * env    :
@@ -108,17 +108,17 @@ def eval(str: String, debug: Boolean = false): String =
 > ```
 
 
-## The `reduce` function
+## The `step` function
 
-The `reduce` function represents the small-step relation of the `MiniPython`
-language as a function that reduces a state `st` to another state:
+The `step` function represents the small-step relation of the `MiniPython`
+language as a function that maps a state `st` to the next state:
 ```scala
-def reduce(st: State): State =
+def step(st: State): State =
   val State(k, s, h, m) = st
   ???
 ```
 
-**Please implement the `reduce` function in the `Implementation.scala` file.**
+**Please implement the `step` function in the `Implementation.scala` file.**
 
 
 ## The `locals` function
