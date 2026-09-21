@@ -21,3 +21,7 @@ University](https://korea.ac.kr).
 ## [**AAA705: Software Testing and Quality Assurance**](./aaa705/)
 
 * Course Page: https://plrg.korea.ac.kr/courses/aaa705/
+
+## [**SWS128: Software Analysis**](./sws128/)
+
+* Course Page: https://plrg.korea.ac.kr/courses/sws128/
